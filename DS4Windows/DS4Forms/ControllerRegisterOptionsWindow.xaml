@@ -3,6 +3,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:lex="http://wpflocalizeextension.codeplex.com"
+        lex:LocalizeDictionary.DesignCulture=""
+        lex:ResxLocalizationProvider.DefaultAssembly="DS4Windows"
+        lex:ResxLocalizationProvider.DefaultDictionary="Strings"
         xmlns:local="clr-namespace:DS4WinWPF.DS4Forms"
         mc:Ignorable="d"
         Title="Controller Type Options" Height="450" Width="800"
@@ -13,14 +17,14 @@
     <DockPanel x:Name="devOptionsDockPanel" Margin="4">
         <DockPanel>
             <StackPanel DockPanel.Dock="Top">
-                <CheckBox Content="DS4 Controller Support" IsChecked="{Binding DS4DeviceOpts.Enabled}" />
-                <CheckBox Content="DualSense Controller Support" IsChecked="{Binding DSDeviceOpts.Enabled}" />
-                <CheckBox Content="Switch Pro Controller Support" IsChecked="{Binding SwitchProDeviceOpts.Enabled}" />
-                <CheckBox Content="JoyCon Controller Support" IsChecked="{Binding JoyConDeviceOpts.Enabled}" />
+                <CheckBox Content="{lex:Loc DS4ControllerSupport}" IsChecked="{Binding DS4DeviceOpts.Enabled}" />
+                <CheckBox Content="{lex:Loc DualSenseControllerSupport}" IsChecked="{Binding DSDeviceOpts.Enabled}" />
+                <CheckBox Content="{lex:Loc SwitchProControllerSupport}" IsChecked="{Binding SwitchProDeviceOpts.Enabled}" />
+                <CheckBox Content="{lex:Loc JoyConControllerSupport}" IsChecked="{Binding JoyConDeviceOpts.Enabled}" />
             </StackPanel>
 
             <DockPanel DockPanel.Dock="Bottom" Margin="0,20,0,0">
-                <Label Content="Detected Controllers" ContentStringFormat="{}{0}:" DockPanel.Dock="Top" FontWeight="Bold" />
+                <Label Content="{lex:Loc DetectedControllers}" ContentStringFormat="{}{0}:" DockPanel.Dock="Top" FontWeight="Bold" />
                 <ListBox x:Name="controllerListBox" ItemsSource="{Binding CurrentInputDevices}" SelectedIndex="{Binding ControllerSelectedIndex}"
                       Margin="0,8,0,0">
                     <ListBox.ItemTemplate>
@@ -30,63 +34,63 @@
                     </ListBox.ItemTemplate>
                 </ListBox>
             </DockPanel>
-            
+
         </DockPanel>
 
         <TabControl x:Name="deviceSettingsTabControl" DockPanel.Dock="Right" SelectedIndex="{Binding CurrentTabSelectedIndex}" Margin="40,4,4,4">
-            <TabItem Header="Blank" Visibility="Collapsed">
+            <TabItem Header="{lex:Loc Blank}" Visibility="Collapsed">
             </TabItem>
 
-            <TabItem x:Name="ds4OptsTabItem" Header="DS4" Visibility="Collapsed">
+            <TabItem x:Name="ds4OptsTabItem" Header="{lex:Loc DS4}" Visibility="Collapsed">
                 <StackPanel Visibility="{Binding Visible, Converter={StaticResource BooleanToVisibilityConverter}}" Margin="4">
-                    <CheckBox Content="Copycat" IsChecked="{Binding Options.IsCopyCat, FallbackValue='False'}" ToolTip="Change some flags used for a non-Sony DS4 controller. It might fix rumble and lightbar support for some third party DS4 clones" />
+                    <CheckBox Content="{lex:Loc Copycat}" IsChecked="{Binding Options.IsCopyCat, FallbackValue='False'}" ToolTip="{lex:Loc CopycatTip}" />
                 </StackPanel>
             </TabItem>
-            
-            <TabItem x:Name="dualSenseOptsTabItem" Header="DualSense" Visibility="Collapsed">
+
+            <TabItem x:Name="dualSenseOptsTabItem" Header="{lex:Loc DualSense}" Visibility="Collapsed">
                 <StackPanel Visibility="{Binding Visible, Converter={StaticResource BooleanToVisibilityConverter}}" Margin="4">
-                    <CheckBox Content="Enable Rumble Emulation" IsChecked="{Binding Options.EnableRumble, FallbackValue='False'}" />
+                    <CheckBox Content="{lex:Loc EnableRumbleEmulation}" IsChecked="{Binding Options.EnableRumble, FallbackValue='False'}" />
                     <StackPanel Orientation="Horizontal" Margin="0,8,0,0" IsEnabled="{Binding Options.EnableRumble}">
-                        <Label Content="Rumble Strength" ContentStringFormat="{}{0}:" />
+                        <Label Content="{lex:Loc RumbleStrength}" ContentStringFormat="{}{0}:" />
                         <ComboBox ItemsSource="{Binding Path=DSHapticOptions}" DisplayMemberPath="DisplayName" SelectedValuePath="ChoiceValue" SelectedValue="{Binding Options.HapticIntensity}" Margin="8,0,0,0" />
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="0,8,0,0">
-                        <Label Content="Player LED Mode" ContentStringFormat="{}{0}:" />
+                        <Label Content="{lex:Loc PlayerLEDMode}" ContentStringFormat="{}{0}:" />
                         <ComboBox ItemsSource="{Binding Path=DsLEDModes}" DisplayMemberPath="DisplayName" SelectedValuePath="ChoiceValue" SelectedValue="{Binding Options.LedMode}" Margin="8,0,0,0" />
                     </StackPanel>
 
                     <StackPanel Orientation="Horizontal" Margin="0,8,0,0">
-                        <Label Content="Mute LED Mode" ContentStringFormat="{}{0}:" />
+                        <Label Content="{lex:Loc MuteLEDMode}" ContentStringFormat="{}{0}:" />
                         <ComboBox ItemsSource="{Binding Path=DsMuteLEDModes}" DisplayMemberPath="DisplayName" SelectedValuePath="ChoiceValue" SelectedValue="{Binding Options.MuteLedMode}" Margin="8,0,0,0" />
                     </StackPanel>
                 </StackPanel>
             </TabItem>
 
-            <TabItem x:Name="switchProOptsTabItem" Header="Switch Pro" Visibility="Collapsed">
+            <TabItem x:Name="switchProOptsTabItem" Header="{lex:Loc SwitchPro}" Visibility="Collapsed">
                 <StackPanel Visibility="{Binding Visible, Converter={StaticResource BooleanToVisibilityConverter}}" Margin="4">
-                    <CheckBox Content="Enable Home LED" IsChecked="{Binding Options.EnableHomeLED, FallbackValue='False'}" />
+                    <CheckBox Content="{lex:Loc EnableHomeLED}" IsChecked="{Binding Options.EnableHomeLED, FallbackValue='False'}" />
                 </StackPanel>
             </TabItem>
 
-            <TabItem x:Name="joyConOptsTabItem" Header="JoyCon" Visibility="Collapsed">
+            <TabItem x:Name="joyConOptsTabItem" Header="{lex:Loc JoyCon}" Visibility="Collapsed">
                 <StackPanel Visibility="{Binding Visible, Converter={StaticResource BooleanToVisibilityConverter}}" Margin="4">
                     <TextBlock Text="Changes take effect on new device connection" Foreground="#FFDE4343" FontWeight="Bold" />
 
-                    <GroupBox Header="JoyCon Global Options" Margin="0,8,0,0">
+                    <GroupBox Header="{lex:Loc JoyConGlobalOptions}" Margin="0,8,0,0">
                         <StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="0,8,0,0">
-                                <Label Content="Link Mode" ContentStringFormat="{}{0}:" />
+                                <Label Content="{lex:Loc LinkMode}" ContentStringFormat="{}{0}:" />
                                 <ComboBox ItemsSource="{Binding Path=LinkModes}" DisplayMemberPath="DisplayName" SelectedValuePath="ChoiceValue" SelectedValue="{Binding ParentOptions.LinkedMode}" Margin="8,0,0,0" />
                             </StackPanel>
 
                             <StackPanel Orientation="Horizontal" Margin="0,8,0,0">
-                                <Label Content="Joined Gyro Provider" ContentStringFormat="{}{0}:" />
+                                <Label Content="{lex:Loc JoinedGyroProvider}" ContentStringFormat="{}{0}:" />
                                 <ComboBox ItemsSource="{Binding Path=JoinGyroOptions}" DisplayMemberPath="DisplayName" SelectedValuePath="ChoiceValue" SelectedValue="{Binding ParentOptions.JoinGyroProv}" Margin="8,0,0,0" />
                             </StackPanel>
                         </StackPanel>
                     </GroupBox>
 
-                    <CheckBox Content="Enable Home LED" IsChecked="{Binding Options.EnableHomeLED, FallbackValue='False'}"
+                    <CheckBox Content="{lex:Loc EnableHomeLED}" IsChecked="{Binding Options.EnableHomeLED, FallbackValue='False'}"
                               Margin="0,16,0,0" />
                 </StackPanel>
             </TabItem>

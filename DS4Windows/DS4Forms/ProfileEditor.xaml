@@ -21,7 +21,7 @@
             <Button x:Name="saveBtn" Content="{lex:Loc SaveProfile}" Margin="10,0,0,0" Click="SaveBtn_Click" />
             <Button x:Name="cancelBtn" Content="{lex:Loc Cancel}" Margin="10,0,0,0" Click="CancelBtn_Click" />
             <Button x:Name="applyBtn" Content="{lex:Loc Apply}" Margin="10,0,0,0" Click="ApplyBtn_Click" IsEnabled="False" />
-            <Button x:Name="presetBtn" Content="Select Preset" Margin="10,0,0,0" Click="PresetBtn_Click" />
+            <Button x:Name="presetBtn" Content="{lex:Loc SelectPreset}" Margin="10,0,0,0" Click="PresetBtn_Click" />
             <Button x:Name="keepSizeBtn" Margin="10,0,0,0" Click="KeepSizeBtn_Click">
                 <StackPanel Orientation="Horizontal" Margin="0">
                     <Image x:Name="sizeImage" Source="/DS4Windows;component/Resources/size.png" Width="20" Height="20"/>
@@ -31,7 +31,7 @@
             </Button>
         </StackPanel>
         <TabControl x:Name="sidebarTabControl" Width="460" DockPanel.Dock="Left" SelectionChanged="SidebarTabControl_SelectionChanged">
-            <TabItem Header="Controls">
+            <TabItem Header="{lex:Loc Controls}">
                 <DockPanel Width="440" LastChildFill="False">
                     <DockPanel.Background>
                         <SolidColorBrush Color="DimGray"/>
@@ -39,57 +39,57 @@
                     <Canvas x:Name="conCanvas" Width="440" Height="240" Margin="0,10,0,0" DockPanel.Dock="Top" >
                         <Canvas.Resources>
                             <ContextMenu x:Key="presetMenu">
-                                <MenuItem x:Name="controlNameItem" Header="Name" IsEnabled="False" />
+                                <MenuItem x:Name="controlNameItem" Header="{lex:Loc Name}" IsEnabled="False" />
                                 <Separator />
-                                <MenuItem Header="Default" Tag="0" Click="PresetMenuItem_Click" />
-                                <MenuItem Header="DPad">
-                                    <MenuItem Header="Normal" Tag="1" CommandParameter="0" Click="PresetMenuItem_Click" />
-                                    <MenuItem Header="Inverted" Tag="1" CommandParameter="1" Click="PresetMenuItem_Click" />
-                                    <MenuItem Header="Inverted X" Tag="1" CommandParameter="2" Click="PresetMenuItem_Click" />
-                                    <MenuItem Header="Inverted Y" Tag="1" CommandParameter="3" Click="PresetMenuItem_Click" />
-                                    <MenuItem Header="Rotate 90&#xb0;" Tag="1" CommandParameter="4" Click="PresetMenuItem_Click" />
-                                    <MenuItem Header="Rotate -90&#xb0;" Tag="1" CommandParameter="5" Click="PresetMenuItem_Click" />
+                                <MenuItem Header="{lex:Loc Default}" Tag="0" Click="PresetMenuItem_Click" />
+                                <MenuItem Header="{lex:Loc DPad}">
+                                    <MenuItem Header="{lex:Loc Normal}" Tag="1" CommandParameter="0" Click="PresetMenuItem_Click" />
+                                    <MenuItem Header="{lex:Loc Inverted}" Tag="1" CommandParameter="1" Click="PresetMenuItem_Click" />
+                                    <MenuItem Header="{lex:Loc InvertedX}" Tag="1" CommandParameter="2" Click="PresetMenuItem_Click" />
+                                    <MenuItem Header="{lex:Loc InvertedY}" Tag="1" CommandParameter="3" Click="PresetMenuItem_Click" />
+                                    <MenuItem Header="{lex:Loc Rotate90}" Tag="1" CommandParameter="4" Click="PresetMenuItem_Click" />
+                                    <MenuItem Header="{lex:Loc Rotate-90}" Tag="1" CommandParameter="5" Click="PresetMenuItem_Click" />
                                 </MenuItem>
-                                <MenuItem Header="Left Stick">
-                                    <MenuItem Header="Normal" Tag="2" CommandParameter="0" Click="PresetMenuItem_Click" />
-                                    <MenuItem Header="Inverted" Tag="2" CommandParameter="1" Click="PresetMenuItem_Click" />
-                                    <MenuItem Header="Inverted X" Tag="2" CommandParameter="2" Click="PresetMenuItem_Click" />
-                                    <MenuItem Header="Inverted Y" Tag="2" CommandParameter="3" Click="PresetMenuItem_Click" />
-                                    <MenuItem Header="Rotate 90&#xb0;" Tag="2" CommandParameter="4" Click="PresetMenuItem_Click" />
-                                    <MenuItem Header="Rotate -90&#xb0;" Tag="2" CommandParameter="5" Click="PresetMenuItem_Click" />
+                                <MenuItem Header="{lex:Loc LeftStick}">
+                                    <MenuItem Header="{lex:Loc Normal}" Tag="2" CommandParameter="0" Click="PresetMenuItem_Click" />
+                                    <MenuItem Header="{lex:Loc Inverted}" Tag="2" CommandParameter="1" Click="PresetMenuItem_Click" />
+                                    <MenuItem Header="{lex:Loc InvertedX}" Tag="2" CommandParameter="2" Click="PresetMenuItem_Click" />
+                                    <MenuItem Header="{lex:Loc InvertedY}" Tag="2" CommandParameter="3" Click="PresetMenuItem_Click" />
+                                    <MenuItem Header="{lex:Loc Rotate90}" Tag="2" CommandParameter="4" Click="PresetMenuItem_Click" />
+                                    <MenuItem Header="{lex:Loc Rotate-90}" Tag="2" CommandParameter="5" Click="PresetMenuItem_Click" />
                                 </MenuItem>
-                                <MenuItem Header="Right Stick">
-                                    <MenuItem Header="Normal" Tag="3" CommandParameter="0" Click="PresetMenuItem_Click" />
-                                    <MenuItem Header="Inverted" Tag="3" CommandParameter="1" Click="PresetMenuItem_Click" />
-                                    <MenuItem Header="Inverted X" Tag="3" CommandParameter="2" Click="PresetMenuItem_Click" />
-                                    <MenuItem Header="Inverted Y" Tag="3" CommandParameter="3" Click="PresetMenuItem_Click" />
-                                    <MenuItem Header="Rotate 90&#xb0;" Tag="3" CommandParameter="4" Click="PresetMenuItem_Click" />
-                                    <MenuItem Header="Rotate -90&#xb0;" Tag="3" CommandParameter="5" Click="PresetMenuItem_Click" />
+                                <MenuItem Header="{lex:Loc RightStick}">
+                                    <MenuItem Header="{lex:Loc Normal}" Tag="3" CommandParameter="0" Click="PresetMenuItem_Click" />
+                                    <MenuItem Header="{lex:Loc Inverted}" Tag="3" CommandParameter="1" Click="PresetMenuItem_Click" />
+                                    <MenuItem Header="{lex:Loc InvertedX}" Tag="3" CommandParameter="2" Click="PresetMenuItem_Click" />
+                                    <MenuItem Header="{lex:Loc InvertedY}" Tag="3" CommandParameter="3" Click="PresetMenuItem_Click" />
+                                    <MenuItem Header="{lex:Loc Rotate90}" Tag="3" CommandParameter="4" Click="PresetMenuItem_Click" />
+                                    <MenuItem Header="{lex:Loc Rotate-90}" Tag="3" CommandParameter="5" Click="PresetMenuItem_Click" />
                                 </MenuItem>
-                                <MenuItem Header="Face Buttons">
-                                    <MenuItem Header="Normal" Tag="4" CommandParameter="0" Click="PresetMenuItem_Click" />
-                                    <MenuItem Header="Rotate 90&#xb0;" Tag="4" CommandParameter="1" Click="PresetMenuItem_Click" />
-                                    <MenuItem Header="Rotate -90&#xb0;" Tag="4" CommandParameter="2" Click="PresetMenuItem_Click" />
+                                <MenuItem Header="{lex:Loc FaceButtons}">
+                                    <MenuItem Header="{lex:Loc Normal}" Tag="4" CommandParameter="0" Click="PresetMenuItem_Click" />
+                                    <MenuItem Header="{lex:Loc Rotate90}" Tag="4" CommandParameter="1" Click="PresetMenuItem_Click" />
+                                    <MenuItem Header="{lex:Loc Rotate-90}" Tag="4" CommandParameter="2" Click="PresetMenuItem_Click" />
                                 </MenuItem>
-                                <MenuItem Header="WASD">
-                                    <MenuItem Header="Normal" Tag="5" CommandParameter="0" Click="PresetMenuItem_Click" />
-                                    <MenuItem Header="Rotate 90&#xb0;" Tag="5" CommandParameter="1" Click="PresetMenuItem_Click" />
-                                    <MenuItem Header="Rotate -90&#xb0;" Tag="5" CommandParameter="2" Click="PresetMenuItem_Click" />
+                                <MenuItem Header="{lex:Loc WASD}">
+                                    <MenuItem Header="{lex:Loc Normal}" Tag="5" CommandParameter="0" Click="PresetMenuItem_Click" />
+                                    <MenuItem Header="{lex:Loc Rotate90}" Tag="5" CommandParameter="1" Click="PresetMenuItem_Click" />
+                                    <MenuItem Header="{lex:Loc Rotate-90}" Tag="5" CommandParameter="2" Click="PresetMenuItem_Click" />
                                 </MenuItem>
-                                <MenuItem Header="Arrow Keys">
-                                    <MenuItem Header="Normal" Tag="6" CommandParameter="0" Click="PresetMenuItem_Click" />
-                                    <MenuItem Header="Rotate 90&#xb0;" Tag="6" CommandParameter="1" Click="PresetMenuItem_Click" />
-                                    <MenuItem Header="Rotate -90&#xb0;" Tag="6" CommandParameter="2" Click="PresetMenuItem_Click" />
+                                <MenuItem Header="{lex:Loc ArrowKeys}">
+                                    <MenuItem Header="{lex:Loc Normal}" Tag="6" CommandParameter="0" Click="PresetMenuItem_Click" />
+                                    <MenuItem Header="{lex:Loc Rotate90}" Tag="6" CommandParameter="1" Click="PresetMenuItem_Click" />
+                                    <MenuItem Header="{lex:Loc Rotate-90}" Tag="6" CommandParameter="2" Click="PresetMenuItem_Click" />
                                 </MenuItem>
-                                <MenuItem Header="Mouse">
-                                    <MenuItem Header="Normal" Tag="7" CommandParameter="0" Click="PresetMenuItem_Click" />
-                                    <MenuItem Header="Inverted" Tag="7" CommandParameter="1" Click="PresetMenuItem_Click" />
-                                    <MenuItem Header="Inverted X" Tag="7" CommandParameter="2" Click="PresetMenuItem_Click" />
-                                    <MenuItem Header="Inverted Y" Tag="7" CommandParameter="3" Click="PresetMenuItem_Click" />
-                                    <MenuItem Header="Rotate 90&#xb0;" Tag="7" CommandParameter="4" Click="PresetMenuItem_Click" />
-                                    <MenuItem Header="Rotate -90&#xb0;" Tag="7" CommandParameter="5" Click="PresetMenuItem_Click" />
+                                <MenuItem Header="{lex:Loc Mouse}">
+                                    <MenuItem Header="{lex:Loc Normal}" Tag="7" CommandParameter="0" Click="PresetMenuItem_Click" />
+                                    <MenuItem Header="{lex:Loc Inverted}" Tag="7" CommandParameter="1" Click="PresetMenuItem_Click" />
+                                    <MenuItem Header="{lex:Loc InvertedX}" Tag="7" CommandParameter="2" Click="PresetMenuItem_Click" />
+                                    <MenuItem Header="{lex:Loc InvertedY}" Tag="7" CommandParameter="3" Click="PresetMenuItem_Click" />
+                                    <MenuItem Header="{lex:Loc Rotate90}" Tag="7" CommandParameter="4" Click="PresetMenuItem_Click" />
+                                    <MenuItem Header="{lex:Loc Rotate-90}" Tag="7" CommandParameter="5" Click="PresetMenuItem_Click" />
                                 </MenuItem>
-                                <MenuItem Header="Unbound" Tag="8" Click="PresetMenuItem_Click" />
+                                <MenuItem Header="{lex:Loc Unbound}" Tag="8" Click="PresetMenuItem_Click" />
                             </ContextMenu>
                         </Canvas.Resources>
 
@@ -126,55 +126,55 @@
                         <Image x:Name="picBoxHover" IsEnabled="False" Source="/DS4Windows;component/Resources/DS4-Config_RS.png" Height="48" Width="48" Canvas.Left="447" Canvas.Top="5" />
                         <Image x:Name="picBoxHover2" IsEnabled="False" Source="/DS4Windows;component/Resources/DS4-Config_RS.png" Height="48" Width="48" Canvas.Left="0" Canvas.Top="0" Stretch="Fill" />
 
-                        <Button Content="Cross" x:Name="crossConBtn" Canvas.Left="330" Canvas.Top="125" Width="26" Height="26" Click="HoverConBtn_Click" Style="{StaticResource NoBGHoverBtn}" MouseEnter="ContBtn_MouseEnter" MouseLeave="ContBtn_MouseLeave" MouseRightButtonUp="ConBtn_MouseRightButtonUp" />
-                        <Button Content="Circle" x:Name="circleConBtn" Canvas.Left="357" Canvas.Top="99" Width="26" Height="26" Style="{StaticResource NoBGHoverBtn}" Click="HoverConBtn_Click" MouseEnter="ContBtn_MouseEnter" MouseLeave="ContBtn_MouseLeave" MouseRightButtonUp="ConBtn_MouseRightButtonUp" />
-                        <Button Content="Square" x:Name="squareConBtn" Canvas.Left="300" Canvas.Top="98" Width="26" Height="26" Style="{StaticResource NoBGHoverBtn}" Click="HoverConBtn_Click" MouseEnter="ContBtn_MouseEnter" MouseLeave="ContBtn_MouseLeave" MouseRightButtonUp="ConBtn_MouseRightButtonUp" />
-                        <Button Content="Triangle" x:Name="triangleConBtn" Canvas.Left="330" Canvas.Top="74" Width="26" Height="26" Style="{StaticResource NoBGHoverBtn}" Click="HoverConBtn_Click" MouseEnter="ContBtn_MouseEnter" MouseLeave="ContBtn_MouseLeave" MouseRightButtonUp="ConBtn_MouseRightButtonUp" />
+                        <Button Content="{lex:Loc Cross}" x:Name="crossConBtn" Canvas.Left="330" Canvas.Top="125" Width="26" Height="26" Click="HoverConBtn_Click" Style="{StaticResource NoBGHoverBtn}" MouseEnter="ContBtn_MouseEnter" MouseLeave="ContBtn_MouseLeave" MouseRightButtonUp="ConBtn_MouseRightButtonUp" />
+                        <Button Content="{lex:Loc Circle}" x:Name="circleConBtn" Canvas.Left="357" Canvas.Top="99" Width="26" Height="26" Style="{StaticResource NoBGHoverBtn}" Click="HoverConBtn_Click" MouseEnter="ContBtn_MouseEnter" MouseLeave="ContBtn_MouseLeave" MouseRightButtonUp="ConBtn_MouseRightButtonUp" />
+                        <Button Content="{lex:Loc Square}" x:Name="squareConBtn" Canvas.Left="300" Canvas.Top="98" Width="26" Height="26" Style="{StaticResource NoBGHoverBtn}" Click="HoverConBtn_Click" MouseEnter="ContBtn_MouseEnter" MouseLeave="ContBtn_MouseLeave" MouseRightButtonUp="ConBtn_MouseRightButtonUp" />
+                        <Button Content="{lex:Loc Triangle}" x:Name="triangleConBtn" Canvas.Left="330" Canvas.Top="74" Width="26" Height="26" Style="{StaticResource NoBGHoverBtn}" Click="HoverConBtn_Click" MouseEnter="ContBtn_MouseEnter" MouseLeave="ContBtn_MouseLeave" MouseRightButtonUp="ConBtn_MouseRightButtonUp" />
 
-                        <Button Content="L1" x:Name="l1ConBtn" Canvas.Left="75" Canvas.Top="22" Width="50" Height="18" Style="{StaticResource NoBGHoverBtn}" Click="HoverConBtn_Click" MouseEnter="ContBtn_MouseEnter" MouseLeave="ContBtn_MouseLeave" />
-                        <Button Content="R1" x:Name="r1ConBtn" Canvas.Left="317" Canvas.Top="22" Width="50" Height="18" Style="{StaticResource NoBGHoverBtn}" Click="HoverConBtn_Click" MouseEnter="ContBtn_MouseEnter" MouseLeave="ContBtn_MouseLeave" />
-                        <Button Content="L2" x:Name="l2ConBtn" Canvas.Left="78" Canvas.Top="0" Width="46" Height="20" Style="{StaticResource NoBGHoverBtn}" Click="HoverConBtn_Click" MouseEnter="ContBtn_MouseEnter" MouseLeave="ContBtn_MouseLeave" />
-                        <Button Content="R2" x:Name="r2ConBtn" Canvas.Left="316" Canvas.Top="0" Width="46" Height="20" Style="{StaticResource NoBGHoverBtn}" Click="HoverConBtn_Click" MouseEnter="ContBtn_MouseEnter" MouseLeave="ContBtn_MouseLeave" />
+                        <Button Content="{lex:Loc L1}" x:Name="l1ConBtn" Canvas.Left="75" Canvas.Top="22" Width="50" Height="18" Style="{StaticResource NoBGHoverBtn}" Click="HoverConBtn_Click" MouseEnter="ContBtn_MouseEnter" MouseLeave="ContBtn_MouseLeave" />
+                        <Button Content="{lex:Loc R1}" x:Name="r1ConBtn" Canvas.Left="317" Canvas.Top="22" Width="50" Height="18" Style="{StaticResource NoBGHoverBtn}" Click="HoverConBtn_Click" MouseEnter="ContBtn_MouseEnter" MouseLeave="ContBtn_MouseLeave" />
+                        <Button Content="{lex:Loc L2}" x:Name="l2ConBtn" Canvas.Left="78" Canvas.Top="0" Width="46" Height="20" Style="{StaticResource NoBGHoverBtn}" Click="HoverConBtn_Click" MouseEnter="ContBtn_MouseEnter" MouseLeave="ContBtn_MouseLeave" />
+                        <Button Content="{lex:Loc R2}" x:Name="r2ConBtn" Canvas.Left="316" Canvas.Top="0" Width="46" Height="20" Style="{StaticResource NoBGHoverBtn}" Click="HoverConBtn_Click" MouseEnter="ContBtn_MouseEnter" MouseLeave="ContBtn_MouseLeave" />
 
-                        <Button Content="Share" x:Name="shareConBtn" Canvas.Left="134" Canvas.Top="63" Width="16" Height="24" Style="{StaticResource NoBGHoverBtn}" Click="HoverConBtn_Click" MouseEnter="ContBtn_MouseEnter" MouseLeave="ContBtn_MouseLeave" />
-                        <Button Content="Options" x:Name="optionsConBtn" Canvas.Left="291" Canvas.Top="63" Width="16" Height="24" Style="{StaticResource NoBGHoverBtn}" Click="HoverConBtn_Click" MouseEnter="ContBtn_MouseEnter" MouseLeave="ContBtn_MouseLeave" />
-                        <Button Content="Guide" x:Name="guideConBtn" Canvas.Left="211" Canvas.Top="144" Width="20" Height="20" Style="{StaticResource NoBGHoverBtn}" Click="HoverConBtn_Click" MouseEnter="ContBtn_MouseEnter" MouseLeave="ContBtn_MouseLeave" />
-                        <Button Content="Mute" x:Name="muteConBtn" Canvas.Left="0" Canvas.Top="0" Width="0" Height="0" Style="{StaticResource NoBGHoverBtn}" Visibility="Collapsed" />
+                        <Button Content="{lex:Loc Share}" x:Name="shareConBtn" Canvas.Left="134" Canvas.Top="63" Width="16" Height="24" Style="{StaticResource NoBGHoverBtn}" Click="HoverConBtn_Click" MouseEnter="ContBtn_MouseEnter" MouseLeave="ContBtn_MouseLeave" />
+                        <Button Content="{lex:Loc Options}" x:Name="optionsConBtn" Canvas.Left="291" Canvas.Top="63" Width="16" Height="24" Style="{StaticResource NoBGHoverBtn}" Click="HoverConBtn_Click" MouseEnter="ContBtn_MouseEnter" MouseLeave="ContBtn_MouseLeave" />
+                        <Button Content="{lex:Loc Guide}" x:Name="guideConBtn" Canvas.Left="211" Canvas.Top="144" Width="20" Height="20" Style="{StaticResource NoBGHoverBtn}" Click="HoverConBtn_Click" MouseEnter="ContBtn_MouseEnter" MouseLeave="ContBtn_MouseLeave" />
+                        <Button Content="{lex:Loc Mute}" x:Name="muteConBtn" Canvas.Left="0" Canvas.Top="0" Width="0" Height="0" Style="{StaticResource NoBGHoverBtn}" Visibility="Collapsed" />
 
-                        <Button Content="Left Touch" x:Name="leftTouchConBtn" Canvas.Left="158" Canvas.Top="69" Width="37" Height="51" Style="{StaticResource NoBGHoverBtn}" Click="HoverConBtn_Click" MouseEnter="ContBtn_MouseEnter" MouseLeave="ContBtn_MouseLeave" />
-                        <Button Content="Multi Touch" x:Name="multiTouchConBtn" Canvas.Left="199" Canvas.Top="74" Width="41" Height="45" Style="{StaticResource NoBGHoverBtn}" Click="HoverConBtn_Click" MouseEnter="ContBtn_MouseEnter" MouseLeave="ContBtn_MouseLeave" />
-                        <Button Content="Right Touch" x:Name="rightTouchConBtn" Canvas.Left="251" Canvas.Top="70" Width="32" Height="53" Style="{StaticResource NoBGHoverBtn}" Click="HoverConBtn_Click" MouseEnter="ContBtn_MouseEnter" MouseLeave="ContBtn_MouseLeave" />
-                        <Button Content="Top Touch" x:Name="topTouchConBtn" Canvas.Left="157" Canvas.Top="46" Width="125" Height="23" Style="{StaticResource NoBGHoverBtn}" Click="HoverConBtn_Click" MouseEnter="ContBtn_MouseEnter" MouseLeave="ContBtn_MouseLeave" />
+                        <Button Content="{lex:Loc LeftTouch}" x:Name="leftTouchConBtn" Canvas.Left="158" Canvas.Top="69" Width="37" Height="51" Style="{StaticResource NoBGHoverBtn}" Click="HoverConBtn_Click" MouseEnter="ContBtn_MouseEnter" MouseLeave="ContBtn_MouseLeave" />
+                        <Button Content="{lex:Loc Multi_Touch}" x:Name="multiTouchConBtn" Canvas.Left="199" Canvas.Top="74" Width="41" Height="45" Style="{StaticResource NoBGHoverBtn}" Click="HoverConBtn_Click" MouseEnter="ContBtn_MouseEnter" MouseLeave="ContBtn_MouseLeave" />
+                        <Button Content="{lex:Loc RightTouch}" x:Name="rightTouchConBtn" Canvas.Left="251" Canvas.Top="70" Width="32" Height="53" Style="{StaticResource NoBGHoverBtn}" Click="HoverConBtn_Click" MouseEnter="ContBtn_MouseEnter" MouseLeave="ContBtn_MouseLeave" />
+                        <Button Content="{lex:Loc TopTouch}" x:Name="topTouchConBtn" Canvas.Left="157" Canvas.Top="46" Width="125" Height="23" Style="{StaticResource NoBGHoverBtn}" Click="HoverConBtn_Click" MouseEnter="ContBtn_MouseEnter" MouseLeave="ContBtn_MouseLeave" />
 
-                        <Button Content="L3" x:Name="l3ConBtn" Canvas.Left="138" Canvas.Top="147" Width="42" Height="42" Style="{StaticResource NoBGHoverBtn}" Click="HoverConBtn_Click" MouseEnter="ContBtn_MouseEnter" MouseLeave="ContBtn_MouseLeave"
+                        <Button Content="{lex:Loc L3}" x:Name="l3ConBtn" Canvas.Left="138" Canvas.Top="147" Width="42" Height="42" Style="{StaticResource NoBGHoverBtn}" Click="HoverConBtn_Click" MouseEnter="ContBtn_MouseEnter" MouseLeave="ContBtn_MouseLeave"
                                 MouseRightButtonUp="ConBtn_MouseRightButtonUp" />
-                        <Button Content="LSU" x:Name="lsuConBtn" Canvas.Left="150" Canvas.Top="140" Width="17" Height="15" Style="{StaticResource NoBGHoverBtn}" Click="HoverConBtn_Click" MouseEnter="ContBtn_MouseEnter" MouseLeave="ContBtn_MouseLeave"
+                        <Button Content="{lex:Loc LSU}" x:Name="lsuConBtn" Canvas.Left="150" Canvas.Top="140" Width="17" Height="15" Style="{StaticResource NoBGHoverBtn}" Click="HoverConBtn_Click" MouseEnter="ContBtn_MouseEnter" MouseLeave="ContBtn_MouseLeave"
                                 MouseRightButtonUp="ConBtn_MouseRightButtonUp" />
-                        <Button Content="LSR" x:Name="lsrConBtn" Canvas.Left="172" Canvas.Top="162" Width="17" Height="15" Style="{StaticResource NoBGHoverBtn}" Click="HoverConBtn_Click" MouseEnter="ContBtn_MouseEnter" MouseLeave="ContBtn_MouseLeave"
+                        <Button Content="{lex:Loc LSR}" x:Name="lsrConBtn" Canvas.Left="172" Canvas.Top="162" Width="17" Height="15" Style="{StaticResource NoBGHoverBtn}" Click="HoverConBtn_Click" MouseEnter="ContBtn_MouseEnter" MouseLeave="ContBtn_MouseLeave"
                                 MouseRightButtonUp="ConBtn_MouseRightButtonUp" />
-                        <Button Content="LSD" x:Name="lsdConBtn" Canvas.Left="150" Canvas.Top="180" Width="17" Height="15" Style="{StaticResource NoBGHoverBtn}" Click="HoverConBtn_Click" MouseEnter="ContBtn_MouseEnter" MouseLeave="ContBtn_MouseLeave"
+                        <Button Content="{lex:Loc LSD}" x:Name="lsdConBtn" Canvas.Left="150" Canvas.Top="180" Width="17" Height="15" Style="{StaticResource NoBGHoverBtn}" Click="HoverConBtn_Click" MouseEnter="ContBtn_MouseEnter" MouseLeave="ContBtn_MouseLeave"
                                 MouseRightButtonUp="ConBtn_MouseRightButtonUp" />
-                        <Button Content="LSL" x:Name="lslConBtn" Canvas.Left="126" Canvas.Top="162" Width="17" Height="15" Style="{StaticResource NoBGHoverBtn}" Click="HoverConBtn_Click" MouseEnter="ContBtn_MouseEnter" MouseLeave="ContBtn_MouseLeave"
-                                MouseRightButtonUp="ConBtn_MouseRightButtonUp" />
-
-                        <Button Content="R3" x:Name="r3ConBtn" Canvas.Left="262" Canvas.Top="149" Width="42" Height="42" Style="{StaticResource NoBGHoverBtn}" Click="HoverConBtn_Click" MouseEnter="ContBtn_MouseEnter" MouseLeave="ContBtn_MouseLeave"
-                                MouseRightButtonUp="ConBtn_MouseRightButtonUp" />
-                        <Button Content="RSU" x:Name="rsuConBtn" Canvas.Left="275" Canvas.Top="142" Width="17" Height="15" Style="{StaticResource NoBGHoverBtn}" Click="HoverConBtn_Click" MouseEnter="ContBtn_MouseEnter" MouseLeave="ContBtn_MouseLeave"
-                                MouseRightButtonUp="ConBtn_MouseRightButtonUp" />
-                        <Button Content="RSR" x:Name="rsrConBtn" Canvas.Left="298" Canvas.Top="162" Width="17" Height="15" Style="{StaticResource NoBGHoverBtn}" Click="HoverConBtn_Click" MouseEnter="ContBtn_MouseEnter" MouseLeave="ContBtn_MouseLeave"
-                                MouseRightButtonUp="ConBtn_MouseRightButtonUp" />
-                        <Button Content="RSD" x:Name="rsdConBtn" Canvas.Left="275" Canvas.Top="180" Width="17" Height="15" Style="{StaticResource NoBGHoverBtn}" Click="HoverConBtn_Click" MouseEnter="ContBtn_MouseEnter" MouseLeave="ContBtn_MouseLeave"
-                                MouseRightButtonUp="ConBtn_MouseRightButtonUp" />
-                        <Button Content="RSL" x:Name="rslConBtn" Canvas.Left="248" Canvas.Top="162" Width="17" Height="15" Style="{StaticResource NoBGHoverBtn}" Click="HoverConBtn_Click" MouseEnter="ContBtn_MouseEnter" MouseLeave="ContBtn_MouseLeave"
+                        <Button Content="{lex:Loc LSL}" x:Name="lslConBtn" Canvas.Left="126" Canvas.Top="162" Width="17" Height="15" Style="{StaticResource NoBGHoverBtn}" Click="HoverConBtn_Click" MouseEnter="ContBtn_MouseEnter" MouseLeave="ContBtn_MouseLeave"
                                 MouseRightButtonUp="ConBtn_MouseRightButtonUp" />
 
-                        <Button Content="Up" x:Name="upConBtn" Canvas.Left="88" Canvas.Top="74" Width="20" Height="35" Style="{StaticResource NoBGHoverBtn}" Click="HoverConBtn_Click" MouseEnter="ContBtn_MouseEnter" MouseLeave="ContBtn_MouseLeave"
+                        <Button Content="{lex:Loc R3}" x:Name="r3ConBtn" Canvas.Left="262" Canvas.Top="149" Width="42" Height="42" Style="{StaticResource NoBGHoverBtn}" Click="HoverConBtn_Click" MouseEnter="ContBtn_MouseEnter" MouseLeave="ContBtn_MouseLeave"
                                 MouseRightButtonUp="ConBtn_MouseRightButtonUp" />
-                        <Button Content="Right" x:Name="rightConBtn" Canvas.Left="103" Canvas.Top="103" Width="35" Height="20" Style="{StaticResource NoBGHoverBtn}" Click="HoverConBtn_Click" MouseEnter="ContBtn_MouseEnter" MouseLeave="ContBtn_MouseLeave"
+                        <Button Content="{lex:Loc RSU}" x:Name="rsuConBtn" Canvas.Left="275" Canvas.Top="142" Width="17" Height="15" Style="{StaticResource NoBGHoverBtn}" Click="HoverConBtn_Click" MouseEnter="ContBtn_MouseEnter" MouseLeave="ContBtn_MouseLeave"
                                 MouseRightButtonUp="ConBtn_MouseRightButtonUp" />
-                        <Button Content="Down" x:Name="downConBtn" Canvas.Left="88" Canvas.Top="114" Width="20" Height="35" Style="{StaticResource NoBGHoverBtn}" Click="HoverConBtn_Click" MouseEnter="ContBtn_MouseEnter" MouseLeave="ContBtn_MouseLeave"
+                        <Button Content="{lex:Loc RSR}" x:Name="rsrConBtn" Canvas.Left="298" Canvas.Top="162" Width="17" Height="15" Style="{StaticResource NoBGHoverBtn}" Click="HoverConBtn_Click" MouseEnter="ContBtn_MouseEnter" MouseLeave="ContBtn_MouseLeave"
                                 MouseRightButtonUp="ConBtn_MouseRightButtonUp" />
-                        <Button Content="Left" x:Name="leftConBtn" Canvas.Left="56" Canvas.Top="103" Width="35" Height="20" Style="{StaticResource NoBGHoverBtn}" Click="HoverConBtn_Click" MouseEnter="ContBtn_MouseEnter" MouseLeave="ContBtn_MouseLeave"
+                        <Button Content="{lex:Loc RSD}" x:Name="rsdConBtn" Canvas.Left="275" Canvas.Top="180" Width="17" Height="15" Style="{StaticResource NoBGHoverBtn}" Click="HoverConBtn_Click" MouseEnter="ContBtn_MouseEnter" MouseLeave="ContBtn_MouseLeave"
+                                MouseRightButtonUp="ConBtn_MouseRightButtonUp" />
+                        <Button Content="{lex:Loc RSL}" x:Name="rslConBtn" Canvas.Left="248" Canvas.Top="162" Width="17" Height="15" Style="{StaticResource NoBGHoverBtn}" Click="HoverConBtn_Click" MouseEnter="ContBtn_MouseEnter" MouseLeave="ContBtn_MouseLeave"
+                                MouseRightButtonUp="ConBtn_MouseRightButtonUp" />
+
+                        <Button Content="{lex:Loc Up}" x:Name="upConBtn" Canvas.Left="88" Canvas.Top="74" Width="20" Height="35" Style="{StaticResource NoBGHoverBtn}" Click="HoverConBtn_Click" MouseEnter="ContBtn_MouseEnter" MouseLeave="ContBtn_MouseLeave"
+                                MouseRightButtonUp="ConBtn_MouseRightButtonUp" />
+                        <Button Content="{lex:Loc Right}" x:Name="rightConBtn" Canvas.Left="103" Canvas.Top="103" Width="35" Height="20" Style="{StaticResource NoBGHoverBtn}" Click="HoverConBtn_Click" MouseEnter="ContBtn_MouseEnter" MouseLeave="ContBtn_MouseLeave"
+                                MouseRightButtonUp="ConBtn_MouseRightButtonUp" />
+                        <Button Content="{lex:Loc Down}" x:Name="downConBtn" Canvas.Left="88" Canvas.Top="114" Width="20" Height="35" Style="{StaticResource NoBGHoverBtn}" Click="HoverConBtn_Click" MouseEnter="ContBtn_MouseEnter" MouseLeave="ContBtn_MouseLeave"
+                                MouseRightButtonUp="ConBtn_MouseRightButtonUp" />
+                        <Button Content="{lex:Loc Left}" x:Name="leftConBtn" Canvas.Left="56" Canvas.Top="103" Width="35" Height="20" Style="{StaticResource NoBGHoverBtn}" Click="HoverConBtn_Click" MouseEnter="ContBtn_MouseEnter" MouseLeave="ContBtn_MouseLeave"
                                 MouseRightButtonUp="ConBtn_MouseRightButtonUp" />
 
                         <Label x:Name="highlightControlDisplayLb" Content="" Canvas.Left="150" Canvas.Top="208" MinWidth="150"
@@ -199,7 +199,7 @@
                     </ListBox>
                 </DockPanel>
             </TabItem>
-            <TabItem x:Name="specialActionsTab" Header="Special Actions">
+            <TabItem x:Name="specialActionsTab" Header="{lex:Loc SpecialActions}">
                 <DockPanel x:Name="specialActionDockPanel">
                     <DockPanel x:Name="baseSpeActPanel" DockPanel.Dock="Top">
                         <UniformGrid Rows="1" Columns="3" DockPanel.Dock="Top">
@@ -229,7 +229,7 @@
                     </DockPanel>
                 </DockPanel>
             </TabItem>
-            <TabItem x:Name="contReadingsTab" Header="Controller Readings" IsEnabled="False">
+            <TabItem x:Name="contReadingsTab" Header="{lex:Loc ControllerReadings}" IsEnabled="False">
                 <local:ControllerReadingsControl x:Name="conReadingsUserCon" />
             </TabItem>
         </TabControl>
@@ -239,7 +239,7 @@
                 <Thickness x:Key="spaceMargin" Bottom="8" />
             </TabControl.Resources>
 
-            <TabItem Header="Axis Config">
+            <TabItem Header="{lex:Loc AxisConfig}">
                 <TabItem.Resources>
                     <Thickness x:Key="spaceMargin" Left="10" Bottom="6" />
                     <Style x:Key="gridRowHeight" TargetType="{x:Type RowDefinition}">
@@ -248,10 +248,10 @@
                 </TabItem.Resources>
                 <ScrollViewer>
                     <StackPanel>
-                        <GroupBox Header="LS">
+                        <GroupBox Header="{lex:Loc LS}">
                             <StackPanel>
                                 <StackPanel Orientation="Horizontal">
-                                    <Label Content="Output Mode" />
+                                    <Label Content="{lex:Loc OutputMode}" />
                                     <ComboBox MinWidth="160" SelectedIndex="{Binding LSOutputIndex,FallbackValue='0'}" VerticalContentAlignment="Center" Margin="10,0,0,0">
                                         <ComboBoxItem Content="None" />
                                         <ComboBoxItem Content="Controls" />
@@ -260,11 +260,11 @@
                                 </StackPanel>
 
                                 <TabControl SelectedIndex="{Binding LSOutputIndex,Mode=OneWay,FallbackValue='0'}" BorderBrush="{x:Null}" Padding="0" Margin="0,10,0,0">
-                                    <TabItem Header="None"  Visibility="Collapsed" />
-                                    <TabItem Header="Controls" Visibility="Collapsed">
+                                    <TabItem Header="{lex:Loc None}"  Visibility="Collapsed" />
+                                    <TabItem Header="{lex:Loc Controls}" Visibility="Collapsed">
                                         <DockPanel>
                                             <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
-                                                <Label Content="Dead Zone Type" />
+                                                <Label Content="{lex:Loc DeadZoneType}" />
                                                 <ComboBox MinWidth="160" SelectedIndex="{Binding LSDeadTypeIndex,FallbackValue='0'}" VerticalContentAlignment="Center" Margin="10,0,0,0">
                                                     <ComboBoxItem Content="Radial" />
                                                     <ComboBoxItem Content="Axial" />
@@ -272,7 +272,7 @@
                                             </StackPanel>
 
                                             <TabControl DockPanel.Dock="Top" SelectedIndex="{Binding LSDeadTypeIndex,Mode=OneWay,FallbackValue='0'}" BorderBrush="{x:Null}" Padding="0" Margin="0,8,0,8">
-                                                <TabItem Header="Radial" Visibility="Collapsed">
+                                                <TabItem Header="{lex:Loc Radial}" Visibility="Collapsed">
                                                     <Grid>
                                                         <Grid.ColumnDefinitions>
                                                             <ColumnDefinition/>
@@ -287,34 +287,34 @@
                                                             <RowDefinition Style="{StaticResource gridRowHeight}" />
                                                         </Grid.RowDefinitions>
 
-                                                        <Label Content="Dead Zone:" Grid.Row="0" Grid.Column="0" />
+                                                        <Label Content="{lex:Loc DeadZone_}" Grid.Row="0" Grid.Column="0" />
                                                         <xctk:DoubleUpDown d:IsHidden="True" Value="{Binding LSDeadZone,UpdateSourceTrigger=LostFocus}" FormatString="F2" MinWidth="50" Grid.Row="0" Grid.Column="1" Maximum="1.0" Minimum="0.0" Increment="0.1"
                                                    Margin="{StaticResource spaceMargin}" />
 
-                                                        <Label Content="Max Zone:" Grid.Row="1" Grid.Column="0" />
+                                                        <Label Content="{lex:Loc MaxZone_}" Grid.Row="1" Grid.Column="0" />
                                                         <xctk:DoubleUpDown d:IsHidden="True" Value="{Binding LSMaxZone}" FormatString="F2" MinWidth="50" Grid.Row="1" Grid.Column="1" Maximum="1.0" Minimum="0.0" Increment="0.1"
                                                    Margin="{StaticResource spaceMargin}" />
 
-                                                        <Label Content="Anti-dead Zone:" Grid.Row="2" Grid.Column="0" />
+                                                        <Label Content="{lex:Loc AntiDeadZone}" Grid.Row="2" Grid.Column="0" />
                                                         <xctk:DoubleUpDown d:IsHidden="True" Value="{Binding LSAntiDeadZone}" FormatString="F2" MinWidth="50" Grid.Row="2" Grid.Column="1" Maximum="1.0" Minimum="0.0" Increment="0.1"
                                                    Margin="{StaticResource spaceMargin}" />
 
-                                                        <Label Content="Max Output:" Grid.Row="3" Grid.Column="0" />
+                                                        <Label Content="{lex:Loc MaxOutput_}" Grid.Row="3" Grid.Column="0" />
                                                         <xctk:DoubleUpDown d:IsHidden="True" Value="{Binding LSMaxOutput}" FormatString="F2" MinWidth="50" Grid.Row="3" Grid.Column="1" Maximum="1.0" Minimum="0.0" Increment="0.1"
                                                    Margin="{StaticResource spaceMargin}" />
 
-                                                        <Label Content="Vertical Scale:" Grid.Row="4" Grid.Column="0" />
+                                                        <Label Content="{lex:Loc VerticalScale_}" Grid.Row="4" Grid.Column="0" />
                                                         <xctk:DoubleUpDown d:IsHidden="True" Value="{Binding LSVerticalScale}" FormatString="F2" MinWidth="50" Grid.Row="4" Grid.Column="1" Maximum="2.0" Minimum="0.0" Increment="0.1"
                                                    Margin="{StaticResource spaceMargin}" />
 
-                                                        <Label Content="Sensitivity:" Grid.Row="5" Grid.Column="0" />
+                                                        <Label Content="{lex:Loc Sensitivity}" Grid.Row="5" Grid.Column="0" />
                                                         <xctk:DoubleUpDown d:IsHidden="True" FormatString="F2" Value="{Binding LSSens}" MinWidth="50" Grid.Row="5" Grid.Column="1" Maximum="5.0" Minimum="0.5" Increment="0.1"
                                                    Margin="{StaticResource spaceMargin}" />
 
                                                     </Grid>
                                                 </TabItem>
 
-                                                <TabItem Header="Axial" Visibility="Collapsed">
+                                                <TabItem Header="{lex:Loc Axial}" Visibility="Collapsed">
                                                     <local:AxialStickUserControl x:Name="axialLSStickControl" />
                                                 </TabItem>
                                             </TabControl>
@@ -334,8 +334,8 @@
                                                     <RowDefinition Style="{StaticResource gridRowHeight}" />
                                                     <RowDefinition Style="{StaticResource gridRowHeight}" />
                                                 </Grid.RowDefinitions>
-                                                
-                                                <Label Content="Output Curve:" Grid.Row="0" Grid.Column="0" />
+
+                                                <Label Content="{lex:Loc OutputCurve}" Grid.Row="0" Grid.Column="0" />
                                                 <ComboBox Grid.Row="0" Grid.Column="1" SelectedIndex="{Binding LSOutputCurveIndex}"
                                           Margin="{StaticResource spaceMargin}">
                                                     <ComboBoxItem Content="Linear" />
@@ -348,13 +348,13 @@
                                                 </ComboBox>
 
                                                 <DockPanel Grid.Row="1" Grid.Column="1" IsEnabled="{Binding LSCustomCurveSelected}">
-                                                    <Button x:Name="lsCustomEditorBtn" Content="..." Tag="LS" Width="20" DockPanel.Dock="Right" Click="CustomEditorBtn_Click"
+                                                    <Button x:Name="lsCustomEditorBtn" Content="{lex:Loc ...}" Tag="LS" Width="20" DockPanel.Dock="Right" Click="CustomEditorBtn_Click"
                                             Margin="{StaticResource spaceMargin}" />
                                                     <TextBox Text="{Binding LSCustomCurve,UpdateSourceTrigger=LostFocus,FallbackValue='0.00, 0.00, 1.00, 1.00'}" DockPanel.Dock="Left"
                                              Margin="{StaticResource spaceMargin}" />
                                                 </DockPanel>
 
-                                                <Label Content="Square Stick:" Grid.Row="2" Grid.Column="0" />
+                                                <Label Content="{lex:Loc SquareStick}" Grid.Row="2" Grid.Column="0" />
                                                 <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Right">
                                                     <CheckBox IsChecked="{Binding LSSquareStick}" Margin="{StaticResource spaceMargin}" VerticalAlignment="Center" />
                                                     <xctk:DoubleUpDown d:IsHidden="True" FormatString="F1" Value="{Binding LSSquareRoundness,FallbackValue=5}"
@@ -362,14 +362,14 @@
                                                        Margin="{StaticResource spaceMargin}" />
                                                 </StackPanel>
 
-                                                <Label Content="Curve (Input):" Grid.Row="3" Grid.Column="0" />
+                                                <Label Content="{lex:Loc CurveInput}" Grid.Row="3" Grid.Column="0" />
                                                 <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Right">
                                                     <xctk:DoubleUpDown d:IsHidden="True" MinWidth="100" Value="{Binding LSCurve}" Minimum="0" Maximum="100"
                                                        Margin="{StaticResource spaceMargin}" />
                                                     <Label Content="%" />
                                                 </StackPanel>
 
-                                                <Label Content="Rotation:" Grid.Row="4" Grid.Column="0" />
+                                                <Label Content="{lex:Loc Rotation_}" Grid.Row="4" Grid.Column="0" />
                                                 <DockPanel Grid.Row="4" Grid.Column="1">
                                                     <TextBlock Text="&#xb0;" DockPanel.Dock="Right" FontSize="18" Margin="{StaticResource spaceMargin}" />
                                                     <xctk:IntegerUpDown d:IsHidden="True" Value="{Binding LSRotation}"
@@ -377,7 +377,7 @@
                                                     Margin="{StaticResource spaceMargin}" />
                                                 </DockPanel>
 
-                                                <Label Content="Fuzz:" Grid.Row="5" Grid.Column="0" />
+                                                <Label Content="{lex:Loc Fuzz}" Grid.Row="5" Grid.Column="0" />
                                                 <DockPanel Grid.Row="5" Grid.Column="1">
                                                     <TextBlock Text="units" DockPanel.Dock="Right" FontSize="10" Margin="{StaticResource spaceMargin}" VerticalAlignment="Center" />
                                                     <xctk:IntegerUpDown d:IsHidden="True" Value="{Binding LSFuzz}"
@@ -385,7 +385,7 @@
                                                     Margin="{StaticResource spaceMargin}" />
                                                 </DockPanel>
 
-                                                <Label Content="Anti Snapback:" Grid.Row="6" Grid.Column="0" />
+                                                <Label Content="{lex:Loc AntiSnapback}" Grid.Row="6" Grid.Column="0" />
                                                 <StackPanel Orientation="Horizontal" Grid.Row="6" Grid.Column="1" HorizontalAlignment="Right">
                                                     <CheckBox IsChecked="{Binding LSAntiSnapback}" Margin="{StaticResource spaceMargin}" VerticalAlignment="Center" />
                                                     <xctk:DoubleUpDown d:IsHidden="True" FormatString="F1" Value="{Binding LSAntiSnapbackDelta, FallbackValue=135}"
@@ -394,7 +394,7 @@
                                                     <TextBlock Text="units" DockPanel.Dock="Right" FontSize="10" Margin="{StaticResource spaceMargin}" VerticalAlignment="Center" />
                                                 </StackPanel>
 
-                                                <Label Content="Anti Snapback timing:" Grid.Row="7" Grid.Column="0" />
+                                                <Label Content="{lex:Loc AntiSnapbackTiming}" Grid.Row="7" Grid.Column="0" />
                                                 <StackPanel Orientation="Horizontal" Grid.Row="7" Grid.Column="1" HorizontalAlignment="Right">
                                                     <xctk:IntegerUpDown d:IsHidden="True" FormatString="F1" Value="{Binding LSAntiSnapbackTimeout}"
                                                        MinWidth="100" Minimum="0" Maximum="1000" Increment="1" IsEnabled="{Binding LSAntiSnapback}"
@@ -404,7 +404,7 @@
                                             </Grid>
                                         </DockPanel>
                                     </TabItem>
-                                    <TabItem Header="FlickStick" Visibility="Collapsed">
+                                    <TabItem Header="{lex:Loc FlickStick}" Visibility="Collapsed">
                                         <Grid>
                                             <Grid.ColumnDefinitions>
                                                 <ColumnDefinition/>
@@ -438,19 +438,19 @@
                                                 <xctk:DoubleUpDown d:IsHidden="True" Value="{Binding LSMinAngleThreshold,UpdateSourceTrigger=LostFocus}" FormatString="F2" MinWidth="50" Maximum="180.0" Minimum="0.0" Increment="0.5"
                                                    Margin="{StaticResource spaceMargin}" />
                                             </DockPanel>
-                                            
+
                                         </Grid>
                                     </TabItem>
                                 </TabControl>
                             </StackPanel>
-                            
-                            
+
+
                         </GroupBox>
 
-                        <GroupBox Header="RS">
+                        <GroupBox Header="{lex:Loc RS}">
                             <StackPanel>
                                 <StackPanel Orientation="Horizontal">
-                                    <Label Content="Output Mode" />
+                                    <Label Content="{lex:Loc OutputMode}" />
                                     <ComboBox MinWidth="160" SelectedIndex="{Binding RSOutputIndex,FallbackValue='0'}" VerticalContentAlignment="Center" Margin="10,0,0,0">
                                         <ComboBoxItem Content="None" />
                                         <ComboBoxItem Content="Controls" />
@@ -460,11 +460,11 @@
 
 
                                 <TabControl SelectedIndex="{Binding RSOutputIndex,Mode=OneWay,FallbackValue='0'}" BorderBrush="{x:Null}">
-                                    <TabItem Header="None"  Visibility="Collapsed" />
-                                    <TabItem Header="Controls" Visibility="Collapsed">
+                                    <TabItem Header="{lex:Loc None}"  Visibility="Collapsed" />
+                                    <TabItem Header="{lex:Loc Controls}" Visibility="Collapsed">
                                         <DockPanel>
                                             <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
-                                                <Label Content="Dead Zone Type" />
+                                                <Label Content="{lex:Loc DeadZoneType}" />
                                                 <ComboBox MinWidth="160" SelectedIndex="{Binding RSDeadTypeIndex,FallbackValue='0'}" VerticalContentAlignment="Center" Margin="10,0,0,0">
                                                     <ComboBoxItem Content="Radial" />
                                                     <ComboBoxItem Content="Axial" />
@@ -472,7 +472,7 @@
                                             </StackPanel>
 
                                             <TabControl DockPanel.Dock="Top" SelectedIndex="{Binding RSDeadTypeIndex,Mode=OneWay,FallbackValue='0'}" BorderBrush="{x:Null}" Padding="0" Margin="0,8,0,8">
-                                                <TabItem Header="Radial" Visibility="Collapsed">
+                                                <TabItem Header="{lex:Loc Radial}" Visibility="Collapsed">
                                                     <Grid>
                                                         <Grid.ColumnDefinitions>
                                                             <ColumnDefinition/>
@@ -487,32 +487,32 @@
                                                             <RowDefinition Style="{StaticResource gridRowHeight}" />
                                                         </Grid.RowDefinitions>
 
-                                                        <Label Content="Dead Zone:" Grid.Row="0" Grid.Column="0" />
+                                                        <Label Content="{lex:Loc DeadZone_}" Grid.Row="0" Grid.Column="0" />
                                                         <xctk:DoubleUpDown d:IsHidden="True" Value="{Binding RSDeadZone,UpdateSourceTrigger=LostFocus}" FormatString="F2" MinWidth="50" Grid.Row="0" Grid.Column="1" Maximum="1.0" Minimum="0.0" Increment="0.1"
                                                    Margin="{StaticResource spaceMargin}" />
 
-                                                        <Label Content="Max Zone:" Grid.Row="1" Grid.Column="0" />
+                                                        <Label Content="{lex:Loc MaxZone_}" Grid.Row="1" Grid.Column="0" />
                                                         <xctk:DoubleUpDown d:IsHidden="True" Value="{Binding RSMaxZone}" FormatString="F2" MinWidth="50" Grid.Row="1" Grid.Column="1" Maximum="1.0" Minimum="0.0" Increment="0.1"
                                                    Margin="{StaticResource spaceMargin}" />
 
-                                                        <Label Content="Anti-dead Zone:" Grid.Row="2" Grid.Column="0" />
+                                                        <Label Content="{lex:Loc AntiDeadZone}" Grid.Row="2" Grid.Column="0" />
                                                         <xctk:DoubleUpDown d:IsHidden="True" Value="{Binding RSAntiDeadZone}" FormatString="F2" MinWidth="50" Grid.Row="2" Grid.Column="1" Maximum="1.0" Minimum="0.0" Increment="0.1"
                                                    Margin="{StaticResource spaceMargin}" />
 
-                                                        <Label Content="Max Output:" Grid.Row="3" Grid.Column="0" />
+                                                        <Label Content="{lex:Loc MaxOutput_}" Grid.Row="3" Grid.Column="0" />
                                                         <xctk:DoubleUpDown d:IsHidden="True" Value="{Binding RSMaxOutput}" FormatString="F2" MinWidth="50" Grid.Row="3" Grid.Column="1" Maximum="1.0" Minimum="0.0" Increment="0.1"
                                                    Margin="{StaticResource spaceMargin}" />
 
-                                                        <Label Content="Vertical Scale:" Grid.Row="4" Grid.Column="0" />
+                                                        <Label Content="{lex:Loc VerticalScale_}" Grid.Row="4" Grid.Column="0" />
                                                         <xctk:DoubleUpDown d:IsHidden="True" Value="{Binding RSVerticalScale}" FormatString="F2" MinWidth="50" Grid.Row="4" Grid.Column="1" Maximum="2.0" Minimum="0.0" Increment="0.1"
                                                    Margin="{StaticResource spaceMargin}" />
 
-                                                        <Label Content="Sensitivity:" Grid.Row="5" Grid.Column="0" />
+                                                        <Label Content="{lex:Loc Sensitivity}" Grid.Row="5" Grid.Column="0" />
                                                         <xctk:DoubleUpDown d:IsHidden="True" FormatString="F2" Value="{Binding RSSens}" MinWidth="50" Grid.Row="5" Grid.Column="1" Maximum="5.0" Minimum="0.5" Increment="0.1"
                                                    Margin="{StaticResource spaceMargin}" />
                                                     </Grid>
                                                 </TabItem>
-                                                <TabItem Header="Axial" Visibility="Collapsed">
+                                                <TabItem Header="{lex:Loc Axial}" Visibility="Collapsed">
                                                     <local:AxialStickUserControl x:Name="axialRSStickControl" />
                                                 </TabItem>
                                             </TabControl>
@@ -533,7 +533,7 @@
                                                     <RowDefinition Style="{StaticResource gridRowHeight}" />
                                                 </Grid.RowDefinitions>
 
-                                                <Label Content="Output Curve:" Grid.Row="0" Grid.Column="0" />
+                                                <Label Content="{lex:Loc OutputCurve}" Grid.Row="0" Grid.Column="0" />
                                                 <ComboBox Grid.Row="0" Grid.Column="1" SelectedIndex="{Binding RSOutputCurveIndex}"
                                           Margin="{StaticResource spaceMargin}">
                                                     <ComboBoxItem Content="Linear" />
@@ -546,13 +546,13 @@
                                                 </ComboBox>
 
                                                 <DockPanel Grid.Row="1" Grid.Column="1" IsEnabled="{Binding RSCustomCurveSelected}">
-                                                    <Button x:Name="rsCustomEditorBtn" Content="..." Tag="RS" Width="20" DockPanel.Dock="Right" Click="CustomEditorBtn_Click"
+                                                    <Button x:Name="rsCustomEditorBtn" Content="{lex:Loc ...}" Tag="RS" Width="20" DockPanel.Dock="Right" Click="CustomEditorBtn_Click"
                                             Margin="{StaticResource spaceMargin}" />
                                                     <TextBox Text="{Binding RSCustomCurve,UpdateSourceTrigger=LostFocus,FallbackValue='0.00, 0.00, 1.00, 1.00'}" DockPanel.Dock="Left"
                                              Margin="{StaticResource spaceMargin}" />
                                                 </DockPanel>
 
-                                                <Label Content="Square Stick:" Grid.Row="2" Grid.Column="0" />
+                                                <Label Content="{lex:Loc SquareStick}" Grid.Row="2" Grid.Column="0" />
                                                 <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Right">
                                                     <CheckBox IsChecked="{Binding RSSquareStick}" Margin="{StaticResource spaceMargin}" VerticalAlignment="Center" />
                                                     <xctk:DoubleUpDown d:IsHidden="True" FormatString="F1" Value="{Binding RSSquareRoundness,FallbackValue=5}"
@@ -560,14 +560,14 @@
                                                        Margin="{StaticResource spaceMargin}" />
                                                 </StackPanel>
 
-                                                <Label Content="Curve (Input):" Grid.Row="3" Grid.Column="0" />
+                                                <Label Content="{lex:Loc CurveInput}" Grid.Row="3" Grid.Column="0" />
                                                 <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Right">
                                                     <xctk:DoubleUpDown d:IsHidden="True" MinWidth="100" Value="{Binding RSCurve}" Minimum="0" Maximum="100"
                                                        Margin="{StaticResource spaceMargin}"/>
                                                     <Label Content="%" />
                                                 </StackPanel>
 
-                                                <Label Content="Rotation:" Grid.Row="4" Grid.Column="0" />
+                                                <Label Content="{lex:Loc Rotation_}" Grid.Row="4" Grid.Column="0" />
                                                 <DockPanel Grid.Row="4" Grid.Column="1">
                                                     <TextBlock Text="&#xb0;" DockPanel.Dock="Right" FontSize="18" Margin="{StaticResource spaceMargin}" />
                                                     <xctk:IntegerUpDown d:IsHidden="True" Value="{Binding RSRotation}"
@@ -575,7 +575,7 @@
                                                     Margin="{StaticResource spaceMargin}" />
                                                 </DockPanel>
 
-                                                <Label Content="Fuzz:" Grid.Row="5" Grid.Column="0" />
+                                                <Label Content="{lex:Loc Fuzz}" Grid.Row="5" Grid.Column="0" />
                                                 <DockPanel Grid.Row="5" Grid.Column="1">
                                                     <TextBlock Text="units" DockPanel.Dock="Right" FontSize="10" Margin="{StaticResource spaceMargin}" VerticalAlignment="Center" />
                                                     <xctk:IntegerUpDown d:IsHidden="True" Value="{Binding RSFuzz}"
@@ -583,7 +583,7 @@
                                                     Margin="{StaticResource spaceMargin}" />
                                                 </DockPanel>
 
-                                                <Label Content="Anti Snapback:" Grid.Row="6" Grid.Column="0" />
+                                                <Label Content="{lex:Loc AntiSnapback}" Grid.Row="6" Grid.Column="0" />
                                                 <StackPanel Orientation="Horizontal" Grid.Row="6" Grid.Column="1" HorizontalAlignment="Right">
                                                     <CheckBox IsChecked="{Binding RSAntiSnapback}" Margin="{StaticResource spaceMargin}" VerticalAlignment="Center" />
                                                     <xctk:DoubleUpDown d:IsHidden="True" FormatString="F1" Value="{Binding RSAntiSnapbackDelta, FallbackValue=135}"
@@ -592,7 +592,7 @@
                                                     <TextBlock Text="units" DockPanel.Dock="Right" FontSize="10" Margin="{StaticResource spaceMargin}" VerticalAlignment="Center" />
                                                 </StackPanel>
 
-                                                <Label Content="Anti Snapback timing:" Grid.Row="7" Grid.Column="0" />
+                                                <Label Content="{lex:Loc AntiSnapbackTiming}" Grid.Row="7" Grid.Column="0" />
                                                 <StackPanel Orientation="Horizontal" Grid.Row="7" Grid.Column="1" HorizontalAlignment="Right">
                                                     <xctk:IntegerUpDown d:IsHidden="True" FormatString="F1" Value="{Binding RSAntiSnapbackTimeout}"
                                                        MinWidth="100" Minimum="0" Maximum="1000" Increment="1" IsEnabled="{Binding RSAntiSnapback}"
@@ -603,7 +603,7 @@
                                         </DockPanel>
 
                                     </TabItem>
-                                    <TabItem Header="FlickStick" Visibility="Collapsed">
+                                    <TabItem Header="{lex:Loc FlickStick}" Visibility="Collapsed">
                                         <Grid>
                                             <Grid.ColumnDefinitions>
                                                 <ColumnDefinition/>
@@ -641,11 +641,11 @@
                                     </TabItem>
                                 </TabControl>
                             </StackPanel>
-                            
-                            
+
+
                         </GroupBox>
 
-                        <GroupBox Header="L2 &amp; R2">
+                        <GroupBox Header="{lex:Loc L2AndR2}">
                             <Grid>
                                 <Grid.RowDefinitions>
                                     <RowDefinition></RowDefinition>
@@ -671,37 +671,37 @@
                                 <TextBlock Text="L2" Grid.Column="1" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,8" />
                                 <TextBlock Text="R2" Grid.Column="2" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,8" />
 
-                                <Label Content="Dead Zone:" Grid.Row="1" Grid.Column="0" />
+                                <Label Content="{lex:Loc DeadZone_}" Grid.Row="1" Grid.Column="0" />
                                 <xctk:DoubleUpDown d:IsHidden="True" FormatString="F2" Value="{Binding L2DeadZone}" MinWidth="50" Grid.Row="1" Grid.Column="1" Maximum="1.0" Minimum="0.0" Increment="0.1"
                                                    Margin="{StaticResource spaceMargin}" />
                                 <xctk:DoubleUpDown d:IsHidden="True" FormatString="F2" Value="{Binding R2DeadZone}" MinWidth="50" Grid.Row="1" Grid.Column="2" Maximum="1.0" Minimum="0.0" Increment="0.1"
                                                    Margin="{StaticResource spaceMargin}" />
 
-                                <Label Content="Max Zone:" Grid.Row="2" Grid.Column="0" />
+                                <Label Content="{lex:Loc MaxZone_}" Grid.Row="2" Grid.Column="0" />
                                 <xctk:DoubleUpDown d:IsHidden="True" FormatString="F2" Value="{Binding L2MaxZone}" MinWidth="50" Grid.Row="2" Grid.Column="1" Maximum="1.0" Minimum="0.0" Increment="0.1"
                                                    Margin="{StaticResource spaceMargin}" />
                                 <xctk:DoubleUpDown d:IsHidden="True" FormatString="F2" Value="{Binding R2MaxZone}" MinWidth="50" Grid.Row="2" Grid.Column="2" Maximum="1.0" Minimum="0.0" Increment="0.1"
                                                    Margin="{StaticResource spaceMargin}" />
 
-                                <Label Content="Anti-dead Zone:" Grid.Row="3" Grid.Column="0" />
+                                <Label Content="{lex:Loc AntiDeadZone}" Grid.Row="3" Grid.Column="0" />
                                 <xctk:DoubleUpDown d:IsHidden="True" FormatString="F2" Value="{Binding L2AntiDeadZone}" MinWidth="50" Grid.Row="3" Grid.Column="1" Maximum="1.0" Minimum="0.0" Increment="0.1"
                                                    Margin="{StaticResource spaceMargin}" />
                                 <xctk:DoubleUpDown d:IsHidden="True" FormatString="F2" Value="{Binding R2AntiDeadZone}" MinWidth="50" Grid.Row="3" Grid.Column="2" Maximum="1.0" Minimum="0.0" Increment="0.1"
                                                    Margin="{StaticResource spaceMargin}" />
 
-                                <Label Content="Max Output:" Grid.Row="4" Grid.Column="0" />
+                                <Label Content="{lex:Loc MaxOutput_}" Grid.Row="4" Grid.Column="0" />
                                 <xctk:DoubleUpDown d:IsHidden="True" FormatString="F2" Value="{Binding L2MaxOutput}" MinWidth="50" Grid.Row="4" Grid.Column="1" Maximum="1.0" Minimum="0.0" Increment="0.1"
                                                    Margin="{StaticResource spaceMargin}" />
                                 <xctk:DoubleUpDown d:IsHidden="True" FormatString="F2" Value="{Binding R2MaxOutput}" MinWidth="50" Grid.Row="4" Grid.Column="2" Maximum="1.0" Minimum="0.0" Increment="0.1"
                                                    Margin="{StaticResource spaceMargin}" />
 
-                                <Label Content="Sensitivity:" Grid.Row="5" Grid.Column="0" />
+                                <Label Content="{lex:Loc Sensitivity}" Grid.Row="5" Grid.Column="0" />
                                 <xctk:DoubleUpDown d:IsHidden="True" FormatString="F2" Value="{Binding L2Sens}" MinWidth="50" Grid.Row="5" Grid.Column="1" Maximum="10.0" Minimum="0.1" Increment="0.1"
                                                    Margin="{StaticResource spaceMargin}" />
                                 <xctk:DoubleUpDown d:IsHidden="True" FormatString="F2" Value="{Binding R2Sens}" MinWidth="50" Grid.Row="5" Grid.Column="2" Maximum="10.0" Minimum="0.1" Increment="0.1"
                                                    Margin="{StaticResource spaceMargin}" />
 
-                                <Label Content="Output Curve:" Grid.Row="6" Grid.Column="0" />
+                                <Label Content="{lex:Loc OutputCurve}" Grid.Row="6" Grid.Column="0" />
                                 <ComboBox Grid.Row="6" Grid.Column="1" SelectedIndex="{Binding L2OutputCurveIndex}"
                                           Margin="{StaticResource spaceMargin}">
                                     <ComboBoxItem Content="Linear" />
@@ -724,53 +724,53 @@
                                 </ComboBox>
 
                                 <DockPanel Grid.Row="7" Grid.Column="1" IsEnabled="{Binding L2CustomCurveSelected}">
-                                    <Button x:Name="l2CustomEditorBtn" Content="..." Tag="L2" Width="20" DockPanel.Dock="Right" Click="CustomEditorBtn_Click"
+                                    <Button x:Name="l2CustomEditorBtn" Content="{lex:Loc ProfileEditor0727}" Tag="L2" Width="20" DockPanel.Dock="Right" Click="CustomEditorBtn_Click"
                                             Margin="{StaticResource spaceMargin}" />
                                     <TextBox Text="{Binding L2CustomCurve,FallbackValue='0.00, 0.00, 1.00, 1.00'}" DockPanel.Dock="Left"
                                              Margin="{StaticResource spaceMargin}" />
                                 </DockPanel>
                                 <DockPanel Grid.Row="7" Grid.Column="2"  IsEnabled="{Binding R2CustomCurveSelected}">
-                                    <Button x:Name="r2CustomEditorBtn" Content="..." Tag="R2" Width="20" DockPanel.Dock="Right" Click="CustomEditorBtn_Click"
+                                    <Button x:Name="r2CustomEditorBtn" Content="{lex:Loc ProfileEditor0733}" Tag="R2" Width="20" DockPanel.Dock="Right" Click="CustomEditorBtn_Click"
                                             Margin="{StaticResource spaceMargin}" />
                                     <TextBox Text="{Binding R2CustomCurve,FallbackValue='0.00, 0.00, 1.00, 1.00'}" DockPanel.Dock="Left"
                                              Margin="{StaticResource spaceMargin}" />
                                 </DockPanel>
 
-                                <Label Content="Two Stage Mode:" Grid.Row="8" Grid.Column="0" />
+                                <Label Content="{lex:Loc TwoStageMode}" Grid.Row="8" Grid.Column="0" />
                                 <ComboBox Grid.Row="8" Grid.Column="1" ItemsSource="{Binding Path=TwoStageModeChoices}"
                                           DisplayMemberPath="DisplayName" SelectedValuePath="Mode" SelectedValue="{Binding L2TriggerMode}" Margin="{StaticResource spaceMargin}" />
 
                                 <ComboBox Grid.Row="8" Grid.Column="2" ItemsSource="{Binding Path=TwoStageModeChoices}"
                                           DisplayMemberPath="DisplayName" SelectedValuePath="Mode" SelectedValue="{Binding R2TriggerMode}" Margin="{StaticResource spaceMargin}" />
 
-                                <Label Content="Full Pull Btn:" Grid.Row="9" Grid.Column="0" />
+                                <Label Content="{lex:Loc FullPullBtn}" Grid.Row="9" Grid.Column="0" />
                                 <DockPanel Grid.Row="9" Grid.Column="1">
-                                    <Button Content="Full" MinWidth="40" Tag="{Binding L2FullPull, Source={StaticResource controlIndexCheck}}" Click="TriggerFullPullBtn_Click"
+                                    <Button Content="{lex:Loc FullPull}" MinWidth="40" Tag="{Binding L2FullPull, Source={StaticResource controlIndexCheck}}" Click="TriggerFullPullBtn_Click"
                                             Margin="{StaticResource spaceMargin}" DockPanel.Dock="Top" />
                                     <Label x:Name="l2FullPullLb" Content="{Binding MappingName,FallbackValue=Unassigned}"
                                            Margin="{StaticResource spaceMargin}" HorizontalAlignment="Center" DockPanel.Dock="Top"/>
                                 </DockPanel>
                                 <DockPanel Grid.Row="9" Grid.Column="2">
-                                    <Button Content="Full" MinWidth="40" Tag="{Binding R2FullPull, Source={StaticResource controlIndexCheck}}" Click="TriggerFullPullBtn_Click"
+                                    <Button Content="{lex:Loc FullPull}" MinWidth="40" Tag="{Binding R2FullPull, Source={StaticResource controlIndexCheck}}" Click="TriggerFullPullBtn_Click"
                                             Margin="{StaticResource spaceMargin}" DockPanel.Dock="Top" />
                                     <Label x:Name="r2FullPullLb" Content="{Binding MappingName,FallbackValue=Unassigned}"
                                            Margin="{StaticResource spaceMargin}" HorizontalAlignment="Center" DockPanel.Dock="Top" />
                                 </DockPanel>
 
-                                <Label Content="Hip Fire Delay:" Grid.Row="10" Grid.Column="0" />
+                                <Label Content="{lex:Loc HipFireDelay}" Grid.Row="10" Grid.Column="0" />
                                 <DockPanel Grid.Row="10" Grid.Column="1">
-                                    <Label Content="ms" DockPanel.Dock="Right" />
+                                    <Label Content="{lex:Loc Ms}" DockPanel.Dock="Right" />
                                     <xctk:IntegerUpDown d:IsHidden="True" Value="{Binding L2HipFireTime}" MinWidth="50" Maximum="5000" Minimum="0" Increment="10"
                                                    Margin="{StaticResource spaceMargin}" />
                                 </DockPanel>
 
                                 <DockPanel Grid.Row="10" Grid.Column="2">
-                                    <Label Content="ms" DockPanel.Dock="Right" />
+                                    <Label Content="{lex:Loc Ms}" DockPanel.Dock="Right" />
                                     <xctk:IntegerUpDown d:IsHidden="True" Value="{Binding R2HipFireTime}" MinWidth="50" Maximum="5000" Minimum="0" Increment="10"
                                                    Margin="{StaticResource spaceMargin}" />
                                 </DockPanel>
 
-                                <Label Content="Trigger Effect:" Grid.Row="11" Grid.Column="0" />
+                                <Label Content="{lex:Loc TriggerEffect}" Grid.Row="11" Grid.Column="0" />
 
                                 <ComboBox Grid.Row="11" Grid.Column="1" ItemsSource="{Binding Path=TriggerEffectChoices}"
                                           DisplayMemberPath="DisplayName" SelectedValuePath="Mode" SelectedValue="{Binding L2TriggerEffect}" Margin="{StaticResource spaceMargin}" />
@@ -779,7 +779,7 @@
                             </Grid>
                         </GroupBox>
 
-                        <GroupBox Header="SixAxis">
+                        <GroupBox Header="{lex:Loc SixAxis}">
                             <Grid>
                                 <Grid.RowDefinitions>
                                     <RowDefinition></RowDefinition>
@@ -800,31 +800,31 @@
                                 <TextBlock Text="X" Grid.Column="1" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,8" />
                                 <TextBlock Text="Z" Grid.Column="2"  FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,8" />
 
-                                <Label Content="Dead Zone:" Grid.Row="1" Grid.Column="0" />
+                                <Label Content="{lex:Loc DeadZone_}" Grid.Row="1" Grid.Column="0" />
                                 <xctk:DoubleUpDown d:IsHidden="True" FormatString="F2" Value="{Binding SXDeadZone}" MinWidth="50" Grid.Row="1" Grid.Column="1" Maximum="1.0" Minimum="0.0" Increment="0.1"
                                                    Margin="{StaticResource spaceMargin}" />
                                 <xctk:DoubleUpDown d:IsHidden="True" FormatString="F2" Value="{Binding SZDeadZone}" MinWidth="50" Grid.Row="1" Grid.Column="2" Maximum="1.0" Minimum="0.0" Increment="0.1"
                                                    Margin="{StaticResource spaceMargin}" />
 
-                                <Label Content="Max Zone:" Grid.Row="2" Grid.Column="0" />
+                                <Label Content="{lex:Loc MaxZone_}" Grid.Row="2" Grid.Column="0" />
                                 <xctk:DoubleUpDown d:IsHidden="True" FormatString="F2" Value="{Binding SXMaxZone}" MinWidth="50" Grid.Row="2" Grid.Column="1" Maximum="1.0" Minimum="0.0" Increment="0.1"
                                                    Margin="{StaticResource spaceMargin}" />
                                 <xctk:DoubleUpDown d:IsHidden="True" FormatString="F2" Value="{Binding SZMaxZone}" MinWidth="50" Grid.Row="2" Grid.Column="2" Maximum="1.0" Minimum="0.0" Increment="0.1"
                                                    Margin="{StaticResource spaceMargin}" />
 
-                                <Label Content="Anti-dead Zone:" Grid.Row="3" Grid.Column="0" />
+                                <Label Content="{lex:Loc AntiDeadZone}" Grid.Row="3" Grid.Column="0" />
                                 <xctk:DoubleUpDown d:IsHidden="True" FormatString="F2" Value="{Binding SXAntiDeadZone}" MinWidth="50" Grid.Row="3" Grid.Column="1" Maximum="1.0" Minimum="0.0" Increment="0.1"
                                                    Margin="{StaticResource spaceMargin}" />
                                 <xctk:DoubleUpDown d:IsHidden="True" FormatString="F2" Value="{Binding SZAntiDeadZone}" MinWidth="50" Grid.Row="3" Grid.Column="2" Maximum="1.0" Minimum="0.0" Increment="0.1"
                                                    Margin="{StaticResource spaceMargin}" />
 
-                                <Label Content="Sensitivity:" Grid.Row="4" Grid.Column="0" />
+                                <Label Content="{lex:Loc Sensitivity}" Grid.Row="4" Grid.Column="0" />
                                 <xctk:DoubleUpDown d:IsHidden="True" FormatString="F2" Value="{Binding SXSens}" MinWidth="50" Grid.Row="4" Grid.Column="1" Maximum="5.0" Minimum="0.5" Increment="0.1"
                                                    Margin="{StaticResource spaceMargin}" />
                                 <xctk:DoubleUpDown d:IsHidden="True" FormatString="F2" Value="{Binding SZSens}" MinWidth="50" Grid.Row="4" Grid.Column="2" Maximum="5.0" Minimum="0.5" Increment="0.1"
                                                    Margin="{StaticResource spaceMargin}" />
 
-                                <Label Content="Output Curve:" Grid.Row="5" Grid.Column="0" />
+                                <Label Content="{lex:Loc OutputCurve}" Grid.Row="5" Grid.Column="0" />
                                 <ComboBox Grid.Row="5" Grid.Column="1" SelectedIndex="{Binding SXOutputCurveIndex}"
                                           Margin="{StaticResource spaceMargin}">
                                     <ComboBoxItem Content="Linear" />
@@ -847,13 +847,13 @@
                                 </ComboBox>
 
                                 <DockPanel Grid.Row="6" Grid.Column="1" IsEnabled="{Binding SXCustomCurveSelected}">
-                                    <Button x:Name="sxCustomEditorBtn" Content="..." Tag="SX" Width="20" DockPanel.Dock="Right" Click="CustomEditorBtn_Click"
+                                    <Button x:Name="sxCustomEditorBtn" Content="{lex:Loc ...}" Tag="SX" Width="20" DockPanel.Dock="Right" Click="CustomEditorBtn_Click"
                                             Margin="{StaticResource spaceMargin}" />
                                     <TextBox Text="{Binding SXCustomCurve,FallbackValue='0.00, 0.00, 1.00, 1.00'}" DockPanel.Dock="Left"
                                              Margin="{StaticResource spaceMargin}" />
                                 </DockPanel>
                                 <DockPanel Grid.Row="6" Grid.Column="2" IsEnabled="{Binding SZCustomCurveSelected}">
-                                    <Button x:Name="szCustomEditorBtn" Content="..." Tag="SZ" Width="20" DockPanel.Dock="Right" Click="CustomEditorBtn_Click"
+                                    <Button x:Name="szCustomEditorBtn" Content="{lex:Loc ...}" Tag="SZ" Width="20" DockPanel.Dock="Right" Click="CustomEditorBtn_Click"
                                            Margin="{StaticResource spaceMargin}" />
                                     <TextBox Text="{Binding SZCustomCurve,FallbackValue='0.00, 0.00, 1.00, 1.00'}" DockPanel.Dock="Left"
                                              Margin="{StaticResource spaceMargin}" />
@@ -864,10 +864,10 @@
                 </ScrollViewer>
             </TabItem>
 
-            <TabItem Header="Lightbar">
+            <TabItem Header="{lex:Loc Lightbar}">
                 <StackPanel>
                     <StackPanel Orientation="Horizontal">
-                        <Label Content="Mode:" />
+                        <Label Content="{lex:Loc Mode}" />
                         <ComboBox x:Name="lightbarModeCombo" Width="160" SelectedIndex="{Binding LightbarModeIndex, FallbackValue=0}"
                                   VerticalContentAlignment="Center" Margin="10,0,0,0">
                             <ComboBoxItem Content="Normal" />
@@ -879,33 +879,33 @@
                             <GroupBox x:Name="colorGB" Header="{lex:Loc Color}" Padding="4">
                                 <StackPanel>
                                     <StackPanel Orientation="Horizontal">
-                                        <Label Content="R" />
+                                        <Label Content="{lex:Loc ColorR}" />
                                         <Slider Value="{Binding MainColorR}" Minimum="0" Maximum="255" ToolTip="{Binding MainColorR}" MinWidth="100" Background="{Binding MainColorRString, FallbackValue=Red}"/>
                                     </StackPanel>
                                     <StackPanel Orientation="Horizontal">
-                                        <Label Content="G" />
+                                        <Label Content="{lex:Loc ColorG}" />
                                         <Slider Value="{Binding MainColorG}" MinWidth="100" Minimum="0" Maximum="255" ToolTip="{Binding MainColorG}" Background="{Binding MainColorGString, FallbackValue=Lime}"/>
                                     </StackPanel>
                                     <StackPanel Orientation="Horizontal">
-                                        <Label Content="B" />
+                                        <Label Content="{lex:Loc ColorB}" />
                                         <Slider Value="{Binding MainColorB}" MinWidth="100" Minimum="0" Maximum="255" ToolTip="{Binding MainColorB}" Background="{Binding MainColorBString, FallbackValue=Blue}"/>
                                     </StackPanel>
                                 </StackPanel>
                             </GroupBox>
 
-                            <GroupBox x:Name="emptyColorGB" Header="Empty" Padding="4">
+                            <GroupBox x:Name="emptyColorGB" Header="{lex:Loc Empty}" Padding="4">
                                 <StackPanel>
 
                                     <StackPanel Orientation="Horizontal">
-                                        <Label Content="R" />
+                                        <Label Content="{lex:Loc ColorR}" />
                                         <Slider Value="{Binding LowColorR}" MinWidth="100" Minimum="0" Maximum="255" ToolTip="{Binding LowColorR}" Background="{Binding LowColorRString, FallbackValue=Red}"/>
                                     </StackPanel>
                                     <StackPanel Orientation="Horizontal">
-                                        <Label Content="G" />
+                                        <Label Content="{lex:Loc ColorG}" />
                                         <Slider Value="{Binding LowColorG}" MinWidth="100" Minimum="0" Maximum="255" ToolTip="{Binding LowColorG}" Background="{Binding LowColorGString, FallbackValue=Lime}"/>
                                     </StackPanel>
                                     <StackPanel Orientation="Horizontal">
-                                        <Label Content="B" />
+                                        <Label Content="{lex:Loc ColorB}" />
                                         <Slider Value="{Binding LowColorB}" MinWidth="100" Minimum="0" Maximum="255" ToolTip="{Binding LowColorB}" Background="{Binding LowColorBString, FallbackValue=Blue}"/>
                                     </StackPanel>
 
@@ -926,7 +926,7 @@
                         </StackPanel>
 
                         <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
-                            <Label Content="While Charging:"/>
+                            <Label Content="{lex:Loc WhileCharging}"/>
                             <ComboBox Margin="8,0,0,0" SelectedIndex="{Binding ChargingType,FallbackValue=0}">
                                 <ComboBoxItem Content="Normal" />
                                 <ComboBoxItem Content="Pulse" />
@@ -937,7 +937,7 @@
                                 Visibility="{Binding ChargingColorVisible}" Click="ChargingColorBtn_Click" Margin="20,0,0,0" />
                         </StackPanel>
 
-                        <CheckBox x:Name="colorByBatteryPerCk" Content="Color by Battery %" IsChecked="{Binding ColorBatteryPercent}"
+                        <CheckBox x:Name="colorByBatteryPerCk" Content="{lex:Loc ColorByBatteryPercent}" IsChecked="{Binding ColorBatteryPercent}"
                               ToolTip="{lex:Loc Resources:LightByBatteryTip}" Click="ColorByBatteryPerCk_Click" Margin="0,10,0,0" />
 
                         <StackPanel Orientation="Horizontal" Height="60" Margin="0,10,0,0">
@@ -949,7 +949,7 @@
                             </Button>
                             <xctk:IntegerUpDown MinWidth="30" Height="30" Minimum="0" Maximum="60" Increment="1" Margin="8,0,0,0"
                                             Value="{Binding Rainbow,FallbackValue=5}" IsEnabled="{Binding RainbowExists}" />
-                            <Label Content="secs/cycle" Padding="0" Margin="8,0,0,0" VerticalContentAlignment="Center" />
+                            <Label Content="{lex:Loc SecsPerCycle}" Padding="0" Margin="8,0,0,0" VerticalContentAlignment="Center" />
                             <StackPanel Margin="8,0,0,0" VerticalAlignment="Center">
                                 <TextBlock Text="{Binding MaxSatRainbow,FallbackValue=100,StringFormat=Max Sat. {0:N2}%}" Margin="0,0,0,5" />
                                 <Slider Value="{Binding MaxSatRainbow,FallbackValue=100}" Minimum="0" Maximum="100" Width="100" IsEnabled="{Binding RainbowExists}" />
@@ -959,14 +959,14 @@
                 </StackPanel>
             </TabItem>
 
-            <TabItem Header="Touchpad">
+            <TabItem Header="{lex:Loc Touchpad}">
                 <TabItem.Resources>
                     <Thickness x:Key="spaceMargin" Bottom="8" />
                 </TabItem.Resources>
 
                 <StackPanel Margin="4">
                     <StackPanel Orientation="Horizontal" Margin="{StaticResource spaceMargin}">
-                        <Label Content="Output Mode" />
+                        <Label Content="{lex:Loc OutputMode}" />
                         <ComboBox x:Name="touchpadOutModeCombo" Width="160" SelectedIndex="{Binding TouchpadOutputIndex, FallbackValue='0'}" VerticalContentAlignment="Center" Margin="10,0,0,0">
                             <ComboBoxItem Content="Mouse" />
                             <ComboBoxItem Content="Controls" />
@@ -976,7 +976,7 @@
                     </StackPanel>
 
                     <TabControl x:Name="touchOutputTabControl" SelectedIndex="{Binding TouchpadOutputIndex, FallbackValue='0'}" BorderBrush="{x:Null}" Margin="{StaticResource spaceMargin}">
-                        <TabItem Header="Mouse" Visibility="Collapsed">
+                        <TabItem Header="{lex:Loc Mouse}" Visibility="Collapsed">
                             <StackPanel>
                                 <Grid>
                                     <Grid.RowDefinitions>
@@ -995,7 +995,7 @@
                                         <xctk:IntegerUpDown d:IsHidden="True" MinWidth="80" Height="20" Maximum="500" Value="{Binding TouchSens}" IsEnabled="{Binding TouchSenExists}" Margin="8,0,0,0" />
                                     </StackPanel>
 
-                                    <CheckBox Content="Jitter Compensation" Grid.Row="0" Grid.Column="1" IsChecked="{Binding TouchJitter}" VerticalAlignment="Center"
+                                    <CheckBox Content="{lex:Loc JitterCompensation}" Grid.Row="0" Grid.Column="1" IsChecked="{Binding TouchJitter}" VerticalAlignment="Center"
                                                           ToolTip="{lex:Loc Resources:Jitter}" />
 
                                     <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="0" Margin="{StaticResource spaceMargin}">
@@ -1003,7 +1003,7 @@
                                         <xctk:IntegerUpDown Value="{Binding TouchTap}" d:IsHidden="True" MinWidth="80" Height="20" IsEnabled="{Binding TouchTapExists}" Margin="8,0,0,0" />
                                     </StackPanel>
 
-                                    <CheckBox Content="Double Tap" Grid.Row="1" Grid.Column="1" IsChecked="{Binding TouchDoubleTap}" VerticalAlignment="Center"
+                                    <CheckBox Content="{lex:Loc DoubleTap}" Grid.Row="1" Grid.Column="1" IsChecked="{Binding TouchDoubleTap}" VerticalAlignment="Center"
                                                           ToolTip="{lex:Loc Resources:TapAndHold}" />
 
                                     <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="0" Margin="{StaticResource spaceMargin}">
@@ -1011,35 +1011,35 @@
                                         <xctk:IntegerUpDown Value="{Binding TouchScroll}" d:IsHidden="True" MinWidth="80" Height="20" IsEnabled="{Binding TouchScrollExists}" Margin="8,0,0,0" />
                                     </StackPanel>
 
-                                    <CheckBox Content="Lower Right as RMB" Grid.Row="2" Grid.Column="1" IsChecked="{Binding LowerRightTouchRMB}" VerticalAlignment="Center"
+                                    <CheckBox Content="{lex:Loc LowerRightAsRMB}" Grid.Row="2" Grid.Column="1" IsChecked="{Binding LowerRightTouchRMB}" VerticalAlignment="Center"
                                                           ToolTip="{lex:Loc Resources:BestUsedRightSide}" />
 
-                                    <CheckBox Content="Passthru Click Action (DS4 mode)" Grid.Row="3" Grid.Column="0" IsChecked="{Binding TouchpadClickPassthru}" VerticalAlignment="Center" />
+                                    <CheckBox Content="{lex:Loc PassthruClickAction}" Grid.Row="3" Grid.Column="0" IsChecked="{Binding TouchpadClickPassthru}" VerticalAlignment="Center" />
                                 </Grid>
 
-                                <CheckBox Content="Start with Slide/Scroll Off" IsChecked="{Binding StartTouchpadOff}" VerticalAlignment="Center"
+                                <CheckBox Content="{lex:Loc StartTouchpadOff}" IsChecked="{Binding StartTouchpadOff}" VerticalAlignment="Center"
                                                     ToolTip="{lex:Loc Resources:TouchpadOffTip}" Margin="0,10,0,0" />
 
                                 <StackPanel Orientation="Horizontal" Margin="{StaticResource spaceMargin}">
-                                    <Label Content="Rotation" ContentStringFormat="{}{0}:" />
+                                    <Label Content="{lex:Loc Rotation}" ContentStringFormat="{}{0}:" />
                                     <xctk:DoubleUpDown d:IsHidden="True" MinWidth="80" Height="20" Minimum="-180" Maximum="180" Increment="1" FormatString="F0" Value="{Binding TouchRelMouseRotation,FallbackValue='0'}" Margin="8,0,0,0" />
                                     <TextBlock Text="&#xb0;" FontSize="18" Margin="{StaticResource spaceMargin}" />
                                 </StackPanel>
 
                                 <StackPanel Orientation="Horizontal" Margin="{StaticResource spaceMargin}">
-                                    <Label Content="Min Threshold" ContentStringFormat="{}{0}:" />
+                                    <Label Content="{lex:Loc MinThreshold}" ContentStringFormat="{}{0}:" />
                                     <xctk:DoubleUpDown d:IsHidden="True" MinWidth="80" Height="20" Minimum="1.0" Maximum="40.0" Increment="1.0" FormatString="F1" Value="{Binding TouchRelMouseMinThreshold,FallbackValue='1.0'}" Margin="8,0,0,0" />
                                 </StackPanel>
 
                                 <StackPanel Orientation="Horizontal" Height="20" Margin="{StaticResource spaceMargin}">
-                                    <CheckBox Content="Trackball" IsChecked="{Binding TouchTrackball}" VerticalAlignment="Center" />
-                                    <Label Content="Friction:" Padding="0" Margin="20,0,5,0" VerticalAlignment="Center"/>
+                                    <CheckBox Content="{lex:Loc Trackball}" IsChecked="{Binding TouchTrackball}" VerticalAlignment="Center" />
+                                    <Label Content="{lex:Loc Friction}" Padding="0" Margin="20,0,5,0" VerticalAlignment="Center"/>
                                     <xctk:DoubleUpDown x:Name="frictionUD" d:IsHidden="True" MinWidth="80" IsEnabled="{Binding TouchTrackball}" Minimum="0.1" Maximum="20.0"
                                                                Value="{Binding TouchTrackballFriction,FallbackValue='10'}" ValueChanged="FrictionUD_ValueChanged" Margin="8,0,0,0" />
                                 </StackPanel>
 
                                 <StackPanel Orientation="Horizontal" Margin="{StaticResource spaceMargin}">
-                                    <Label Content="Invert" Padding="0" HorizontalAlignment="Center" />
+                                    <Label Content="{lex:Loc Invert}" Padding="0" HorizontalAlignment="Center" />
                                     <ComboBox MinWidth="160" SelectedIndex="{Binding TouchInvertIndex}" Margin="20,0,0,0">
                                         <ComboBoxItem Content="None" />
                                         <ComboBoxItem Content="X" />
@@ -1049,31 +1049,31 @@
                                 </StackPanel>
 
                                 <StackPanel Orientation="Horizontal" Margin="{StaticResource spaceMargin}">
-                                    <Label Content="Disable Invert" Padding="0" HorizontalAlignment="Center" />
+                                    <Label Content="{lex:Loc DisableInvert}" Padding="0" HorizontalAlignment="Center" />
                                     <Button x:Name="touchDisInvertBtn" MinWidth="160"  Height="22" Content="{Binding TouchDisInvertString,FallbackValue=None}" Click="TouchDisInvertBtn_Click" Margin="20,0,0,0">
                                         <Button.ContextMenu>
                                             <ContextMenu>
-                                                <MenuItem Header="Cross" IsCheckable="True" Click="TouchDisInvertMenuItem_Click" />
-                                                <MenuItem Header="Circle" IsCheckable="True" Click="TouchDisInvertMenuItem_Click" />
-                                                <MenuItem Header="Square" IsCheckable="True" Click="TouchDisInvertMenuItem_Click" />
-                                                <MenuItem Header="Triangle" IsCheckable="True" Click="TouchDisInvertMenuItem_Click" />
-                                                <MenuItem Header="L1" IsCheckable="True" Click="TouchDisInvertMenuItem_Click" />
-                                                <MenuItem Header="L2" IsCheckable="True" Click="TouchDisInvertMenuItem_Click" />
-                                                <MenuItem Header="R1" IsCheckable="True" Click="TouchDisInvertMenuItem_Click" />
-                                                <MenuItem Header="R2" IsCheckable="True" Click="TouchDisInvertMenuItem_Click" />
-                                                <MenuItem Header="Up" IsCheckable="True" Click="TouchDisInvertMenuItem_Click" />
-                                                <MenuItem Header="Down" IsCheckable="True" Click="TouchDisInvertMenuItem_Click" />
-                                                <MenuItem Header="Left" IsCheckable="True" Click="TouchDisInvertMenuItem_Click" />
-                                                <MenuItem Header="Right" IsCheckable="True" Click="TouchDisInvertMenuItem_Click" />
-                                                <MenuItem Header="L3" IsCheckable="True" Click="TouchDisInvertMenuItem_Click" />
-                                                <MenuItem Header="R3" IsCheckable="True" Click="TouchDisInvertMenuItem_Click" />
-                                                <MenuItem Header="Finger on Touchpad" IsCheckable="True" Click="TouchDisInvertMenuItem_Click" />
-                                                <MenuItem Header="2 Fingers on Touchpad" IsCheckable="True" Click="TouchDisInvertMenuItem_Click" />
-                                                <MenuItem Header="Options" IsCheckable="True" Click="TouchDisInvertMenuItem_Click" />
-                                                <MenuItem Header="Share" IsCheckable="True" Click="TouchDisInvertMenuItem_Click" />
-                                                <MenuItem Header="PS" IsCheckable="True" Click="TouchDisInvertMenuItem_Click" />
-                                                <MenuItem Header="Touchpad Click" IsCheckable="True" Click="TouchDisInvertMenuItem_Click" />
-                                                <MenuItem Header="Mute" IsCheckable="True" Click="TouchDisInvertMenuItem_Click" />
+                                                <MenuItem Header="{lex:Loc Cross}" IsCheckable="True" Click="TouchDisInvertMenuItem_Click" />
+                                                <MenuItem Header="{lex:Loc Circle}" IsCheckable="True" Click="TouchDisInvertMenuItem_Click" />
+                                                <MenuItem Header="{lex:Loc Square}" IsCheckable="True" Click="TouchDisInvertMenuItem_Click" />
+                                                <MenuItem Header="{lex:Loc Triangle}" IsCheckable="True" Click="TouchDisInvertMenuItem_Click" />
+                                                <MenuItem Header="{lex:Loc L1}" IsCheckable="True" Click="TouchDisInvertMenuItem_Click" />
+                                                <MenuItem Header="{lex:Loc L2}" IsCheckable="True" Click="TouchDisInvertMenuItem_Click" />
+                                                <MenuItem Header="{lex:Loc R1}" IsCheckable="True" Click="TouchDisInvertMenuItem_Click" />
+                                                <MenuItem Header="{lex:Loc R2}" IsCheckable="True" Click="TouchDisInvertMenuItem_Click" />
+                                                <MenuItem Header="{lex:Loc Up}" IsCheckable="True" Click="TouchDisInvertMenuItem_Click" />
+                                                <MenuItem Header="{lex:Loc Down}" IsCheckable="True" Click="TouchDisInvertMenuItem_Click" />
+                                                <MenuItem Header="{lex:Loc Left}" IsCheckable="True" Click="TouchDisInvertMenuItem_Click" />
+                                                <MenuItem Header="{lex:Loc Right}" IsCheckable="True" Click="TouchDisInvertMenuItem_Click" />
+                                                <MenuItem Header="{lex:Loc L3}" IsCheckable="True" Click="TouchDisInvertMenuItem_Click" />
+                                                <MenuItem Header="{lex:Loc R3}" IsCheckable="True" Click="TouchDisInvertMenuItem_Click" />
+                                                <MenuItem Header="{lex:Loc FingerOnTouchpad}" IsCheckable="True" Click="TouchDisInvertMenuItem_Click" />
+                                                <MenuItem Header="{lex:Loc TwoFingersOnTouchpad}" IsCheckable="True" Click="TouchDisInvertMenuItem_Click" />
+                                                <MenuItem Header="{lex:Loc Options}" IsCheckable="True" Click="TouchDisInvertMenuItem_Click" />
+                                                <MenuItem Header="{lex:Loc Share}" IsCheckable="True" Click="TouchDisInvertMenuItem_Click" />
+                                                <MenuItem Header="{lex:Loc PS}" IsCheckable="True" Click="TouchDisInvertMenuItem_Click" />
+                                                <MenuItem Header="{lex:Loc TouchpadClick}" IsCheckable="True" Click="TouchDisInvertMenuItem_Click" />
+                                                <MenuItem Header="{lex:Loc Mute}" IsCheckable="True" Click="TouchDisInvertMenuItem_Click" />
                                             </ContextMenu>
                                         </Button.ContextMenu>
                                     </Button>
@@ -1082,55 +1082,55 @@
                             </StackPanel>
                         </TabItem>
 
-                        <TabItem Header="Controls" Visibility="Collapsed">
+                        <TabItem Header="{lex:Loc Controls}" Visibility="Collapsed">
                             <StackPanel>
                                 <StackPanel Orientation="Horizontal" Margin="5,0,0,0">
-                                    <Button x:Name="swipeUpBtn" Content="Swipe Up" MinWidth="100" Tag="{Binding SwipeUp, Source={StaticResource controlIndexCheck}}" Click="SwipeControlsButton_Click" />
+                                    <Button x:Name="swipeUpBtn" Content="{lex:Loc SwipeUp}" MinWidth="100" Tag="{Binding SwipeUp, Source={StaticResource controlIndexCheck}}" Click="SwipeControlsButton_Click" />
                                     <Label x:Name="swipeUpLb" Content="{Binding MappingName,FallbackValue=Unassigned}"  Margin="10,0,0,0"/>
                                 </StackPanel>
                                 <StackPanel Orientation="Horizontal" Margin="5,8,0,0">
-                                    <Button x:Name="swipeDownBtn" Content="Swipe Down" MinWidth="100" Tag="{Binding SwipeDown, Source={StaticResource controlIndexCheck}}" Click="SwipeControlsButton_Click" />
+                                    <Button x:Name="swipeDownBtn" Content="{lex:Loc SwipeDown}" MinWidth="100" Tag="{Binding SwipeDown, Source={StaticResource controlIndexCheck}}" Click="SwipeControlsButton_Click" />
                                     <Label x:Name="swipeDownLb" Content="{Binding MappingName,FallbackValue=Unassigned}"  Margin="10,0,0,0"/>
                                 </StackPanel>
                                 <StackPanel Orientation="Horizontal" Margin="5,8,0,0">
-                                    <Button x:Name="swipeLeftBtn" Content="Swipe Left" MinWidth="100" Tag="{Binding SwipeLeft, Source={StaticResource controlIndexCheck}}" Click="SwipeControlsButton_Click" />
+                                    <Button x:Name="swipeLeftBtn" Content="{lex:Loc SwipeLeft}" MinWidth="100" Tag="{Binding SwipeLeft, Source={StaticResource controlIndexCheck}}" Click="SwipeControlsButton_Click" />
                                     <Label x:Name="swipeLeftLb" Content="{Binding MappingName,FallbackValue=Unassigned}"  Margin="10,0,0,0"/>
                                 </StackPanel>
                                 <StackPanel Orientation="Horizontal" Margin="5,8,0,10">
-                                    <Button x:Name="swipeRightBtn" Content="Swipe Right" MinWidth="100" Tag="{Binding SwipeRight, Source={StaticResource controlIndexCheck}}" Click="SwipeControlsButton_Click" />
+                                    <Button x:Name="swipeRightBtn" Content="{lex:Loc SwipeRight}" MinWidth="100" Tag="{Binding SwipeRight, Source={StaticResource controlIndexCheck}}" Click="SwipeControlsButton_Click" />
                                     <Label x:Name="swipeRightLb" Content="{Binding MappingName,FallbackValue=Unassigned}"  Margin="10,0,0,0"/>
                                 </StackPanel>
 
-                                <CheckBox Content="Passthru Click Action (DS4 mode)" IsChecked="{Binding TouchpadClickPassthru}" VerticalAlignment="Center"
+                                <CheckBox Content="{lex:Loc PassthruClickAction}" IsChecked="{Binding TouchpadClickPassthru}" VerticalAlignment="Center"
                                                           Margin="5,8,0,0" />
                             </StackPanel>
                         </TabItem>
-                        <TabItem Header="Absolute Mouse" Visibility="Collapsed">
+                        <TabItem Header="{lex:Loc AbsoluteMouse}" Visibility="Collapsed">
                             <StackPanel>
                                 <StackPanel Orientation="Horizontal" Margin="{StaticResource spaceMargin}">
-                                    <Label Content="Max Zone X:" />
+                                    <Label Content="{lex:Loc MaxZoneX_}" />
                                     <xctk:IntegerUpDown d:IsHidden="True" MinWidth="80" Height="20" Minimum="0" Maximum="100" Value="{Binding TouchAbsMouseMaxZoneX}" Margin="8,0,0,0" />
                                 </StackPanel>
                                 <StackPanel Orientation="Horizontal" Margin="{StaticResource spaceMargin}">
-                                    <Label Content="Max Zone Y:" />
+                                    <Label Content="{lex:Loc MaxZoneY_}" />
                                     <xctk:IntegerUpDown d:IsHidden="True" MinWidth="80" Height="20" Minimum="0" Maximum="100" Value="{Binding TouchAbsMouseMaxZoneY}" Margin="8,0,0,0" />
                                 </StackPanel>
                                 <StackPanel Orientation="Horizontal" Margin="{StaticResource spaceMargin}">
-                                    <Label Content="Snap To Center on Release:" />
+                                    <Label Content="{lex:Loc SnapToCenterOnRelease}" />
                                     <CheckBox IsChecked="{Binding TouchAbsMouseSnapCenter}" VerticalAlignment="Center" Margin="8,0,0,0" />
                                 </StackPanel>
                             </StackPanel>
                         </TabItem>
-                        <TabItem Header="Passthru" Visibility="Collapsed" />
+                        <TabItem Header="{lex:Loc Passthru}" Visibility="Collapsed" />
                     </TabControl>
                 </StackPanel>
             </TabItem>
 
-            <TabItem Header="Gyro">
+            <TabItem Header="{lex:Loc Gyro}">
                 <ScrollViewer VerticalScrollBarVisibility="Auto">
                     <StackPanel>
                         <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
-                            <Label Content="Output Mode" />
+                            <Label Content="{lex:Loc OutputMode}" />
                             <ComboBox x:Name="gyroOutModeCombo" Width="160" SelectedIndex="{Binding GyroOutModeIndex, FallbackValue=0}" VerticalContentAlignment="Center" Margin="10,0,0,0">
                                 <ComboBoxItem Content="Controls" />
                                 <ComboBoxItem Content="Mouse" />
@@ -1142,75 +1142,75 @@
 
                         <StackPanel x:Name="gyroControlsPanel" Visibility="Visible">
                             <StackPanel Orientation="Horizontal" Margin="0,0,0,8">
-                                <Button x:Name="gyroZNBtn" Content="Tilt Up" Width="100" Tag="{Binding TiltUp, Source={StaticResource controlIndexCheck}}" Click="TiltControlsButton_Click" />
+                                <Button x:Name="gyroZNBtn" Content="{lex:Loc TiltUp}" Width="100" Tag="{Binding TiltUp, Source={StaticResource controlIndexCheck}}" Click="TiltControlsButton_Click" />
                                 <Label x:Name="gyroZNLb" Content="{Binding MappingName,FallbackValue=Unassigned}" />
                             </StackPanel>
 
                             <StackPanel Orientation="Horizontal" Margin="0,0,0,8">
-                                <Button x:Name="gyroZPBtn" Content="Tilt Down" Width="100" Tag="{Binding TiltDown, Source={StaticResource controlIndexCheck}}" Click="TiltControlsButton_Click" />
+                                <Button x:Name="gyroZPBtn" Content="{lex:Loc TiltDown}" Width="100" Tag="{Binding TiltDown, Source={StaticResource controlIndexCheck}}" Click="TiltControlsButton_Click" />
                                 <Label x:Name="gyroZPLb" Content="{Binding MappingName,FallbackValue=Unassigned}" />
                             </StackPanel>
 
                             <StackPanel Orientation="Horizontal" Margin="0,0,0,8">
-                                <Button x:Name="gyroXPBtn" Content="Tilt Left" Width="100" Tag="{Binding TiltLeft, Source={StaticResource controlIndexCheck}}" Click="TiltControlsButton_Click" />
+                                <Button x:Name="gyroXPBtn" Content="{lex:Loc TiltLeft}" Width="100" Tag="{Binding TiltLeft, Source={StaticResource controlIndexCheck}}" Click="TiltControlsButton_Click" />
                                 <Label x:Name="gyroXLb" Content="{Binding MappingName,FallbackValue=Unassigned}" />
                             </StackPanel>
 
                             <StackPanel Orientation="Horizontal" Margin="0,0,0,8">
-                                <Button x:Name="gyroXNBtn" Content="Tilt Right" Width="100" Tag="{Binding TiltRight, Source={StaticResource controlIndexCheck}}" Click="TiltControlsButton_Click" />
+                                <Button x:Name="gyroXNBtn" Content="{lex:Loc TiltRight}" Width="100" Tag="{Binding TiltRight, Source={StaticResource controlIndexCheck}}" Click="TiltControlsButton_Click" />
                                 <Label x:Name="gyroXNLb" Content="{Binding MappingName,FallbackValue=Unassigned}" />
                             </StackPanel>
 
                             <StackPanel Orientation="Horizontal" Margin="0,16,0,0">
-                                <Label Content="Triggers" />
+                                <Label Content="{lex:Loc Triggers}" />
                                 <Button x:Name="gyroControlsTrigBtn" Content="{Binding GyroControlsTrigDisplay,FallbackValue='Always On'}" MinWidth="160" Click="GyroControlsTrigBtn_Click" >
                                     <Button.ContextMenu>
                                         <ContextMenu>
-                                            <MenuItem Header="Cross" IsCheckable="True" Click="GyroControlsMenuItem_Click" />
-                                            <MenuItem Header="Circle" IsCheckable="True" Click="GyroControlsMenuItem_Click" />
-                                            <MenuItem Header="Square" IsCheckable="True" Click="GyroControlsMenuItem_Click" />
-                                            <MenuItem Header="Triangle" IsCheckable="True" Click="GyroControlsMenuItem_Click" />
-                                            <MenuItem Header="L1" IsCheckable="True" Click="GyroControlsMenuItem_Click" />
-                                            <MenuItem Header="L2" IsCheckable="True" Click="GyroControlsMenuItem_Click" />
-                                            <MenuItem Header="R1" IsCheckable="True" Click="GyroControlsMenuItem_Click" />
-                                            <MenuItem Header="R2" IsCheckable="True" Click="GyroControlsMenuItem_Click" />
-                                            <MenuItem Header="Up" IsCheckable="True" Click="GyroControlsMenuItem_Click" />
-                                            <MenuItem Header="Down" IsCheckable="True" Click="GyroControlsMenuItem_Click" />
-                                            <MenuItem Header="Left" IsCheckable="True" Click="GyroControlsMenuItem_Click" />
-                                            <MenuItem Header="Right" IsCheckable="True" Click="GyroControlsMenuItem_Click" />
-                                            <MenuItem Header="L3" IsCheckable="True" Click="GyroControlsMenuItem_Click" />
-                                            <MenuItem Header="R3" IsCheckable="True" Click="GyroControlsMenuItem_Click" />
-                                            <MenuItem Header="Finger on Touchpad" IsCheckable="True" Click="GyroControlsMenuItem_Click" />
-                                            <MenuItem Header="2 Fingers on Touchpad" IsCheckable="True" Click="GyroControlsMenuItem_Click" />
-                                            <MenuItem Header="Options" IsCheckable="True" Click="GyroControlsMenuItem_Click" />
-                                            <MenuItem Header="Share" IsCheckable="True" Click="GyroControlsMenuItem_Click" />
-                                            <MenuItem Header="PS" IsCheckable="True" Click="GyroControlsMenuItem_Click" />
-                                            <MenuItem Header="Touchpad Click" IsCheckable="True" Click="GyroControlsMenuItem_Click" />
-                                            <MenuItem Header="Mute" IsCheckable="True" Click="GyroControlsMenuItem_Click" />
-                                            <MenuItem Header="Always On" IsCheckable="True" Click="GyroControlsMenuItem_Click" />
+                                            <MenuItem Header="{lex:Loc Cross}" IsCheckable="True" Click="GyroControlsMenuItem_Click" />
+                                            <MenuItem Header="{lex:Loc Circle}" IsCheckable="True" Click="GyroControlsMenuItem_Click" />
+                                            <MenuItem Header="{lex:Loc Square}" IsCheckable="True" Click="GyroControlsMenuItem_Click" />
+                                            <MenuItem Header="{lex:Loc Triangle}" IsCheckable="True" Click="GyroControlsMenuItem_Click" />
+                                            <MenuItem Header="{lex:Loc L1}" IsCheckable="True" Click="GyroControlsMenuItem_Click" />
+                                            <MenuItem Header="{lex:Loc L2}" IsCheckable="True" Click="GyroControlsMenuItem_Click" />
+                                            <MenuItem Header="{lex:Loc R1}" IsCheckable="True" Click="GyroControlsMenuItem_Click" />
+                                            <MenuItem Header="{lex:Loc R2}" IsCheckable="True" Click="GyroControlsMenuItem_Click" />
+                                            <MenuItem Header="{lex:Loc Up}" IsCheckable="True" Click="GyroControlsMenuItem_Click" />
+                                            <MenuItem Header="{lex:Loc Down}" IsCheckable="True" Click="GyroControlsMenuItem_Click" />
+                                            <MenuItem Header="{lex:Loc Left}" IsCheckable="True" Click="GyroControlsMenuItem_Click" />
+                                            <MenuItem Header="{lex:Loc Right}" IsCheckable="True" Click="GyroControlsMenuItem_Click" />
+                                            <MenuItem Header="{lex:Loc L3}" IsCheckable="True" Click="GyroControlsMenuItem_Click" />
+                                            <MenuItem Header="{lex:Loc R3}" IsCheckable="True" Click="GyroControlsMenuItem_Click" />
+                                            <MenuItem Header="{lex:Loc FingerOnTouchpad}" IsCheckable="True" Click="GyroControlsMenuItem_Click" />
+                                            <MenuItem Header="{lex:Loc TwoFingersOnTouchpad}" IsCheckable="True" Click="GyroControlsMenuItem_Click" />
+                                            <MenuItem Header="{lex:Loc Options}" IsCheckable="True" Click="GyroControlsMenuItem_Click" />
+                                            <MenuItem Header="{lex:Loc Share}" IsCheckable="True" Click="GyroControlsMenuItem_Click" />
+                                            <MenuItem Header="{lex:Loc PS}" IsCheckable="True" Click="GyroControlsMenuItem_Click" />
+                                            <MenuItem Header="{lex:Loc TouchpadClick}" IsCheckable="True" Click="GyroControlsMenuItem_Click" />
+                                            <MenuItem Header="{lex:Loc Mute}" IsCheckable="True" Click="GyroControlsMenuItem_Click" />
+                                            <MenuItem Header="{lex:Loc AlwaysOn}" IsCheckable="True" Click="GyroControlsMenuItem_Click" />
                                         </ContextMenu>
                                     </Button.ContextMenu>
                                 </Button>
                             </StackPanel>
 
                             <StackPanel Orientation="Horizontal" Margin="0,8,0,0">
-                                <CheckBox Content="Turn Behavior - Turns Gyro"
+                                <CheckBox Content="{lex:Loc TurnBehaviorTurnsGyro}"
                                   IsChecked="{Binding GyroControlsTurns}" ToolTip="{lex:Loc Resources:GyroTriggerBehavior}" />
-                                <CheckBox Content="Toggle" IsChecked="{Binding GyroControlsToggle}" Margin="20,0,0,0" />
+                                <CheckBox Content="{lex:Loc Toggle}" IsChecked="{Binding GyroControlsToggle}" Margin="20,0,0,0" />
                             </StackPanel>
 
                             <StackPanel Orientation="Horizontal" Margin="0,8,0,0">
-                                <Label Content="Eval Cond." />
+                                <Label Content="{lex:Loc EvalCond}" />
                                 <ComboBox SelectedIndex="{Binding GyroControlsEvalCondIndex,FallbackValue=0}" Margin="8,0,0,0">
                                     <ComboBoxItem Content="And" />
                                     <ComboBoxItem Content="Or" />
                                 </ComboBox>
                             </StackPanel>
 
-                            <GroupBox Header="360 Steering Wheel" Margin="0,16,0,0" Padding="2,4">
+                            <GroupBox Header="{lex:Loc 360SteeringWheel}" Margin="0,16,0,0" Padding="2,4">
                                 <StackPanel>
                                     <StackPanel Orientation="Horizontal" Margin="0,0,0,8">
-                                        <Label Content="Steering wheel axis" />
+                                        <Label Content="{lex:Loc SteeringWheelAxis}" />
                                         <ComboBox Width="160" Margin="8,0,0,0" SelectedIndex="{Binding SASteeringWheelEmulationAxisIndex,FallbackValue=0}">
                                             <ComboBoxItem Content="None" />
                                             <ComboBoxItem Content="Left X-Axis" />
@@ -1228,7 +1228,7 @@
                                     </StackPanel>
 
                                     <StackPanel Orientation="Horizontal" Margin="0,0,0,8">
-                                        <Label Content="Steering wheel range" />
+                                        <Label Content="{lex:Loc SteeringWheelRange}" />
                                         <ComboBox Margin="8,0,0,0" SelectedIndex="{Binding SASteeringWheelEmulationRangeIndex,FallbackValue=0}">
                                             <ComboBoxItem Content="90" />
                                             <ComboBoxItem Content="180" />
@@ -1240,12 +1240,12 @@
                                             <ComboBoxItem Content="1080" />
                                             <ComboBoxItem Content="1440" />
                                         </ComboBox>
-                                        <Button x:Name="steeringWheelEmulationCalibrateBtn" Content="Calibrate" Margin="8,0,0,0"
+                                        <Button x:Name="steeringWheelEmulationCalibrateBtn" Content="{lex:Loc Calibrate}" Margin="8,0,0,0"
                                         Click="SteeringWheelEmulationCalibrateBtn_Click" />
                                     </StackPanel>
 
                                     <StackPanel Orientation="Horizontal" Margin="0,0,0,8">
-                                        <Label Content="Fuzz:" />
+                                        <Label Content="{lex:Loc Fuzz}" />
                                         <xctk:IntegerUpDown d:IsHidden="True" Value="{Binding SASteeringWheelFuzz}"
                                                     Minimum="0" Maximum="100"
                                                     Margin="{StaticResource spaceMargin}" />
@@ -1253,18 +1253,18 @@
                                     </StackPanel>
 
                                     <StackPanel Orientation="Horizontal" Margin="0,0,0,8">
-                                        <CheckBox Content="Use Smoothing" IsChecked="{Binding SASteeringWheelUseSmoothing}" />
+                                        <CheckBox Content="{lex:Loc UseSmoothing}" IsChecked="{Binding SASteeringWheelUseSmoothing}" />
                                     </StackPanel>
 
                                     <StackPanel x:Name="euroFilterOptionsPanel" IsEnabled="{Binding SASteeringWheelUseSmoothing,FallbackValue=False}"
                                             Orientation="Horizontal" Margin="0,0,0,8">
                                         <StackPanel Orientation="Horizontal">
-                                            <Label Content="1&#x20ac; MinCutoff" />
+                                            <Label Content="{lex:Loc OneEuroMinCutoff}" />
                                             <xctk:DoubleUpDown x:Name="euroMinCutoff" d:IsHidden="True" FormatString="F5" Value="{Binding SASteeringWheelSmoothMinCutoff,FallbackValue=1.0,UpdateSourceTrigger=LostFocus}"
                                                            Minimum="0.00001" Maximum="1000.0" Increment="0.1" MinWidth="60" />
                                         </StackPanel>
                                         <StackPanel Orientation="Horizontal" Margin="30,0,0,0">
-                                            <Label Content="1&#x20ac; Beta" />
+                                            <Label Content="{lex:Loc OneEuroBeta}" />
                                             <xctk:DoubleUpDown x:Name="euroBeta" d:IsHidden="True" FormatString="F5" Value="{Binding SASteeringWheelSmoothBeta,FallbackValue=0.0,UpdateSourceTrigger=LostFocus}"
                                                            Minimum="0.0" Maximum="1.0" MinWidth="60" />
                                         </StackPanel>
@@ -1273,53 +1273,53 @@
                             </GroupBox>
 
                             <StackPanel Orientation="Horizontal" Margin="0,8,0,8">
-                                <Button x:Name="gyroCalBtn" Content="Gyro Calibration" Width="100"  Click="GyroCalibration_Click" />
+                                <Button x:Name="gyroCalBtn" Content="{lex:Loc GyroCalibration}" Width="100"  Click="GyroCalibration_Click" />
                             </StackPanel>
                         </StackPanel>
 
                         <StackPanel x:Name="gyroMousePanel" Visibility="Collapsed" Margin="{StaticResource spaceMargin}">
                             <StackPanel Orientation="Horizontal" Margin="{StaticResource spaceMargin}">
-                                <Label Content="Triggers" />
+                                <Label Content="{lex:Loc Triggers}" />
                                 <Button x:Name="gyroMouseTrigBtn" Content="{Binding GyroMouseTrigDisplay,FallbackValue=Always On}" MinWidth="160" Click="GyroMouseTrigBtn_Click" >
                                     <Button.ContextMenu>
                                         <ContextMenu>
-                                            <MenuItem Header="Cross" IsCheckable="True" Click="GyroMouseTrigMenuItem_Click" />
-                                            <MenuItem Header="Circle" IsCheckable="True" Click="GyroMouseTrigMenuItem_Click" />
-                                            <MenuItem Header="Square" IsCheckable="True" Click="GyroMouseTrigMenuItem_Click" />
-                                            <MenuItem Header="Triangle" IsCheckable="True" Click="GyroMouseTrigMenuItem_Click" />
-                                            <MenuItem Header="L1" IsCheckable="True" Click="GyroMouseTrigMenuItem_Click" />
-                                            <MenuItem Header="L2" IsCheckable="True" Click="GyroMouseTrigMenuItem_Click" />
-                                            <MenuItem Header="R1" IsCheckable="True" Click="GyroMouseTrigMenuItem_Click" />
-                                            <MenuItem Header="R2" IsCheckable="True" Click="GyroMouseTrigMenuItem_Click" />
-                                            <MenuItem Header="Up" IsCheckable="True" Click="GyroMouseTrigMenuItem_Click" />
-                                            <MenuItem Header="Down" IsCheckable="True" Click="GyroMouseTrigMenuItem_Click" />
-                                            <MenuItem Header="Left" IsCheckable="True" Click="GyroMouseTrigMenuItem_Click" />
-                                            <MenuItem Header="Right" IsCheckable="True" Click="GyroMouseTrigMenuItem_Click" />
-                                            <MenuItem Header="L3" IsCheckable="True" Click="GyroMouseTrigMenuItem_Click" />
-                                            <MenuItem Header="R3" IsCheckable="True" Click="GyroMouseTrigMenuItem_Click" />
-                                            <MenuItem Header="Finger on Touchpad" IsCheckable="True" Click="GyroMouseTrigMenuItem_Click" />
-                                            <MenuItem Header="2 Fingers on Touchpad" IsCheckable="True" Click="GyroMouseTrigMenuItem_Click" />
-                                            <MenuItem Header="Options" IsCheckable="True" Click="GyroMouseTrigMenuItem_Click" />
-                                            <MenuItem Header="Share" IsCheckable="True" Click="GyroMouseTrigMenuItem_Click" />
-                                            <MenuItem Header="PS" IsCheckable="True" Click="GyroMouseTrigMenuItem_Click" />
-                                            <MenuItem Header="Touchpad Click" IsCheckable="True" Click="GyroMouseTrigMenuItem_Click" />
-                                            <MenuItem Header="Mute" IsCheckable="True" Click="GyroMouseTrigMenuItem_Click" />
-                                            <MenuItem Header="Always On" IsCheckable="True" Click="GyroMouseTrigMenuItem_Click" />
+                                            <MenuItem Header="{lex:Loc Cross}" IsCheckable="True" Click="GyroMouseTrigMenuItem_Click" />
+                                            <MenuItem Header="{lex:Loc Circle}" IsCheckable="True" Click="GyroMouseTrigMenuItem_Click" />
+                                            <MenuItem Header="{lex:Loc Square}" IsCheckable="True" Click="GyroMouseTrigMenuItem_Click" />
+                                            <MenuItem Header="{lex:Loc Triangle}" IsCheckable="True" Click="GyroMouseTrigMenuItem_Click" />
+                                            <MenuItem Header="{lex:Loc L1}" IsCheckable="True" Click="GyroMouseTrigMenuItem_Click" />
+                                            <MenuItem Header="{lex:Loc L2}" IsCheckable="True" Click="GyroMouseTrigMenuItem_Click" />
+                                            <MenuItem Header="{lex:Loc R1}" IsCheckable="True" Click="GyroMouseTrigMenuItem_Click" />
+                                            <MenuItem Header="{lex:Loc R2}" IsCheckable="True" Click="GyroMouseTrigMenuItem_Click" />
+                                            <MenuItem Header="{lex:Loc Up}" IsCheckable="True" Click="GyroMouseTrigMenuItem_Click" />
+                                            <MenuItem Header="{lex:Loc Down}" IsCheckable="True" Click="GyroMouseTrigMenuItem_Click" />
+                                            <MenuItem Header="{lex:Loc Left}" IsCheckable="True" Click="GyroMouseTrigMenuItem_Click" />
+                                            <MenuItem Header="{lex:Loc Right}" IsCheckable="True" Click="GyroMouseTrigMenuItem_Click" />
+                                            <MenuItem Header="{lex:Loc L3}" IsCheckable="True" Click="GyroMouseTrigMenuItem_Click" />
+                                            <MenuItem Header="{lex:Loc R3}" IsCheckable="True" Click="GyroMouseTrigMenuItem_Click" />
+                                            <MenuItem Header="{lex:Loc FingerOnTouchpad}" IsCheckable="True" Click="GyroMouseTrigMenuItem_Click" />
+                                            <MenuItem Header="{lex:Loc TwoFingersOnTouchpad}" IsCheckable="True" Click="GyroMouseTrigMenuItem_Click" />
+                                            <MenuItem Header="{lex:Loc Options}" IsCheckable="True" Click="GyroMouseTrigMenuItem_Click" />
+                                            <MenuItem Header="{lex:Loc Share}" IsCheckable="True" Click="GyroMouseTrigMenuItem_Click" />
+                                            <MenuItem Header="{lex:Loc PS}" IsCheckable="True" Click="GyroMouseTrigMenuItem_Click" />
+                                            <MenuItem Header="{lex:Loc TouchpadClick}" IsCheckable="True" Click="GyroMouseTrigMenuItem_Click" />
+                                            <MenuItem Header="{lex:Loc Mute}" IsCheckable="True" Click="GyroMouseTrigMenuItem_Click" />
+                                            <MenuItem Header="{lex:Loc AlwaysOn}" IsCheckable="True" Click="GyroMouseTrigMenuItem_Click" />
                                         </ContextMenu>
                                     </Button.ContextMenu>
                                 </Button>
                             </StackPanel>
 
-                            <CheckBox Content="Turn Behavior - Turns Gyro" Margin="{StaticResource spaceMargin}"
+                            <CheckBox Content="{lex:Loc TurnBehaviorTurnsGyro}" Margin="{StaticResource spaceMargin}"
                                   IsChecked="{Binding GyroMouseTurns}" ToolTip="{lex:Loc Resources:GyroTriggerBehavior}" />
                             <StackPanel Orientation="Horizontal" Margin="{StaticResource spaceMargin}">
-                                <Label Content="Gyro Sensitivity:" />
+                                <Label Content="{lex:Loc GyroSensitivity}" />
                                 <xctk:IntegerUpDown d:IsHidden="True" MinWidth="50" Margin="8,0,0,0" Value="{Binding GyroSensitivity}"
                                                 Minimum="0" Maximum="500" />
                             </StackPanel>
 
                             <StackPanel Orientation="Horizontal" Margin="{StaticResource spaceMargin}">
-                                <Label Content="Vertical Scale:" />
+                                <Label Content="{lex:Loc VerticalScale_}" />
                                 <xctk:IntegerUpDown d:IsHidden="True" MinWidth="50" Margin="8,0,0,0" Value="{Binding GyroVertScale}"
                                                 Minimum="0" Maximum="400" Increment="10" />
                                 <Label Content="%" />
@@ -1327,7 +1327,7 @@
 
                             <StackPanel Orientation="Horizontal" Margin="{StaticResource spaceMargin}">
                                 <StackPanel>
-                                    <Label Content="Eval Cond." Margin="{StaticResource spaceMargin}" />
+                                    <Label Content="{lex:Loc EvalCond}" Margin="{StaticResource spaceMargin}" />
                                     <ComboBox SelectedIndex="{Binding GyroMouseEvalCondIndex,FallbackValue=0}">
                                         <ComboBoxItem Content="And" />
                                         <ComboBoxItem Content="Or" />
@@ -1335,7 +1335,7 @@
                                 </StackPanel>
 
                                 <StackPanel Margin="20,0,0,0">
-                                    <Label Content="X Axis" Margin="{StaticResource spaceMargin}" />
+                                    <Label Content="{lex:Loc XAxis}" Margin="{StaticResource spaceMargin}" />
                                     <ComboBox SelectedIndex="{Binding GyroMouseXAxis,FallbackValue=0}">
                                         <ComboBoxItem Content="Yaw" />
                                         <ComboBoxItem Content="Roll" />
@@ -1344,26 +1344,26 @@
                             </StackPanel>
 
                             <StackPanel Orientation="Horizontal" Margin="{StaticResource spaceMargin}">
-                                <Label Content="Invert" Padding="0"/>
-                                <CheckBox Content="X" Margin="8,0,0,0" IsChecked="{Binding GyroMouseInvertX}" />
-                                <CheckBox Content="Y" Margin="8,0,0,0" IsChecked="{Binding GyroMouseInvertY}" />
+                                <Label Content="{lex:Loc Invert}" Padding="0"/>
+                                <CheckBox Content="{lex:Loc GyroMouseInvertX}" Margin="8,0,0,0" IsChecked="{Binding GyroMouseInvertX}" />
+                                <CheckBox Content="{lex:Loc GyroMouseInvertY}" Margin="8,0,0,0" IsChecked="{Binding GyroMouseInvertY}" />
                             </StackPanel>
 
                             <StackPanel Orientation="Horizontal" Margin="{StaticResource spaceMargin}">
-                                <Label Content="Deadzone" />
+                                <Label Content="{lex:Loc Deadzone}" />
                                 <xctk:IntegerUpDown d:IsHidden="True" MinWidth="60" Margin="8,0,0,0"
                                                 Value="{Binding GyroMouseDeadZone}" Minimum="0" Maximum="1000" />
                             </StackPanel>
 
                             <StackPanel Orientation="Horizontal" Margin="{StaticResource spaceMargin}">
-                                <Label Content="Min Threshold" ContentStringFormat="{}{0}:" />
+                                <Label Content="{lex:Loc MinThreshold}" ContentStringFormat="{}{0}:" />
                                 <xctk:DoubleUpDown d:IsHidden="True" MinWidth="80" Height="20" Minimum="1.0" Maximum="40.0" Increment="1.0" FormatString="F1" Value="{Binding GyroMouseMinThreshold,FallbackValue='1.0'}" Margin="8,0,0,0" />
                             </StackPanel>
 
-                            <CheckBox Content="Toggle" IsChecked="{Binding GyroMouseToggle}" Margin="{StaticResource spaceMargin}" />
+                            <CheckBox Content="{lex:Loc Toggle}" IsChecked="{Binding GyroMouseToggle}" Margin="{StaticResource spaceMargin}" />
 
-                            <CheckBox Content="Smoothing" IsChecked="{Binding GyroMouseSmooth,FallbackValue='False'}"  Margin="{StaticResource spaceMargin}" />
-                            <GroupBox Header="Smoothing Options" IsEnabled="{Binding GyroMouseSmooth,FallbackValue='False'}" Margin="{StaticResource spaceMargin}">
+                            <CheckBox Content="{lex:Loc Smoothing}" IsChecked="{Binding GyroMouseSmooth,FallbackValue='False'}"  Margin="{StaticResource spaceMargin}" />
+                            <GroupBox Header="{lex:Loc ProfileEditor1366}" IsEnabled="{Binding GyroMouseSmooth,FallbackValue='False'}" Margin="{StaticResource spaceMargin}">
                                 <StackPanel>
                                     <ComboBox x:Name="gyroMouseSmoothMethodCombo" Margin="{StaticResource spaceMargin}" SelectedIndex="{Binding GyroMouseSmoothMethodIndex,FallbackValue='0'}">
                                         <ComboBoxItem Content="1&#x20ac; Filter" />
@@ -1372,19 +1372,19 @@
 
                                     <StackPanel x:Name="gyroMouseOneEuroPanel" Orientation="Horizontal" Margin="{StaticResource spaceMargin}" Visibility="{Binding GyroMouseOneEuroPanelVisibility,FallbackValue='Visible'}">
                                         <StackPanel Orientation="Horizontal">
-                                            <Label Content="1&#x20ac; MinCutoff" />
+                                            <Label Content="{lex:Loc OneEuroMinCutoff}" />
                                             <xctk:DoubleUpDown d:IsHidden="True" FormatString="F5" Value="{Binding GyroMouseOneEuroMinCutoff,FallbackValue=1.0,UpdateSourceTrigger=LostFocus}"
                                                            Minimum="0.00001" Maximum="100.0" Increment="0.1" MinWidth="60" />
                                         </StackPanel>
                                         <StackPanel Orientation="Horizontal" Margin="30,0,0,0">
-                                            <Label Content="1&#x20ac; Beta" />
+                                            <Label Content="{lex:Loc OneEuroBeta}" />
                                             <xctk:DoubleUpDown  d:IsHidden="True" FormatString="F5" Value="{Binding GyroMouseOneEuroBeta,FallbackValue=0.0,UpdateSourceTrigger=LostFocus}"
                                                            Minimum="0.0" Maximum="1.0" Increment="0.1" MinWidth="60" />
                                         </StackPanel>
                                     </StackPanel>
 
                                     <StackPanel x:Name="gyroMouseWeightedAvgPanel" Orientation="Horizontal" Margin="{StaticResource spaceMargin}" Visibility="{Binding GyroMouseWeightAvgPanelVisibility,FallbackValue='Collapsed'}">
-                                        <Label Content="Smooth Weight" Padding="0" />
+                                        <Label Content="{lex:Loc SmoothWeight}" Padding="0" />
                                         <xctk:DoubleUpDown d:IsHidden="True" MinWidth="60" Margin="8,0,0,0"
                                                    Value="{Binding GyroMouseSmoothWeight}" Minimum="0.0" Maximum="1.0" Increment="0.1" />
                                     </StackPanel>
@@ -1392,92 +1392,92 @@
                             </GroupBox>
 
                             <StackPanel Orientation="Horizontal" Margin="0,8,0,8">
-                                <Button x:Name="gyroCalBtn4" Content="Gyro Calibration" Width="100"  Click="GyroCalibration_Click" />
+                                <Button x:Name="gyroCalBtn4" Content="{lex:Loc GyroCalibration}" Width="100"  Click="GyroCalibration_Click" />
                             </StackPanel>
                         </StackPanel>
 
                         <StackPanel x:Name="gyroMouseJoystickPanel" Visibility="Collapsed">
                             <StackPanel Orientation="Horizontal" Margin="{StaticResource spaceMargin}">
-                                <Label Content="Triggers" />
+                                <Label Content="{lex:Loc Triggers}" />
                                 <Button x:Name="gyroMouseStickTrigBtn" Content="{Binding GyroMouseStickTrigDisplay,FallbackValue='Always On'}" MinWidth="160"
                                     Margin="8,0,0,0" Click="GyroMouseStickTrigBtn_Click" >
                                     <Button.ContextMenu>
                                         <ContextMenu>
-                                            <MenuItem Header="Cross" IsCheckable="True" Click="GyroMouseStickTrigMenuItem_Click" />
-                                            <MenuItem Header="Circle" IsCheckable="True" Click="GyroMouseStickTrigMenuItem_Click" />
-                                            <MenuItem Header="Square" IsCheckable="True" Click="GyroMouseStickTrigMenuItem_Click" />
-                                            <MenuItem Header="Triangle" IsCheckable="True" Click="GyroMouseStickTrigMenuItem_Click" />
-                                            <MenuItem Header="L1" IsCheckable="True" Click="GyroMouseStickTrigMenuItem_Click" />
-                                            <MenuItem Header="L2" IsCheckable="True" Click="GyroMouseStickTrigMenuItem_Click" />
-                                            <MenuItem Header="R1" IsCheckable="True" Click="GyroMouseStickTrigMenuItem_Click" />
-                                            <MenuItem Header="R2" IsCheckable="True" Click="GyroMouseStickTrigMenuItem_Click" />
-                                            <MenuItem Header="Up" IsCheckable="True" Click="GyroMouseStickTrigMenuItem_Click" />
-                                            <MenuItem Header="Down" IsCheckable="True" Click="GyroMouseStickTrigMenuItem_Click" />
-                                            <MenuItem Header="Left" IsCheckable="True" Click="GyroMouseStickTrigMenuItem_Click" />
-                                            <MenuItem Header="Right" IsCheckable="True" Click="GyroMouseStickTrigMenuItem_Click" />
-                                            <MenuItem Header="L3" IsCheckable="True" Click="GyroMouseStickTrigMenuItem_Click" />
-                                            <MenuItem Header="R3" IsCheckable="True" Click="GyroMouseStickTrigMenuItem_Click" />
-                                            <MenuItem Header="Finger on Touchpad" IsCheckable="True" Click="GyroMouseStickTrigMenuItem_Click" />
-                                            <MenuItem Header="2 Fingers on Touchpad" IsCheckable="True" Click="GyroMouseStickTrigMenuItem_Click" />
-                                            <MenuItem Header="Options" IsCheckable="True" Click="GyroMouseStickTrigMenuItem_Click" />
-                                            <MenuItem Header="Share" IsCheckable="True" Click="GyroMouseStickTrigMenuItem_Click" />
-                                            <MenuItem Header="PS" IsCheckable="True" Click="GyroMouseStickTrigMenuItem_Click" />
-                                            <MenuItem Header="Touchpad Click" IsCheckable="True" Click="GyroMouseStickTrigMenuItem_Click" />
-                                            <MenuItem Header="Mute" IsCheckable="True" Click="GyroMouseStickTrigMenuItem_Click" />
-                                            <MenuItem Header="Always On" IsCheckable="True" Click="GyroMouseStickTrigMenuItem_Click" />
+                                            <MenuItem Header="{lex:Loc Cross}" IsCheckable="True" Click="GyroMouseStickTrigMenuItem_Click" />
+                                            <MenuItem Header="{lex:Loc Circle}" IsCheckable="True" Click="GyroMouseStickTrigMenuItem_Click" />
+                                            <MenuItem Header="{lex:Loc Square}" IsCheckable="True" Click="GyroMouseStickTrigMenuItem_Click" />
+                                            <MenuItem Header="{lex:Loc Triangle}" IsCheckable="True" Click="GyroMouseStickTrigMenuItem_Click" />
+                                            <MenuItem Header="{lex:Loc L1}" IsCheckable="True" Click="GyroMouseStickTrigMenuItem_Click" />
+                                            <MenuItem Header="{lex:Loc L2}" IsCheckable="True" Click="GyroMouseStickTrigMenuItem_Click" />
+                                            <MenuItem Header="{lex:Loc R1}" IsCheckable="True" Click="GyroMouseStickTrigMenuItem_Click" />
+                                            <MenuItem Header="{lex:Loc R2}" IsCheckable="True" Click="GyroMouseStickTrigMenuItem_Click" />
+                                            <MenuItem Header="{lex:Loc Up}" IsCheckable="True" Click="GyroMouseStickTrigMenuItem_Click" />
+                                            <MenuItem Header="{lex:Loc Down}" IsCheckable="True" Click="GyroMouseStickTrigMenuItem_Click" />
+                                            <MenuItem Header="{lex:Loc Left}" IsCheckable="True" Click="GyroMouseStickTrigMenuItem_Click" />
+                                            <MenuItem Header="{lex:Loc Right}" IsCheckable="True" Click="GyroMouseStickTrigMenuItem_Click" />
+                                            <MenuItem Header="{lex:Loc L3}" IsCheckable="True" Click="GyroMouseStickTrigMenuItem_Click" />
+                                            <MenuItem Header="{lex:Loc R3}" IsCheckable="True" Click="GyroMouseStickTrigMenuItem_Click" />
+                                            <MenuItem Header="{lex:Loc FingerOnTouchpad}" IsCheckable="True" Click="GyroMouseStickTrigMenuItem_Click" />
+                                            <MenuItem Header="{lex:Loc TwoFingersOnTouchpad}" IsCheckable="True" Click="GyroMouseStickTrigMenuItem_Click" />
+                                            <MenuItem Header="{lex:Loc Options}" IsCheckable="True" Click="GyroMouseStickTrigMenuItem_Click" />
+                                            <MenuItem Header="{lex:Loc Share}" IsCheckable="True" Click="GyroMouseStickTrigMenuItem_Click" />
+                                            <MenuItem Header="{lex:Loc PS}" IsCheckable="True" Click="GyroMouseStickTrigMenuItem_Click" />
+                                            <MenuItem Header="{lex:Loc TouchpadClick}" IsCheckable="True" Click="GyroMouseStickTrigMenuItem_Click" />
+                                            <MenuItem Header="{lex:Loc Mute}" IsCheckable="True" Click="GyroMouseStickTrigMenuItem_Click" />
+                                            <MenuItem Header="{lex:Loc AlwaysOn}" IsCheckable="True" Click="GyroMouseStickTrigMenuItem_Click" />
                                         </ContextMenu>
                                     </Button.ContextMenu>
                                 </Button>
                             </StackPanel>
 
                             <StackPanel Orientation="Horizontal" Margin="{StaticResource spaceMargin}">
-                                <CheckBox Content="Turn Behavior - Turns Gyro" IsChecked="{Binding GyroMouseStickTurns}"
+                                <CheckBox Content="{lex:Loc TurnBehaviorTurnsGyro}" IsChecked="{Binding GyroMouseStickTurns}"
                                       ToolTip="{lex:Loc Resources:GyroTriggerBehavior}" />
-                                <CheckBox Content="Toggle" Margin="8,0,0,0" IsChecked="{Binding GyroMouseStickToggle}" />
+                                <CheckBox Content="{lex:Loc Toggle}" Margin="8,0,0,0" IsChecked="{Binding GyroMouseStickToggle}" />
                             </StackPanel>
 
                             <StackPanel Orientation="Horizontal" Margin="{StaticResource spaceMargin}">
-                                <Label Content="Dead Zone" />
+                                <Label Content="{lex:Loc Dead_Zone}" />
                                 <xctk:IntegerUpDown d:IsHidden="True" Margin="8,0,0,0" Value="{Binding GyroMouseStickDeadZone}" MinWidth="60" />
-                                <Label Content="Max Zone" Margin="8,0,0,0" />
+                                <Label Content="{lex:Loc MaxZone}" Margin="8,0,0,0" />
                                 <xctk:IntegerUpDown d:IsHidden="True" Margin="8,0,0,0" Value="{Binding GyroMouseStickMaxZone}" MinWidth="60"
                                                 Minimum="1" />
                             </StackPanel>
 
                             <StackPanel Orientation="Horizontal" Height="30" Margin="{StaticResource spaceMargin}">
-                                <Label Content="Minimum X" />
+                                <Label Content="{lex:Loc MinimumX}" />
                                 <xctk:DoubleUpDown d:IsHidden="True" Margin="8,0,0,0" Value="{Binding GyroMouseStickAntiDeadX}" MinWidth="60"
                                                FormatString="F0" Minimum="0.0" Maximum="100.0" Increment="10.0" />
                                 <Label Content="%" />
 
-                                <Label Content="Minimum Y" Margin="8,0,0,0" />
+                                <Label Content="{lex:Loc MinimumY}" Margin="8,0,0,0" />
                                 <xctk:DoubleUpDown d:IsHidden="True" Margin="8,0,0,0" Value="{Binding GyroMouseStickAntiDeadY}" MinWidth="60"
                                                FormatString="F0" Minimum="0.0" Maximum="100.0" Increment="10.0" />
                                 <Label Content="%" />
                             </StackPanel>
 
                             <StackPanel Orientation="Horizontal" Margin="{StaticResource spaceMargin}">
-                                <Label Content="Vertical Scale" />
+                                <Label Content="{lex:Loc VerticalScale}" />
                                 <xctk:IntegerUpDown d:IsHidden="True" Margin="8,0,0,0" Value="{Binding GyroMouseStickVertScale}" MinWidth="60"
                                                 Minimum="0" Maximum="400" Increment="10" />
                                 <Label Content="%" />
                             </StackPanel>
 
                             <StackPanel Orientation="Horizontal" Margin="{StaticResource spaceMargin}">
-                                <CheckBox Content="Max Output" IsChecked="{Binding GyroMouseStickMaxOutputEnabled,FallbackValue=False}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                <CheckBox Content="{lex:Loc MaxOutput}" IsChecked="{Binding GyroMouseStickMaxOutputEnabled,FallbackValue=False}" HorizontalAlignment="Center" VerticalAlignment="Center" />
                                 <xctk:DoubleUpDown d:IsHidden="True" Margin="8,0,0,0" Value="{Binding GyroMouseStickMaxOutput}" IsEnabled="{Binding GyroMouseStickMaxOutputEnabled,FallbackValue=False}"
                                                FormatString="F0" MinWidth="60" Maximum="100.0" Minimum="0.0" Increment="10.0" />
                                 <Label Content="%" />
                             </StackPanel>
 
                             <StackPanel Orientation="Horizontal" Margin="{StaticResource spaceMargin}">
-                                <Label Content="Eval Cond." />
+                                <Label Content="{lex:Loc EvalCond}" />
                                 <ComboBox SelectedIndex="{Binding GyroMouseStickEvalCondIndex,FallbackValue=0}" Margin="8,0,0,0">
                                     <ComboBoxItem Content="And" />
                                     <ComboBoxItem Content="Or" />
                                 </ComboBox>
 
-                                <Label Content="X-Axis" Margin="20,0,0,0" />
+                                <Label Content="{lex:Loc XAxis}" Margin="20,0,0,0" />
                                 <ComboBox SelectedIndex="{Binding GyroMouseStickXAxis,FallbackValue=0}" Margin="8,0,0,0">
                                     <ComboBoxItem Content="Yaw" />
                                     <ComboBoxItem Content="Roll" />
@@ -1485,12 +1485,12 @@
                             </StackPanel>
 
                             <StackPanel Orientation="Horizontal" Margin="{StaticResource spaceMargin}">
-                                <CheckBox Content="Invert X" IsChecked="{Binding GyroMouseStickInvertX}"/>
-                                <CheckBox Content="Invert Y" Margin="10,0,0,0" IsChecked="{Binding GyroMouseStickInvertY}" />
+                                <CheckBox Content="{lex:Loc InvertX}" IsChecked="{Binding GyroMouseStickInvertX}"/>
+                                <CheckBox Content="{lex:Loc InvertY}" Margin="10,0,0,0" IsChecked="{Binding GyroMouseStickInvertY}" />
                             </StackPanel>
 
-                            <CheckBox Content="Smoothing" IsChecked="{Binding GyroMouseStickSmooth}" Margin="{StaticResource spaceMargin}" />
-                            <GroupBox Header="Smoothing Options" IsEnabled="{Binding GyroMouseStickSmooth,FallbackValue='False'}" Margin="{StaticResource spaceMargin}">
+                            <CheckBox Content="{lex:Loc Smoothing}" IsChecked="{Binding GyroMouseStickSmooth}" Margin="{StaticResource spaceMargin}" />
+                            <GroupBox Header="{lex:Loc ProfileEditor1493}" IsEnabled="{Binding GyroMouseStickSmooth,FallbackValue='False'}" Margin="{StaticResource spaceMargin}">
                                 <StackPanel>
                                     <ComboBox x:Name="gyroMouseStickSmoothMethodCombo" Margin="{StaticResource spaceMargin}" SelectedIndex="{Binding GyroMouseStickSmoothMethodIndex,FallbackValue='0'}">
                                         <ComboBoxItem Content="1&#x20ac; Filter" />
@@ -1499,19 +1499,19 @@
 
                                     <StackPanel x:Name="gyroMouseStickOneEuroPanel" Orientation="Horizontal" Margin="{StaticResource spaceMargin}" Visibility="{Binding GyroMouseStickOneEuroPanelVisibility,FallbackValue='Visible'}">
                                         <StackPanel Orientation="Horizontal">
-                                            <Label Content="1&#x20ac; MinCutoff" />
+                                            <Label Content="{lex:Loc OneEuroMinCutoff}" />
                                             <xctk:DoubleUpDown d:IsHidden="True" FormatString="F5" Value="{Binding GyroMouseStickOneEuroMinCutoff,FallbackValue=1.0,UpdateSourceTrigger=LostFocus}"
                                                            Minimum="0.00001" Maximum="100.0" Increment="0.1" MinWidth="60" />
                                         </StackPanel>
                                         <StackPanel Orientation="Horizontal" Margin="30,0,0,0">
-                                            <Label Content="1&#x20ac; Beta" />
+                                            <Label Content="{lex:Loc OneEuroBeta}" />
                                             <xctk:DoubleUpDown d:IsHidden="True" FormatString="F5" Value="{Binding GyroMouseStickOneEuroBeta,FallbackValue=0.0,UpdateSourceTrigger=LostFocus}"
                                                            Minimum="0.0" Maximum="1.0" Increment="0.1" MinWidth="60" />
                                         </StackPanel>
                                     </StackPanel>
 
                                     <StackPanel x:Name="gyroMouseStickWeightedAvgPanel" Orientation="Horizontal" Margin="{StaticResource spaceMargin}" Visibility="{Binding GyroMouseStickWeightAvgPanelVisibility,FallbackValue='Collapsed'}">
-                                        <Label Content="Weight" Padding="0" Margin="20,0,0,0" />
+                                        <Label Content="{lex:Loc Weight}" Padding="0" Margin="20,0,0,0" />
                                         <xctk:DoubleUpDown d:IsHidden="True" Margin="8,0,0,0" FormatString="F2" Value="{Binding GyroMouseStickSmoothWeight}"
                                                Minimum="0.0" Maximum="1.0" Increment="0.1" MinWidth="60" IsEnabled="{Binding GyroMouseStickSmooth}" />
                                     </StackPanel>
@@ -1520,69 +1520,69 @@
                             </GroupBox>
 
                             <StackPanel Orientation="Horizontal" Margin="0,8,0,8">
-                                <Button x:Name="gyroCalBtn1" Content="Gyro Calibration" Width="100"  Click="GyroCalibration_Click" />
+                                <Button x:Name="gyroCalBtn1" Content="{lex:Loc GyroCalibration}" Width="100"  Click="GyroCalibration_Click" />
                             </StackPanel>
                         </StackPanel>
 
                         <StackPanel x:Name="gyroDirSwipePanel" Visibility="Collapsed">
                             <StackPanel Orientation="Horizontal" Margin="0,0,0,8">
-                                <Button x:Name="gyroSwipeUpBtn" Content="Swipe Up" Width="100" Tag="{Binding GyroSwipeUp, Source={StaticResource controlIndexCheck}}" Click="GyroSwipeControlsBtn_Click" />
+                                <Button x:Name="gyroSwipeUpBtn" Content="{lex:Loc SwipeUp}" Width="100" Tag="{Binding GyroSwipeUp, Source={StaticResource controlIndexCheck}}" Click="GyroSwipeControlsBtn_Click" />
                                 <Label x:Name="gyroSwipeUpLb" Content="{Binding MappingName,FallbackValue=Unassigned}" />
                             </StackPanel>
 
                             <StackPanel Orientation="Horizontal" Margin="0,0,0,8">
-                                <Button x:Name="gyroSwipeDownBtn" Content="Swipe Down" Width="100" Tag="{Binding GyroSwipeDown, Source={StaticResource controlIndexCheck}}" Click="GyroSwipeControlsBtn_Click" />
+                                <Button x:Name="gyroSwipeDownBtn" Content="{lex:Loc SwipeDown}" Width="100" Tag="{Binding GyroSwipeDown, Source={StaticResource controlIndexCheck}}" Click="GyroSwipeControlsBtn_Click" />
                                 <Label x:Name="gyroSwipeDownLb" Content="{Binding MappingName,FallbackValue=Unassigned}" />
                             </StackPanel>
 
                             <StackPanel Orientation="Horizontal" Margin="0,0,0,8">
-                                <Button x:Name="gyroSwipeLeftBtn" Content="Swipe Left" Width="100" Tag="{Binding GyroSwipeLeft, Source={StaticResource controlIndexCheck}}" Click="GyroSwipeControlsBtn_Click" />
+                                <Button x:Name="gyroSwipeLeftBtn" Content="{lex:Loc SwipeLeft}" Width="100" Tag="{Binding GyroSwipeLeft, Source={StaticResource controlIndexCheck}}" Click="GyroSwipeControlsBtn_Click" />
                                 <Label x:Name="gyroSwipeLeftLb" Content="{Binding MappingName,FallbackValue=Unassigned}" />
                             </StackPanel>
 
                             <StackPanel Orientation="Horizontal" Margin="0,0,0,8">
-                                <Button x:Name="gyroSwipeRightBtn" Content="Swipe Right" Width="100" Tag="{Binding GyroSwipeRight, Source={StaticResource controlIndexCheck}}" Click="GyroSwipeControlsBtn_Click" />
+                                <Button x:Name="gyroSwipeRightBtn" Content="{lex:Loc SwipeRight}" Width="100" Tag="{Binding GyroSwipeRight, Source={StaticResource controlIndexCheck}}" Click="GyroSwipeControlsBtn_Click" />
                                 <Label x:Name="gyroSwipeRightLb" Content="{Binding MappingName,FallbackValue=Unassigned}" />
                             </StackPanel>
 
                             <StackPanel Orientation="Horizontal" Margin="0,8,0,0">
-                                <Label Content="Triggers" />
+                                <Label Content="{lex:Loc Triggers}" />
                                 <Button x:Name="gyroSwipeTrigBtn" Content="{Binding GyroSwipeTrigDisplay,FallbackValue=Always On}" MinWidth="160" Click="GyroSwipeTrigBtn_Click" >
                                     <Button.ContextMenu>
                                         <ContextMenu>
-                                            <MenuItem Header="Cross" IsCheckable="True" Click="GyroSwipeTrigMenuItem_Click" />
-                                            <MenuItem Header="Circle" IsCheckable="True" Click="GyroSwipeTrigMenuItem_Click" />
-                                            <MenuItem Header="Square" IsCheckable="True" Click="GyroSwipeTrigMenuItem_Click" />
-                                            <MenuItem Header="Triangle" IsCheckable="True" Click="GyroSwipeTrigMenuItem_Click" />
-                                            <MenuItem Header="L1" IsCheckable="True" Click="GyroSwipeTrigMenuItem_Click" />
-                                            <MenuItem Header="L2" IsCheckable="True" Click="GyroSwipeTrigMenuItem_Click" />
-                                            <MenuItem Header="R1" IsCheckable="True" Click="GyroSwipeTrigMenuItem_Click" />
-                                            <MenuItem Header="R2" IsCheckable="True" Click="GyroSwipeTrigMenuItem_Click" />
-                                            <MenuItem Header="Up" IsCheckable="True" Click="GyroSwipeTrigMenuItem_Click" />
-                                            <MenuItem Header="Down" IsCheckable="True" Click="GyroSwipeTrigMenuItem_Click" />
-                                            <MenuItem Header="Left" IsCheckable="True" Click="GyroSwipeTrigMenuItem_Click" />
-                                            <MenuItem Header="Right" IsCheckable="True" Click="GyroSwipeTrigMenuItem_Click" />
-                                            <MenuItem Header="L3" IsCheckable="True" Click="GyroSwipeTrigMenuItem_Click" />
-                                            <MenuItem Header="R3" IsCheckable="True" Click="GyroSwipeTrigMenuItem_Click" />
-                                            <MenuItem Header="Finger on Touchpad" IsCheckable="True" Click="GyroSwipeTrigMenuItem_Click" />
-                                            <MenuItem Header="2 Fingers on Touchpad" IsCheckable="True" Click="GyroSwipeTrigMenuItem_Click" />
-                                            <MenuItem Header="Options" IsCheckable="True" Click="GyroSwipeTrigMenuItem_Click" />
-                                            <MenuItem Header="Share" IsCheckable="True" Click="GyroSwipeTrigMenuItem_Click" />
-                                            <MenuItem Header="PS" IsCheckable="True" Click="GyroSwipeTrigMenuItem_Click" />
-                                            <MenuItem Header="Touchpad Click" IsCheckable="True" Click="GyroSwipeTrigMenuItem_Click" />
-                                            <MenuItem Header="Mute" IsCheckable="True" Click="GyroSwipeTrigMenuItem_Click" />
-                                            <MenuItem Header="Always On" IsCheckable="True" Click="GyroSwipeTrigMenuItem_Click" />
+                                            <MenuItem Header="{lex:Loc Cross}" IsCheckable="True" Click="GyroSwipeTrigMenuItem_Click" />
+                                            <MenuItem Header="{lex:Loc Circle}" IsCheckable="True" Click="GyroSwipeTrigMenuItem_Click" />
+                                            <MenuItem Header="{lex:Loc Square}" IsCheckable="True" Click="GyroSwipeTrigMenuItem_Click" />
+                                            <MenuItem Header="{lex:Loc Triangle}" IsCheckable="True" Click="GyroSwipeTrigMenuItem_Click" />
+                                            <MenuItem Header="{lex:Loc L1}" IsCheckable="True" Click="GyroSwipeTrigMenuItem_Click" />
+                                            <MenuItem Header="{lex:Loc L2}" IsCheckable="True" Click="GyroSwipeTrigMenuItem_Click" />
+                                            <MenuItem Header="{lex:Loc R1}" IsCheckable="True" Click="GyroSwipeTrigMenuItem_Click" />
+                                            <MenuItem Header="{lex:Loc R2}" IsCheckable="True" Click="GyroSwipeTrigMenuItem_Click" />
+                                            <MenuItem Header="{lex:Loc Up}" IsCheckable="True" Click="GyroSwipeTrigMenuItem_Click" />
+                                            <MenuItem Header="{lex:Loc Down}" IsCheckable="True" Click="GyroSwipeTrigMenuItem_Click" />
+                                            <MenuItem Header="{lex:Loc Left}" IsCheckable="True" Click="GyroSwipeTrigMenuItem_Click" />
+                                            <MenuItem Header="{lex:Loc Right}" IsCheckable="True" Click="GyroSwipeTrigMenuItem_Click" />
+                                            <MenuItem Header="{lex:Loc L3}" IsCheckable="True" Click="GyroSwipeTrigMenuItem_Click" />
+                                            <MenuItem Header="{lex:Loc R3}" IsCheckable="True" Click="GyroSwipeTrigMenuItem_Click" />
+                                            <MenuItem Header="{lex:Loc FingerOnTouchpad}" IsCheckable="True" Click="GyroSwipeTrigMenuItem_Click" />
+                                            <MenuItem Header="{lex:Loc TwoFingersOnTouchpad}" IsCheckable="True" Click="GyroSwipeTrigMenuItem_Click" />
+                                            <MenuItem Header="{lex:Loc Options}" IsCheckable="True" Click="GyroSwipeTrigMenuItem_Click" />
+                                            <MenuItem Header="{lex:Loc Share}" IsCheckable="True" Click="GyroSwipeTrigMenuItem_Click" />
+                                            <MenuItem Header="{lex:Loc PS}" IsCheckable="True" Click="GyroSwipeTrigMenuItem_Click" />
+                                            <MenuItem Header="{lex:Loc TouchpadClick}" IsCheckable="True" Click="GyroSwipeTrigMenuItem_Click" />
+                                            <MenuItem Header="{lex:Loc Mute}" IsCheckable="True" Click="GyroSwipeTrigMenuItem_Click" />
+                                            <MenuItem Header="{lex:Loc AlwaysOn}" IsCheckable="True" Click="GyroSwipeTrigMenuItem_Click" />
                                         </ContextMenu>
                                     </Button.ContextMenu>
                                 </Button>
                             </StackPanel>
 
-                            <CheckBox Content="Turn Behavior - Turns Gyro" Margin="0,8,0,0"
+                            <CheckBox Content="{lex:Loc TurnBehaviorTurnsGyro}" Margin="0,8,0,0"
                                   IsChecked="{Binding GyroSwipeTurns}" ToolTip="{lex:Loc Resources:GyroTriggerBehavior}" />
 
                             <StackPanel Orientation="Horizontal" Margin="{StaticResource spaceMargin}">
                                 <StackPanel>
-                                    <Label Content="Eval Cond." Margin="{StaticResource spaceMargin}" />
+                                    <Label Content="{lex:Loc EvalCond}" Margin="{StaticResource spaceMargin}" />
                                     <ComboBox SelectedIndex="{Binding GyroSwipeEvalCondIndex,FallbackValue=0}">
                                         <ComboBoxItem Content="And" />
                                         <ComboBoxItem Content="Or" />
@@ -1590,7 +1590,7 @@
                                 </StackPanel>
 
                                 <StackPanel Margin="20,0,0,0">
-                                    <Label Content="X Axis" Margin="{StaticResource spaceMargin}" />
+                                    <Label Content="{lex:Loc XAxis}" Margin="{StaticResource spaceMargin}" />
                                     <ComboBox SelectedIndex="{Binding GyroSwipeXAxis,FallbackValue=0}">
                                         <ComboBoxItem Content="Yaw" />
                                         <ComboBoxItem Content="Roll" />
@@ -1599,41 +1599,41 @@
                             </StackPanel>
 
                             <StackPanel Orientation="Horizontal" Margin="{StaticResource spaceMargin}">
-                                <Label Content="Deadzone X" />
+                                <Label Content="{lex:Loc DeadzoneX}" />
                                 <xctk:IntegerUpDown d:IsHidden="True" MinWidth="60" Margin="8,0,0,0"
                                                 Value="{Binding GyroSwipeDeadZoneX}" Minimum="0" Maximum="2000" />
-                                <Label Content="deg/sec." />
+                                <Label Content="{lex:Loc DegPerSec}" />
                             </StackPanel>
 
                             <StackPanel Orientation="Horizontal" Margin="{StaticResource spaceMargin}">
-                                <Label Content="Deadzone Y" />
+                                <Label Content="{lex:Loc DeadzoneY}" />
                                 <xctk:IntegerUpDown d:IsHidden="True" MinWidth="60" Margin="8,0,0,0"
                                                 Value="{Binding GyroSwipeDeadZoneY}" Minimum="0" Maximum="2000" />
-                                <Label Content="deg/sec." />
+                                <Label Content="{lex:Loc DegPerSec}" />
                             </StackPanel>
 
                             <StackPanel Orientation="Horizontal" Margin="0,0,0,8">
-                                <Label Content="Delay Time" ContentStringFormat="{}{0}:" />
+                                <Label Content="{lex:Loc DelayTime}" ContentStringFormat="{}{0}:" />
                                 <xctk:IntegerUpDown d:IsHidden="True" MinWidth="60" Margin="8,0,0,0"
                                                 Value="{Binding GyroSwipeDelayTime}" Minimum="0" Maximum="5000" Increment="10" />
-                                <Label Content="ms" />
+                                <Label Content="{lex:Loc Ms}" />
                             </StackPanel>
 
                             <StackPanel Orientation="Horizontal" Margin="0,8,0,8">
-                                <Button x:Name="gyroCalBtn2" Content="Gyro Calibration" Width="100"  Click="GyroCalibration_Click" />
+                                <Button x:Name="gyroCalBtn2" Content="{lex:Loc GyroCalibration}" Width="100"  Click="GyroCalibration_Click" />
                             </StackPanel>
                         </StackPanel>
 
                         <StackPanel x:Name="passthruPanel" Visibility="Collapsed">
                             <StackPanel Orientation="Horizontal" Margin="0,8,0,8">
-                                <Button x:Name="gyroCalBtn3" Content="Gyro Calibration" Width="100"  Click="GyroCalibration_Click" />
+                                <Button x:Name="gyroCalBtn3" Content="{lex:Loc GyroCalibration}" Width="100"  Click="GyroCalibration_Click" />
                             </StackPanel>
                         </StackPanel>
                     </StackPanel>
                 </ScrollViewer>
             </TabItem>
 
-            <TabItem Header="Other">
+            <TabItem Header="{lex:Loc Other}">
                 <StackPanel>
                     <GroupBox Header="{lex:Loc Rumble}" MinHeight="50" Margin="4,4,4,0" Padding="0,4,0,4">
                         <UniformGrid Rows="1" Columns="3">
@@ -1651,16 +1651,16 @@
                                 </DockPanel>
                             </UniformGrid>
 
-                            <Button x:Name="heavyRumbleTestBtn" Content="Test Heavy" Margin="10,0,0,0" Click="HeavyRumbleTestBtn_Click" />
-                            <Button x:Name="lightRumbleTestBtn" Content="Test Light" Margin="10,0,0,0" Click="LightRumbleTestBtn_Click" />
+                            <Button x:Name="heavyRumbleTestBtn" Content="{lex:Loc TestHeavy}" Margin="10,0,0,0" Click="HeavyRumbleTestBtn_Click" />
+                            <Button x:Name="lightRumbleTestBtn" Content="{lex:Loc TestLight}" Margin="10,0,0,0" Click="LightRumbleTestBtn_Click" />
                         </UniformGrid>
                     </GroupBox>
                     <StackPanel Orientation="Horizontal" Margin="0,8,0,0">
-                        <Label Content="Use Controller" ToolTip="{lex:Loc Resources:UseControllerForMapping}" />
+                        <Label Content="{lex:Loc UseController}" ToolTip="{lex:Loc Resources:UseControllerForMapping}" />
                         <xctk:IntegerUpDown x:Name="useControllerUD" d:IsHidden="True" Width="40" Margin="8,0,0,0"
                                             Value="0" Minimum="0" Maximum="4" IsEnabled="False"
                                             ToolTip="{lex:Loc Resources:UseControllerForMapping}" />
-                        <CheckBox x:Name="useControllerReadoutCk" FlowDirection="RightToLeft" Content="for readout" VerticalAlignment="Center"
+                        <CheckBox x:Name="useControllerReadoutCk" FlowDirection="RightToLeft" Content="{lex:Loc ForReadout}" VerticalAlignment="Center"
                                   Margin="8,0,0,0" IsChecked="{Binding UseControllerReadout}"
                                   ToolTip="{lex:Loc Resources:UseControllerForMapping}" Click="UseControllerReadoutCk_Click">
                             <CheckBox.Resources>
@@ -1671,7 +1671,7 @@
                         </CheckBox>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Height="40" Margin="0,4,0,0">
-                        <Label Content="Mouse Sensitivity" VerticalAlignment="Center" />
+                        <Label Content="{lex:Loc MouseSensitivity}" VerticalAlignment="Center" />
                         <xctk:IntegerUpDown d:IsHidden="True" MinWidth="50" Height="20"
                                             Value="{Binding ButtonMouseSensitivity,FallbackValue=25}"
                                             Minimum="0" Maximum="255" Increment="1" Margin="10,0,0,0" />
@@ -1679,26 +1679,26 @@
                                    MinWidth="50" VerticalAlignment="Center"  Margin="10,0,0,0" />
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Height="40">
-                        <Label Content="Mouse Vertical Scale" ContentStringFormat="{}{0}:" VerticalAlignment="Center" />
+                        <Label Content="{lex:Loc MouseVerticalScale}" ContentStringFormat="{}{0}:" VerticalAlignment="Center" />
                         <xctk:IntegerUpDown d:IsHidden="True" MinWidth="50" Height="20"
                             Value="{Binding ButtonMouseVerticalScale,FallbackValue='100'}"
                             Minimum="0" Maximum="500" Increment="10" Margin="10,0,0,0" />
                         <Label Content="%" VerticalContentAlignment="Center" Margin="4,0,0,0" />
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
-                        <Label Content="Mouse Offset" VerticalAlignment="Center" />
+                        <Label Content="{lex:Loc MouseOffset}" VerticalAlignment="Center" />
                         <xctk:DoubleUpDown d:IsHidden="True" MinWidth="50" FormatString="F3" DefaultValue="0" Minimum="0" Maximum="100"
                                            Value="{Binding ButtonMouseOffset,FallbackValue=0,UpdateSourceTrigger=LostFocus}" />
                         <Label Content="%"/>
                         <TextBlock Text="{Binding MouseOffsetSpeed,Mode=OneWay,StringFormat='\{0:0.00} pps'}"
                                    MinWidth="50" VerticalAlignment="Center" Margin="10,0,0,0" />
                     </StackPanel>
-                    <CheckBox Content="Mouse Acceleration" IsChecked="{Binding MouseAcceleration}" Margin="0,6,0,0" />
-                    <CheckBox Content="Enable Touchpad Toggle" IsChecked="{Binding EnableTouchpadToggle}" Margin="0,6,0,0"
+                    <CheckBox Content="{lex:Loc MouseAcceleration}" IsChecked="{Binding MouseAcceleration}" Margin="0,6,0,0" />
+                    <CheckBox Content="{lex:Loc EnableTouchpadToggle}" IsChecked="{Binding EnableTouchpadToggle}" Margin="0,6,0,0"
                               ToolTip="{lex:Loc Resources:EnableTouchToggle}" />
                     <CheckBox Content="{lex:Loc EnableOutputDataToDS4}" IsChecked="{Binding EnableOutputDataToDS4}" Margin="0,6,0,0" ToolTip="{lex:Loc EnableOutputDataToDS4Tip}" />
                     <StackPanel Orientation="Horizontal" Margin="0,6,0,0">
-                        <CheckBox x:Name="launchProgCk" Content="Launch program with profile" IsChecked="{Binding LaunchProgramExists}" IsEnabled="{Binding LaunchProgramExists}" />
+                        <CheckBox x:Name="launchProgCk" Content="{lex:Loc LaunchProgramWithProfile}" IsChecked="{Binding LaunchProgramExists}" IsEnabled="{Binding LaunchProgramExists}" />
                         <Button x:Name="launchProgBrowseBtn" Click="LaunchProgBrowseBtn_Click" Width="80" Height="30" Margin="20,0,0,0">
                             <Button.Content>
                                 <PriorityBinding>
@@ -1713,16 +1713,16 @@
                             </Button.Background>
                         </Button>
                     </StackPanel>
-                    <CheckBox Content="Use DInput only" IsChecked="{Binding DInputOnly}"
+                    <CheckBox Content="{lex:Loc UseDInputOnly}" IsChecked="{Binding DInputOnly}"
                               ToolTip="{lex:Loc Resources:DinputOnly}" Margin="0,6,0,0" />
                     <StackPanel Orientation="Horizontal" Height="30" Margin="0,6,0,0">
-                        <CheckBox Content="Idle Disconnect" VerticalAlignment="Center" IsChecked="{Binding IdleDisconnectExists}" />
+                        <CheckBox Content="{lex:Loc IdleDisconnect}" VerticalAlignment="Center" IsChecked="{Binding IdleDisconnectExists}" />
                         <xctk:IntegerUpDown x:Name="idleDisconnectUD" d:IsHidden="True" Value="{Binding IdleDisconnect,FallbackValue=5}"
                                             IsEnabled="{Binding IdleDisconnectExists}" MinWidth="50" Height="20" Minimum="0" Maximum="60" Margin="10,0,0,0" />
-                        <Label Content="mins" />
+                        <Label Content="{lex:Loc Mins}" />
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="0,6,0,0">
-                        <Label Content="BT Poll Rate" ToolTip="{lex:Loc Resources:BtPollRate}" />
+                        <Label Content="{lex:Loc BTPollRate}" ToolTip="{lex:Loc Resources:BtPollRate}" />
                         <ComboBox x:Name="btPollRateCombo" SelectedIndex="{Binding TempBTPollRateIndex,FallbackValue=4}" MinWidth="140"
                                   ToolTip="{lex:Loc Resources:BtPollRate}">
                             <ComboBoxItem Content="Max (1 ms)" />
@@ -1742,10 +1742,10 @@
                             <ComboBoxItem Content="71 Hz (14 ms)" />
                             <ComboBoxItem Content="66 Hz (15 ms)" />
                             <ComboBoxItem Content="62 Hz (16 ms)" />
-                        </ComboBox>
+                      </ComboBox>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="0,6,0,0">
-                        <Label Content="Emulated Controller" ToolTip="{lex:Loc Resources:OutContNotice}" />
+                        <Label Content="{lex:Loc EmulatedController}" ToolTip="{lex:Loc Resources:OutContNotice}" />
                         <ComboBox x:Name="outConTypeCombo" SelectedIndex="{Binding TempControllerIndex,FallbackValue=0}" MinWidth="140"
                                   ToolTip="{lex:Loc Resources:OutContNotice}">
                             <ComboBoxItem Content="Xbox 360"/>

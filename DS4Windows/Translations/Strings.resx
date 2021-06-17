@@ -466,4 +466,991 @@ Example: whyme_DS4Windows</value>
   <data name="SharedAccess" xml:space="preserve">
     <value>Shared Access</value>
   </data>
+  <data name="DeadZone_" xml:space="preserve">
+		<value>Dead Zone:</value>
+	</data>
+	<data name="MaxZone_" xml:space="preserve">
+		<value>Max Zone:</value>
+	</data>
+	<data name="AntiDeadZone" xml:space="preserve">
+		<value>Anti-dead Zone:</value>
+	</data>
+	<data name="MaxOutput_" xml:space="preserve">
+		<value>Max Output:</value>
+	</data>
+	<data name="Ok" xml:space="preserve">
+		<value>OK</value>
+	</data>
+	<data name="LoadPreset" xml:space="preserve">
+		<value>Load Preset</value>
+	</data>
+	<data name="CyclePrograms" xml:space="preserve">
+		<value>Cycle Programs</value>
+	</data>
+	<data name="FromFile" xml:space="preserve">
+		<value>From File...</value>
+	</data>
+	<data name="SavePreset" xml:space="preserve">
+		<value>Save Preset</value>
+	</data>
+	<data name="InsertWait" xml:space="preserve">
+		<value>Insert Wait</value>
+	</data>
+	<data name="RecordDelays" xml:space="preserve">
+		<value>Record Delays</value>
+	</data>
+	<data name="ScanCode" xml:space="preserve">
+		<value>Scan Code</value>
+	</data>
+	<data name="FourthMouseButton" xml:space="preserve">
+		<value>4th Mouse Button</value>
+	</data>
+	<data name="FifthMouseButton" xml:space="preserve">
+		<value>5th Mouse Button</value>
+	</data>
+	<data name="AddRumble" xml:space="preserve">
+		<value>Add Rumble</value>
+	</data>
+	<data name="ChangeLightbarColor" xml:space="preserve">
+		<value>Change Lightbar Color</value>
+	</data>
+	<data name="MacroOrder" xml:space="preserve">
+		<value>Macro Order</value>
+	</data>
+	<data name="UseKeyboardAndMouseAndController" xml:space="preserve">
+		<value>Use Keyboard/Mouse + Controller 1 to record</value>
+	</data>
+	<data name="Name_" xml:space="preserve">
+		<value>Name:</value>
+	</data>
+	<data name="Cross" xml:space="preserve">
+		<value>Cross</value>
+	</data>
+	<data name="Circle" xml:space="preserve">
+		<value>Circle</value>
+	</data>
+	<data name="Square" xml:space="preserve">
+		<value>Square</value>
+	</data>
+	<data name="Triangle" xml:space="preserve">
+		<value>Triangle</value>
+	</data>
+	<data name="Options" xml:space="preserve">
+		<value>Options</value>
+	</data>
+	<data name="Share" xml:space="preserve">
+		<value>Share</value>
+	</data>
+	<data name="Up" xml:space="preserve">
+		<value>Up</value>
+	</data>
+	<data name="Down" xml:space="preserve">
+		<value>Down</value>
+	</data>
+	<data name="Left" xml:space="preserve">
+		<value>Left</value>
+	</data>
+	<data name="Right" xml:space="preserve">
+		<value>Right</value>
+	</data>
+	<data name="PS" xml:space="preserve">
+		<value>PS</value>
+	</data>
+	<data name="Mute" xml:space="preserve">
+		<value>Mute</value>
+	</data>
+	<data name="L1" xml:space="preserve">
+		<value>L1</value>
+	</data>
+	<data name="R1" xml:space="preserve">
+		<value>R1</value>
+	</data>
+	<data name="L2" xml:space="preserve">
+		<value>L2</value>
+	</data>
+	<data name="L2FullPull" xml:space="preserve">
+		<value>L2 Full Pull</value>
+	</data>
+	<data name="R2" xml:space="preserve">
+		<value>R2</value>
+	</data>
+	<data name="R2FullPull" xml:space="preserve">
+		<value>R2 Full Pull</value>
+	</data>
+	<data name="L3" xml:space="preserve">
+		<value>L3</value>
+	</data>
+	<data name="R3" xml:space="preserve">
+		<value>R3</value>
+	</data>
+	<data name="LeftTouch" xml:space="preserve">
+		<value>Left Touch</value>
+	</data>
+	<data name="UpperTouch" xml:space="preserve">
+		<value>Upper Touch</value>
+	</data>
+	<data name="MultiTouch" xml:space="preserve">
+		<value>Multitouch</value>
+	</data>
+	<data name="RightTouch" xml:space="preserve">
+		<value>Right Touch</value>
+	</data>
+	<data name="LeftStickUp" xml:space="preserve">
+		<value>Left Stick Up</value>
+	</data>
+	<data name="LeftStickDown" xml:space="preserve">
+		<value>Left Stick Down</value>
+	</data>
+	<data name="LeftStickLeft" xml:space="preserve">
+		<value>Left Stick Left</value>
+	</data>
+	<data name="LeftStickRight" xml:space="preserve">
+		<value>Left Stick Right</value>
+	</data>
+	<data name="RightStickUp" xml:space="preserve">
+		<value>Right Stick Up</value>
+	</data>
+	<data name="RightStickDown" xml:space="preserve">
+		<value>Right Stick Down</value>
+	</data>
+	<data name="RightStickLeft" xml:space="preserve">
+		<value>Right Stick Left</value>
+	</data>
+	<data name="RightStickRight" xml:space="preserve">
+		<value>Right Stick Right</value>
+	</data>
+	<data name="TiltDown" xml:space="preserve">
+		<value>Tilt Down</value>
+	</data>
+	<data name="UnloadTrigger" xml:space="preserve">
+		<value>Unload Trigger</value>
+	</data>
+	<data name="Macro" xml:space="preserve">
+		<value>Macro</value>
+	</data>
+	<data name="RecordMacro" xml:space="preserve">
+		<value>Record a macro</value>
+	</data>
+	<data name="RunTriggerRelease" xml:space="preserve">
+		<value>Run on Trigger Release</value>
+	</data>
+	<data name="SyncRun" xml:space="preserve">
+		<value>Synchronized Run</value>
+	</data>
+	<data name="KeepKeyState" xml:space="preserve">
+		<value>Keep key state</value>
+	</data>
+	<data name="RepeatHeld" xml:space="preserve">
+		<value>Repeat while held</value>
+	</data>
+	<data name="LaunchProgram" xml:space="preserve">
+		<value>Launch Program</value>
+	</data>
+	<data name="HoldFor" xml:space="preserve">
+		<value>Hold for </value>
+	</data>
+	<data name="Secs" xml:space="preserve">
+		<value>secs</value>
+	</data>
+	<data name="Arguments" xml:space="preserve">
+		<value>Arguments</value>
+	</data>
+	<data name="LoadProfile" xml:space="preserve">
+		<value>Load Profile</value>
+	</data>
+	<data name="SetUnloadTrigger" xml:space="preserve">
+		<value>Set Unload Trigger</value>
+	</data>
+	<data name="AutoUntrigger" xml:space="preserve">
+		<value>Unload on trigger release</value>
+	</data>
+	<data name="PressKey" xml:space="preserve">
+		<value>Press Key</value>
+	</data>
+	<data name="UntoggleKeyBy" xml:space="preserve">
+		<value>Untoggle key by</value>
+	</data>
+	<data name="DisconnectBT" xml:space="preserve">
+		<value>DisBT</value>
+	</data>
+	<data name="CheckBattery" xml:space="preserve">
+		<value>Check Battery</value>
+	</data>
+	<data name="ViaNotification" xml:space="preserve">
+		<value>via notification</value>
+	</data>
+	<data name="ViaLightbar" xml:space="preserve">
+		<value>via lightbar</value>
+	</data>
+	<data name="MultiAct" xml:space="preserve">
+		<value>MultiAct</value>
+	</data>
+	<data name="TapTrigger" xml:space="preserve">
+		<value>Tap Trigger</value>
+	</data>
+	<data name="HoldTrigger" xml:space="preserve">
+		<value>Hold Trigger</value>
+	</data>
+	<data name="DoubleTapTrigger" xml:space="preserve">
+		<value>Double Tap Trigger</value>
+	</data>
+	<data name="SixaxisWheel" xml:space="preserve">
+		<value>Sixaxis Wheel</value>
+	</data>
+	<data name="Intro" xml:space="preserve">
+		<value>Intro</value>
+	</data>
+	<data name="No" xml:space="preserve">
+		<value>No</value>
+	</data>
+	<data name="Yes" xml:space="preserve">
+		<value>Yes</value>
+	</data>
+	<data name="PresetMenu" xml:space="preserve">
+		<value>Preset Menu</value>
+	</data>
+	<data name="OutputController" xml:space="preserve">
+		<value>Output Controller:</value>
+	</data>
+	<data name="TurnOffTemporarily" xml:space="preserve">
+		<value>Turn Off DS4Window Temporarily</value>
+	</data>
+	<data name="RevertDefaultProfile" xml:space="preserve">
+		<value>Revert to default profile on unknown</value>
+	</data>
+	<data name="ShowAutoDebug" xml:space="preserve">
+		<value>Show auto-profile debug messages</value>
+	</data>
+	<data name="MultipleSaveLocationsDetected" xml:space="preserve">
+		<value>Multiple save locations detected</value>
+	</data>
+	<data name="DontDelete" xml:space="preserve">
+		<value>Don't Delete the other settings yet</value>
+	</data>
+	<data name="ProgramFolder" xml:space="preserve">
+		<value>Program Folder</value>
+	</data>
+	<data name="Appdata" xml:space="preserve">
+		<value>Appdata</value>
+	</data>
+	<data name="DS4ControllerSupport" xml:space="preserve">
+		<value>DS4 Controller Support</value>
+	</data>
+	<data name="DualSenseControllerSupport" xml:space="preserve">
+		<value>DualSense Controller Support</value>
+	</data>
+	<data name="SwitchProControllerSupport" xml:space="preserve">
+		<value>Switch Pro Controller Support</value>
+	</data>
+	<data name="JoyConControllerSupport" xml:space="preserve">
+		<value>JoyCon Controller Support</value>
+	</data>
+	<data name="DetectedControllers" xml:space="preserve">
+		<value>Detected Controllers</value>
+	</data>
+	<data name="Blank" xml:space="preserve">
+		<value>Blank</value>
+	</data>
+	<data name="DS4" xml:space="preserve">
+		<value>DS4</value>
+	</data>
+	<data name="Copycat" xml:space="preserve">
+		<value>Copycat</value>
+	</data>
+	<data name="CopycatTip" xml:space="preserve">
+		<value>Change some flags used for a non-Sony DS4 controller. It might fix rumble and lightbar support for some third party DS4 clones</value>
+	</data>
+	<data name="DualSense" xml:space="preserve">
+		<value>DualSense</value>
+	</data>
+	<data name="EnableRumbleEmulation" xml:space="preserve">
+		<value>Enable Rumble Emulation</value>
+	</data>
+	<data name="RumbleStrength" xml:space="preserve">
+		<value>Rumble Strength</value>
+	</data>
+	<data name="PlayerLEDMode" xml:space="preserve">
+		<value>Player LED Mode</value>
+	</data>
+	<data name="MuteLEDMode" xml:space="preserve">
+		<value>Mute LED Mode</value>
+	</data>
+	<data name="SwitchPro" xml:space="preserve">
+		<value>Switch Pro</value>
+	</data>
+	<data name="EnableHomeLED" xml:space="preserve">
+		<value>Enable Home LED</value>
+	</data>
+	<data name="JoyCon" xml:space="preserve">
+		<value>JoyCon</value>
+	</data>
+	<data name="JoyConGlobalOptions" xml:space="preserve">
+		<value>JoyCon Global Options</value>
+	</data>
+	<data name="LinkMode" xml:space="preserve">
+		<value>Link Mode</value>
+	</data>
+	<data name="JoinedGyroProvider" xml:space="preserve">
+		<value>Joined Gyro Provider</value>
+	</data>
+	<data name="ProgramName" xml:space="preserve">
+		<value>DS4Windows - Ryochan7 Build (Version </value>
+	</data>
+	<data name="Hotkeys" xml:space="preserve">
+		<value>Hotkeys</value>
+	</data>
+	<data name="Credits" xml:space="preserve">
+		<value>Credits</value>
+	</data>
+	<data name="Translators" xml:space="preserve">
+		<value>Translators:</value>
+	</data>
+	<data name="Tip" xml:space="preserve">
+		<value>Tip</value>
+	</data>
+	<data name="Accept" xml:space="preserve">
+		<value>Accept</value>
+	</data>
+	<data name="Extra" xml:space="preserve">
+		<value>Extra</value>
+	</data>
+	<data name="Test" xml:space="preserve">
+		<value>Test</value>
+	</data>
+	<data name="Heavy" xml:space="preserve">
+		<value>Heavy</value>
+	</data>
+	<data name="Light" xml:space="preserve">
+		<value>Light</value>
+	</data>
+	<data name="ChangeLight" xml:space="preserve">
+		<value>Change Light</value>
+	</data>
+	<data name="ColorR" xml:space="preserve">
+		<value>R</value>
+	</data>
+	<data name="ColorG" xml:space="preserve">
+		<value>G</value>
+	</data>
+	<data name="ColorB" xml:space="preserve">
+		<value>B</value>
+	</data>
+	<data name="FlashRate" xml:space="preserve">
+		<value>Flash Rate</value>
+	</data>
+	<data name="ChangeMouseSensitivity" xml:space="preserve">
+		<value>Change Mouse Sensitivity</value>
+	</data>
+	<data name="Regular" xml:space="preserve">
+		<value>Regular</value>
+	</data>
+	<data name="ShiftModifier" xml:space="preserve">
+		<value>Shift Modifier</value>
+	</data>
+	<data name="Unbound" xml:space="preserve">
+		<value>Unbound</value>
+	</data>
+	<data name="MacroOn" xml:space="preserve">
+		<value>Macro On, Choose a key to disable, else close this window to save</value>
+	</data>
+	<data name="Plug" xml:space="preserve">
+		<value>Plug</value>
+	</data>
+	<data name="Unplug" xml:space="preserve">
+		<value>Unplug</value>
+	</data>
+	<data name="Current" xml:space="preserve">
+		<value>Current</value>
+	</data>
+	<data name="Requested" xml:space="preserve">
+		<value>Requested</value>
+	</data>
+	<data name="Active" xml:space="preserve">
+		<value>Active</value>
+	</data>
+	<data name="SkipVersion" xml:space="preserve">
+		<value>Skip Version</value>
+	</data>
+	<data name="UseLanguagePack_" xml:space="preserve">
+		<value>Use language pack:</value>
+	</data>
+	<data name="Open" xml:space="preserve">
+		<value>Open</value>
+	</data>
+	<data name="Exit" xml:space="preserve">
+		<value>Exit</value>
+	</data>
+	<data name="ID" xml:space="preserve">
+		<value>ID</value>
+	</data>
+	<data name="ContStatusTip" xml:space="preserve">
+		<value>Right click to disconnect wireless</value>
+	</data>
+	<data name="Ex" xml:space="preserve">
+		<value>Ex</value>
+	</data>
+	<data name="LinkProfileOrID" xml:space="preserve">
+		<value>Link Profile/ID</value>
+	</data>
+	<data name="SelectedProfile" xml:space="preserve">
+		<value>Selected Profile</value>
+	</data>
+	<data name="UseProfileColor" xml:space="preserve">
+		<value>Use Profile Color</value>
+	</data>
+	<data name="UseCustomColor" xml:space="preserve">
+		<value>Use Custom Color</value>
+	</data>
+	<data name="OutputSlots" xml:space="preserve">
+		<value>Output Slots</value>
+	</data>
+	<data name="HideDS4Controller" xml:space="preserve">
+		<value>Hide DS4 Controller</value>
+	</data>
+	<data name="SwipeTouch" xml:space="preserve">
+		<value>Swipe Touchpad To Switch Profiles</value>
+	</data>
+	<data name="RunAs" xml:space="preserve">
+		<value>Run As</value>
+	</data>
+	<data name="Program" xml:space="preserve">
+		<value>Program</value>
+	</data>
+	<data name="Task" xml:space="preserve">
+		<value>Task</value>
+	</data>
+	<data name="DisconnectBTStop" xml:space="preserve">
+		<value>Disconnect from BT when Stopping</value>
+	</data>
+	<data name="FlashHighLatency" xml:space="preserve">
+		<value>Flash Lightbar at High Latency</value>
+	</data>
+	<data name="Ms" xml:space="preserve">
+		<value>ms</value>
+	</data>
+	<data name="MinimizeToTaskbar" xml:space="preserve">
+		<value>Minimize to Taskbar</value>
+	</data>
+	<data name="MinimizeToTaskbarTip" xml:space="preserve">
+		<value>Minimize to Taskbar instead of System Tray</value>
+	</data>
+	<data name="IconChoice" xml:space="preserve">
+		<value>Icon Choice:</value>
+	</data>
+	<data name="AppTheme" xml:space="preserve">
+		<value>App Theme:</value>
+	</data>
+	<data name="CheckEvery" xml:space="preserve">
+		<value>Check every </value>
+	</data>
+	<data name="UDPServer" xml:space="preserve">
+		<value>UDP Server</value>
+	</data>
+	<data name="EnableServer" xml:space="preserve">
+		<value>Enable Server</value>
+	</data>
+	<data name="Port" xml:space="preserve">
+		<value>Port</value>
+	</data>
+	<data name="UseSmoothing" xml:space="preserve">
+		<value>Use Smoothing</value>
+	</data>
+	<data name="OneEuroMinCutoff" xml:space="preserve">
+		<value>1&#x20ac; MinCutoff</value>
+	</data>
+	<data name="OneEuroBeta" xml:space="preserve">
+		<value>1&#x20ac; Beta</value>
+	</data>
+	<data name="UseLanguagePack" xml:space="preserve">
+		<value>Use language pack</value>
+	</data>
+	<data name="UseCustomSteamFolder" xml:space="preserve">
+		<value>Use custom Steam Folder</value>
+	</data>
+	<data name="Utils" xml:space="preserve">
+		<value>Utils</value>
+	</data>
+	<data name="DeviceOptions" xml:space="preserve">
+		<value>Device Options</value>
+	</data>
+	<data name="Time" xml:space="preserve">
+		<value>Time</value>
+	</data>
+	<data name="Data" xml:space="preserve">
+		<value>Data</value>
+	</data>
+	<data name="InputDelayNA" xml:space="preserve">
+		<value>Input Delay: N/A</value>
+	</data>
+	<data name="Battery0" xml:space="preserve">
+		<value>Battery: 0%</value>
+	</data>
+	<data name="LxInVal" xml:space="preserve">
+		<value>LX (I): </value>
+	</data>
+	<data name="LxOutVal" xml:space="preserve">
+		<value>LX (O): </value>
+	</data>
+	<data name="LyInVal" xml:space="preserve">
+		<value>LY (I): </value>
+	</data>
+	<data name="LyOutVal" xml:space="preserve">
+		<value>LY (O): </value>
+	</data>
+	<data name="RxInVal" xml:space="preserve">
+		<value>RX (I): </value>
+	</data>
+	<data name="RxOutVal" xml:space="preserve">
+		<value>RX (O): </value>
+	</data>
+	<data name="RyInVal" xml:space="preserve">
+		<value>RY (I): </value>
+	</data>
+	<data name="RyOutVal" xml:space="preserve">
+		<value>RY (O): </value>
+	</data>
+	<data name="XInVal" xml:space="preserve">
+		<value>X (I): </value>
+	</data>
+	<data name="XOutVal" xml:space="preserve">
+		<value>X (O): </value>
+	</data>
+	<data name="ZInVal" xml:space="preserve">
+		<value>Z (I): </value>
+	</data>
+	<data name="ZOutVal" xml:space="preserve">
+		<value>Z (O): </value>
+	</data>
+	<data name="InVal" xml:space="preserve">
+		<value>I: </value>
+	</data>
+	<data name="OutVal" xml:space="preserve">
+		<value>O: </value>
+	</data>
+	<data name="Yaw" xml:space="preserve">
+		<value>Yaw</value>
+	</data>
+	<data name="Pitch" xml:space="preserve">
+		<value>Pitch</value>
+	</data>
+	<data name="Roll" xml:space="preserve">
+		<value>Roll</value>
+	</data>
+	<data name="AccelX" xml:space="preserve">
+		<value>X</value>
+	</data>
+	<data name="AccelY" xml:space="preserve">
+		<value>Y</value>
+	</data>
+	<data name="AccelZ" xml:space="preserve">
+		<value>Z</value>
+	</data>
+	<data name="Step1" xml:space="preserve">
+		<value>Step 1: Install ViGEmBus Driver</value>
+	</data>
+	<data name="Step2" xml:space="preserve">
+		<value>Step 2: If on Windows 7, Install 360 Driver</value>
+	</data>
+	<data name="Step4" xml:space="preserve">
+		<value>(Optional) Step 4: Install HidHide Driver</value>
+	</data>
+	<data name="Step5" xml:space="preserve">
+		<value>(Optional) Step 5: Install FakerInput Driver</value>
+	</data>
+	<data name="Finished" xml:space="preserve">
+		<value>Finished</value>
+	</data>
+	<data name="SelectPreset" xml:space="preserve">
+		<value>Select Preset</value>
+	</data>
+	<data name="Controls" xml:space="preserve">
+		<value>Controls</value>
+	</data>
+	<data name="Default" xml:space="preserve">
+		<value>Default</value>
+	</data>
+	<data name="DPad" xml:space="preserve">
+		<value>DPad</value>
+	</data>
+	<data name="Normal" xml:space="preserve">
+		<value>Normal</value>
+	</data>
+	<data name="Inverted" xml:space="preserve">
+		<value>Inverted</value>
+	</data>
+	<data name="InvertedX" xml:space="preserve">
+		<value>Inverted X</value>
+	</data>
+	<data name="InvertedY" xml:space="preserve">
+		<value>Inverted Y</value>
+	</data>
+	<data name="Rotate90" xml:space="preserve">
+		<value>Rotate 90&#xb0;</value>
+	</data>
+	<data name="Rotate-90" xml:space="preserve">
+		<value>Rotate -90&#xb0;</value>
+	</data>
+	<data name="FaceButtons" xml:space="preserve">
+		<value>Face Buttons</value>
+	</data>
+	<data name="WASD" xml:space="preserve">
+		<value>WASD</value>
+	</data>
+	<data name="ArrowKeys" xml:space="preserve">
+		<value>Arrow Keys</value>
+	</data>
+	<data name="Mouse" xml:space="preserve">
+		<value>Mouse</value>
+	</data>
+	<data name="Guide" xml:space="preserve">
+		<value>Guide</value>
+	</data>
+	<data name="Multi_Touch" xml:space="preserve">
+		<value>Multi Touch</value>
+	</data>
+	<data name="TopTouch" xml:space="preserve">
+		<value>Top Touch</value>
+	</data>
+	<data name="LSU" xml:space="preserve">
+		<value>LSU</value>
+	</data>
+	<data name="LSR" xml:space="preserve">
+		<value>LSR</value>
+	</data>
+	<data name="LSD" xml:space="preserve">
+		<value>LSD</value>
+	</data>
+	<data name="LSL" xml:space="preserve">
+		<value>LSL</value>
+	</data>
+	<data name="RSU" xml:space="preserve">
+		<value>RSU</value>
+	</data>
+	<data name="RSR" xml:space="preserve">
+		<value>RSR</value>
+	</data>
+	<data name="RSD" xml:space="preserve">
+		<value>RSD</value>
+	</data>
+	<data name="RSL" xml:space="preserve">
+		<value>RSL</value>
+	</data>
+	<data name="SpecialActions" xml:space="preserve">
+		<value>Special Actions</value>
+	</data>
+	<data name="ControllerReadings" xml:space="preserve">
+		<value>Controller Readings</value>
+	</data>
+	<data name="AxisConfig" xml:space="preserve">
+		<value>Axis Config</value>
+	</data>
+	<data name="LS" xml:space="preserve">
+		<value>LS</value>
+	</data>
+	<data name="DeadZoneType" xml:space="preserve">
+		<value>Dead Zone Type</value>
+	</data>
+	<data name="Radial" xml:space="preserve">
+		<value>Radial</value>
+	</data>
+	<data name="VerticalScale_" xml:space="preserve">
+		<value>Vertical Scale:</value>
+	</data>
+	<data name="Sensitivity" xml:space="preserve">
+		<value>Sensitivity:</value>
+	</data>
+	<data name="Axial" xml:space="preserve">
+		<value>Axial</value>
+	</data>
+	<data name="OutputCurve" xml:space="preserve">
+		<value>Output Curve:</value>
+	</data>
+	<data name="SquareStick" xml:space="preserve">
+		<value>Square Stick:</value>
+	</data>
+	<data name="CurveInput" xml:space="preserve">
+		<value>Curve (Input):</value>
+	</data>
+	<data name="Rotation_" xml:space="preserve">
+		<value>Rotation:</value>
+	</data>
+	<data name="Fuzz" xml:space="preserve">
+		<value>Fuzz:</value>
+	</data>
+	<data name="AntiSnapback" xml:space="preserve">
+		<value>Anti Snapback:</value>
+	</data>
+	<data name="AntiSnapbackTiming" xml:space="preserve">
+		<value>Anti Snapback timing:</value>
+	</data>
+	<data name="FlickStick" xml:space="preserve">
+		<value>FlickStick</value>
+	</data>
+	<data name="RS" xml:space="preserve">
+		<value>RS</value>
+	</data>
+	<data name="L2AndR2" xml:space="preserve">
+		<value>L2 &amp; R2</value>
+	</data>
+	<data name="TwoStageMode" xml:space="preserve">
+		<value>Two Stage Mode:</value>
+	</data>
+	<data name="FullPull" xml:space="preserve">
+		<value>Full</value>
+	</data>
+	<data name="FullPullBtn" xml:space="preserve">
+		<value>Full Pull Btn:</value>
+	</data>
+	<data name="HipFireDelay" xml:space="preserve">
+		<value>Hip Fire Delay:</value>
+	</data>
+	<data name="TriggerEffect" xml:space="preserve">
+		<value>Trigger Effect:</value>
+	</data>
+	<data name="SixAxis" xml:space="preserve">
+		<value>SixAxis</value>
+	</data>
+	<data name="Lightbar" xml:space="preserve">
+		<value>Lightbar</value>
+	</data>
+	<data name="Mode" xml:space="preserve">
+		<value>Mode:</value>
+	</data>
+	<data name="Empty" xml:space="preserve">
+		<value>Empty</value>
+	</data>
+	<data name="WhileCharging" xml:space="preserve">
+		<value>While Charging:</value>
+	</data>
+	<data name="ColorByBatteryPercent" xml:space="preserve">
+		<value>Color by Battery %</value>
+	</data>
+	<data name="SecsPerCycle" xml:space="preserve">
+		<value>secs/cycle</value>
+	</data>
+	<data name="Touchpad" xml:space="preserve">
+		<value>Touchpad</value>
+	</data>
+	<data name="JitterCompensation" xml:space="preserve">
+		<value>Jitter Compensation</value>
+	</data>
+	<data name="DoubleTap" xml:space="preserve">
+		<value>Double Tap</value>
+	</data>
+	<data name="LowerRightAsRMB" xml:space="preserve">
+		<value>Lower Right as RMB</value>
+	</data>
+	<data name="PassthruClickAction" xml:space="preserve">
+		<value>Passthru Click Action (DS4 mode)</value>
+	</data>
+	<data name="StartTouchpadOff" xml:space="preserve">
+		<value>Start with Slide/Scroll Off</value>
+	</data>
+	<data name="Rotation" xml:space="preserve">
+		<value>Rotation</value>
+	</data>
+	<data name="MinThreshold" xml:space="preserve">
+		<value>Min Threshold</value>
+	</data>
+	<data name="Trackball" xml:space="preserve">
+		<value>Trackball</value>
+	</data>
+	<data name="Friction" xml:space="preserve">
+		<value>Friction:</value>
+	</data>
+	<data name="Invert" xml:space="preserve">
+		<value>Invert</value>
+	</data>
+	<data name="DisableInvert" xml:space="preserve">
+		<value>Disable Invert</value>
+	</data>
+	<data name="FingerOnTouchpad" xml:space="preserve">
+		<value>Finger on Touchpad</value>
+	</data>
+	<data name="TwoFingersOnTouchpad" xml:space="preserve">
+		<value>2 Fingers on Touchpad</value>
+	</data>
+	<data name="TouchpadClick" xml:space="preserve">
+		<value>Touchpad Click</value>
+	</data>
+	<data name="SwipeUp" xml:space="preserve">
+		<value>Swipe Up</value>
+	</data>
+	<data name="SwipeDown" xml:space="preserve">
+		<value>Swipe Down</value>
+	</data>
+	<data name="SwipeLeft" xml:space="preserve">
+		<value>Swipe Left</value>
+	</data>
+	<data name="SwipeRight" xml:space="preserve">
+		<value>Swipe Right</value>
+	</data>
+	<data name="AbsoluteMouse" xml:space="preserve">
+		<value>Absolute Mouse</value>
+	</data>
+	<data name="MaxZoneX_" xml:space="preserve">
+		<value>Max Zone X:</value>
+	</data>
+	<data name="MaxZoneY_" xml:space="preserve">
+		<value>Max Zone Y:</value>
+	</data>
+	<data name="SnapToCenterOnRelease" xml:space="preserve">
+		<value>Snap To Center on Release:</value>
+	</data>
+	<data name="Passthru" xml:space="preserve">
+		<value>Passthru</value>
+	</data>
+	<data name="OutputMode" xml:space="preserve">
+		<value>Output Mode</value>
+	</data>
+	<data name="TiltUp" xml:space="preserve">
+		<value>Tilt Up</value>
+	</data>
+	<data name="TiltLeft" xml:space="preserve">
+		<value>Tilt Left</value>
+	</data>
+	<data name="TiltRight" xml:space="preserve">
+		<value>Tilt Right</value>
+	</data>
+	<data name="Triggers" xml:space="preserve">
+		<value>Triggers</value>
+	</data>
+	<data name="AlwaysOn" xml:space="preserve">
+		<value>Always On</value>
+	</data>
+	<data name="TurnBehaviorTurnsGyro" xml:space="preserve">
+		<value>Turn Behavior - Turns Gyro</value>
+	</data>
+	<data name="Toggle" xml:space="preserve">
+		<value>Toggle</value>
+	</data>
+	<data name="EvalCond" xml:space="preserve">
+		<value>Eval Cond.</value>
+	</data>
+	<data name="360SteeringWheel" xml:space="preserve">
+		<value>360 Steering Wheel</value>
+	</data>
+	<data name="SteeringWheelAxis" xml:space="preserve">
+		<value>Steering wheel axis</value>
+	</data>
+	<data name="SteeringWheelRange" xml:space="preserve">
+		<value>Steering wheel range</value>
+	</data>
+	<data name="Calibrate" xml:space="preserve">
+		<value>Calibrate</value>
+	</data>
+	<data name="GyroCalibration" xml:space="preserve">
+		<value>Gyro Calibration</value>
+	</data>
+	<data name="GyroSensitivity" xml:space="preserve">
+		<value>Gyro Sensitivity:</value>
+	</data>
+	<data name="XAxis" xml:space="preserve">
+		<value>X Axis</value>
+	</data>
+	<data name="GyroMouseInvertX" xml:space="preserve">
+		<value>X</value>
+	</data>
+	<data name="GyroMouseInvertY" xml:space="preserve">
+		<value>Y</value>
+	</data>
+	<data name="Deadzone" xml:space="preserve">
+		<value>Deadzone</value>
+	</data>
+	<data name="Smoothing" xml:space="preserve">
+		<value>Smoothing</value>
+	</data>
+	<data name="SmoothingOptions" xml:space="preserve">
+		<value>Smoothing Options</value>
+	</data>
+	<data name="SmoothWeight" xml:space="preserve">
+		<value>Smooth Weight</value>
+	</data>
+	<data name="Dead_Zone" xml:space="preserve">
+		<value>Dead Zone</value>
+	</data>
+	<data name="MaxZone" xml:space="preserve">
+		<value>Max Zone</value>
+	</data>
+	<data name="MinimumX" xml:space="preserve">
+		<value>Minimum X</value>
+	</data>
+	<data name="MinimumY" xml:space="preserve">
+		<value>Minimum Y</value>
+	</data>
+	<data name="VerticalScale" xml:space="preserve">
+		<value>Vertical Scale</value>
+	</data>
+	<data name="MaxOutput" xml:space="preserve">
+		<value>Max Output</value>
+	</data>
+	<data name="InvertX" xml:space="preserve">
+		<value>Invert X</value>
+	</data>
+	<data name="InvertY" xml:space="preserve">
+		<value>Invert Y</value>
+	</data>
+	<data name="Weight" xml:space="preserve">
+		<value>Weight</value>
+	</data>
+	<data name="DeadzoneX" xml:space="preserve">
+		<value>Deadzone X</value>
+	</data>
+	<data name="DegPerSec" xml:space="preserve">
+		<value>deg/sec.</value>
+	</data>
+	<data name="DeadzoneY" xml:space="preserve">
+		<value>Deadzone Y</value>
+	</data>
+	<data name="DelayTime" xml:space="preserve">
+		<value>Delay Time</value>
+	</data>
+	<data name="Other" xml:space="preserve">
+		<value>Other</value>
+	</data>
+	<data name="TestHeavy" xml:space="preserve">
+		<value>Test Heavy</value>
+	</data>
+	<data name="TestLight" xml:space="preserve">
+		<value>Test Light</value>
+	</data>
+	<data name="UseController" xml:space="preserve">
+		<value>Use Controller</value>
+	</data>
+	<data name="ForReadout" xml:space="preserve">
+		<value>for readout</value>
+	</data>
+	<data name="MouseSensitivity" xml:space="preserve">
+		<value>Mouse Sensitivity</value>
+	</data>
+	<data name="MouseVerticalScale" xml:space="preserve">
+		<value>Mouse Vertical Scale</value>
+	</data>
+	<data name="MouseOffset" xml:space="preserve">
+		<value>Mouse Offset</value>
+	</data>
+	<data name="MouseAcceleration" xml:space="preserve">
+		<value>Mouse Acceleration</value>
+	</data>
+	<data name="EnableTouchpadToggle" xml:space="preserve">
+		<value>Enable Touchpad Toggle</value>
+	</data>
+	<data name="LaunchProgramWithProfile" xml:space="preserve">
+		<value>Launch program with profile</value>
+	</data>
+	<data name="UseDInputOnly" xml:space="preserve">
+		<value>Use DInput only</value>
+	</data>
+	<data name="IdleDisconnect" xml:space="preserve">
+		<value>Idle Disconnect</value>
+	</data>
+	<data name="Mins" xml:space="preserve">
+		<value>mins</value>
+	</data>
+	<data name="BTPollRate" xml:space="preserve">
+		<value>BT Poll Rate</value>
+	</data>
+	<data name="EmulatedController" xml:space="preserve">
+		<value>Emulated Controller</value>
+	</data>
 </root>

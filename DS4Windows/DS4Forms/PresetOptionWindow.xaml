@@ -17,18 +17,18 @@
     </Window.Resources>
     <DockPanel>
         <TabControl x:Name="screensTabControl" BorderBrush="{x:Null}">
-            <TabItem x:Name="IntroTab" Header="Intro">
+            <TabItem x:Name="IntroTab" Header="{lex:Loc Intro}">
                 <DockPanel Margin="4,0,4,8">
                     <StackPanel Orientation="Horizontal" DockPanel.Dock="Bottom" HorizontalAlignment="Right">
-                        <Button x:Name="noPresetBtn" Content="No" MinWidth="60" Margin="0,0,20,0" TabIndex="0" Click="NoPresetBtn_Click" />
-                        <Button x:Name="yesPresetBtn" Content="Yes" MinWidth="60" TabIndex="1" Click="YesPresetBtn_Click" />
+                        <Button x:Name="noPresetBtn" Content="{lex:Loc No}" MinWidth="60" Margin="0,0,20,0" TabIndex="0" Click="NoPresetBtn_Click" />
+                        <Button x:Name="yesPresetBtn" Content="{lex:Loc Yes}" MinWidth="60" TabIndex="1" Click="YesPresetBtn_Click" />
                     </StackPanel>
                     <StackPanel>
                         <TextBlock Text="{lex:Loc PresetIntrotext}" TextWrapping="Wrap" />
                     </StackPanel>
                 </DockPanel>
             </TabItem>
-            <TabItem x:Name="PresetListTab" Header="Preset Menu">
+            <TabItem x:Name="PresetListTab" Header="{lex:Loc PresetMenu}">
                 <DockPanel Margin="4,0,4,8">
                     <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
                         <Label Content="{lex:Loc Presets}" />
@@ -41,7 +41,7 @@
                         </ComboBox>
                     </StackPanel>
                     <StackPanel x:Name="outputContStackPanel" Orientation="Horizontal" DockPanel.Dock="Top" Visibility="{Binding PresetDisplayOutputCont, Converter={StaticResource BooleanToVisibilityConverter}, Mode=OneWay}" Margin="0,10,0,10">
-                        <Label Content="Output Controller:" />
+                        <Label Content="{lex:Loc OutputController}" />
                         <ComboBox ItemsSource="{Binding OutputChoices}" DisplayMemberPath="DisplayName" SelectedValuePath="ChoiceValue" SelectedValue="{Binding ControllerChoice}" Margin="8,0,0,0" />
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" DockPanel.Dock="Bottom" HorizontalAlignment="Right">

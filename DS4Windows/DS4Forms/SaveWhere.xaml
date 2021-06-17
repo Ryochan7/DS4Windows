@@ -3,27 +3,31 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:lex="http://wpflocalizeextension.codeplex.com"
+        lex:LocalizeDictionary.DesignCulture=""
+        lex:ResxLocalizationProvider.DefaultAssembly="DS4Windows"
+        lex:ResxLocalizationProvider.DefaultDictionary="Strings"
         xmlns:local="clr-namespace:DS4WinWPF.DS4Forms"
         mc:Ignorable="d"
         Title="SaveWhere" Height="184" Width="453" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Closing="Window_Closing"
         Style="{DynamicResource WindowStyle}">
     <StackPanel>
         <DockPanel x:Name="multipleSavesDockP" Margin="4,0">
-            <Label Content="Multiple save locations detected" />
-            <CheckBox x:Name="dontDeleteCk" Content="Don't Delete the other settings yet" DockPanel.Dock="Right" HorizontalAlignment="Right" VerticalAlignment="Center" />
+            <Label Content="{lex:Loc MultipleSaveLocationsDetected}" />
+            <CheckBox x:Name="dontDeleteCk" Content="{lex:Loc DontDelete}" DockPanel.Dock="Right" HorizontalAlignment="Right" VerticalAlignment="Center" />
         </DockPanel>
         <TextBlock x:Name="pickWhereTxt" Text="Pick where you want profiles and settings to be saved"
                    TextWrapping="Wrap" HorizontalAlignment="Center" Margin="4,10,4,0" TextAlignment="Center" />
         <DockPanel Margin="4,10,4,0">
             <StackPanel x:Name="progFolderPanel" Width="200">
-                <Button x:Name="progFolderBtn" Content="Program Folder" Click="ProgFolderBtn_Click" />
+                <Button x:Name="progFolderBtn" Content="{lex:Loc ProgramFolder}" Click="ProgFolderBtn_Click" />
                 <TextBlock TextWrapping="Wrap" TextAlignment="Center">
                     For those who prefer a portable program.
                     Note: this option does not work if in an admin folder w/o UAC
                 </TextBlock>
             </StackPanel>
             <StackPanel DockPanel.Dock="Right" HorizontalAlignment="Right" Width="200">
-                <Button x:Name="appdataBtn" Content="Appdata" Click="AppdataBtn_Click" />
+                <Button x:Name="appdataBtn" Content="{lex:Loc Appdata}" Click="AppdataBtn_Click" />
                 <TextBlock TextWrapping="Wrap" TextAlignment="Center">
                     For those who prefer a regular install. Settings saved at %appdata%\DS4Windows
                 </TextBlock>

@@ -14,7 +14,7 @@
         <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
             <StackPanel Orientation="Horizontal" Width="200">
                 <Label x:Name="inputContNum" Content="#" FontWeight="Bold"/>
-                <Label x:Name="inputDelayLb" Content="Input Delay: N/A"  Margin="8,0,0,0">
+                <Label x:Name="inputDelayLb" Content="{lex:Loc InputDelayNA}"  Margin="8,0,0,0">
                     <Label.Background>
                         <SolidColorBrush x:Name="inpuDelayBackBrush" Color="Transparent" />
                     </Label.Background>
@@ -24,7 +24,7 @@
                 </Label>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="20,0,0,0">
-                <Label x:Name="batteryLvlLb" Content="Battery: 0%" Margin="8,0,0,0" />
+                <Label x:Name="batteryLvlLb" Content="{lex:Loc Battery0}" Margin="8,0,0,0" />
             </StackPanel>
         </StackPanel>
         <Grid DockPanel.Dock="Top" Width="450" Margin="0,8,0,0">
@@ -49,21 +49,21 @@
                 </Canvas>
                 <StackPanel Orientation="Horizontal">
                     <StackPanel Orientation="Horizontal">
-                        <Label Content="LX (I): " />
+                        <Label Content="{lex:Loc LxInVal}" />
                         <Label x:Name="lxInValLb" Content="" Width="30" Padding="2,5"  />
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
-                        <Label Content="LX (O): " />
+                        <Label Content="{lex:Loc LxOutVal}" />
                         <Label x:Name="lxOutValLb" Content="" Width="30" Padding="2,5" />
                     </StackPanel>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <StackPanel Orientation="Horizontal">
-                        <Label Content="LY (I): "/>
+                        <Label Content="{lex:Loc LyInVal}"/>
                         <Label x:Name="lyInValLb" Content="" Width="30" Padding="2,5" />
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
-                        <Label Content="LY (O): " />
+                        <Label Content="{lex:Loc LyOutVal}" />
                         <Label x:Name="lyOutValLb" Content="" Width="30" />
                     </StackPanel>
                 </StackPanel>
@@ -85,21 +85,21 @@
                 </Canvas>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <StackPanel Orientation="Horizontal">
-                        <Label Content="RX (I): "/>
+                        <Label Content="{lex:Loc RxInVal}"/>
                         <Label x:Name="rxInValLb" Content="" Width="30" />
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
-                        <Label Content="RX (O): "/>
+                        <Label Content="{lex:Loc RxOutVal}"/>
                         <Label x:Name="rxOutValLb" Content="" Width="30" />
                     </StackPanel>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <StackPanel Orientation="Horizontal">
-                        <Label Content="RY (I): "/>
+                        <Label Content="{lex:Loc RyInVal}"/>
                         <Label x:Name="ryInValLb" Content="" Width="30" />
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
-                        <Label Content="RY (O): "/>
+                        <Label Content="{lex:Loc RyOutVal}"/>
                         <Label x:Name="ryOutValLb" Content="" Width="30" />
                     </StackPanel>
                 </StackPanel>
@@ -121,21 +121,21 @@
                 </Canvas>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <StackPanel Orientation="Horizontal">
-                        <Label Content="X (I): "/>
+                        <Label Content="{lex:Loc XInVal}"/>
                         <Label x:Name="sixAxisXInValLb" Content="" Width="40" />
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
-                        <Label Content="X (O): "/>
+                        <Label Content="{lex:Loc XOutVal}"/>
                         <Label x:Name="sixAxisXOutValLb" Content="" Width="40" />
                     </StackPanel>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <StackPanel Orientation="Horizontal">
-                        <Label Content="Z (I): "/>
+                        <Label Content="{lex:Loc ZInVal}"/>
                         <Label x:Name="sixAxisZInValLb" Content="" Width="40" />
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
-                        <Label Content="Z (O): "/>
+                        <Label Content="{lex:Loc ZOutVal}"/>
                         <Label x:Name="sixAxisZOutValLb" Content="" Width="40" />
                     </StackPanel>
                 </StackPanel>
@@ -149,7 +149,7 @@
             <StackPanel Orientation="Horizontal" MinHeight="100" Grid.Column="0" RenderTransformOrigin="0,0" HorizontalAlignment="Center">
                 <StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="0,0,20,0">
-                        <Label x:Name="l2ValLb" Content="L2" Height="16" VerticalAlignment="Top" HorizontalAlignment="Left" RenderTransformOrigin="0.5,1" Padding="0" Margin="0,0,4,0" >
+                        <Label x:Name="l2ValLb" Content="{lex:Loc L2}" Height="16" VerticalAlignment="Top" HorizontalAlignment="Left" RenderTransformOrigin="0.5,1" Padding="0" Margin="0,0,4,0" >
                             <Label.RenderTransform>
                                 <TransformGroup>
                                     <TranslateTransform x:Name="l2ValLbTrans" Y="66" />
@@ -163,11 +163,11 @@
                     </StackPanel>
                     <StackPanel>
                         <StackPanel Orientation="Horizontal">
-                            <Label Content="I: " Width="30" />
+                            <Label Content="{lex:Loc InVal}" Width="30" />
                             <Label x:Name="l2InValLb" Content="" Width="30" />
                         </StackPanel>
                         <StackPanel Orientation="Horizontal">
-                            <Label Content="O: " Width="30" />
+                            <Label Content="{lex:Loc OutVal}" Width="30" />
                             <Label x:Name="l2OutValLb" Content="" Width="30" />
                         </StackPanel>
                     </StackPanel>
@@ -176,7 +176,7 @@
                 <StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <Slider x:Name="r2Slider" Orientation="Vertical" Minimum="0" Maximum="255" Value="0" Height="80" Focusable="False" />
-                        <Label x:Name="r2ValLb" Content="R2" Height="16" VerticalAlignment="Top" HorizontalAlignment="Left" RenderTransformOrigin="0.5,1" Padding="0" Margin="0,0,4,0" >
+                        <Label x:Name="r2ValLb" Content="{lex:Loc R2}" Height="16" VerticalAlignment="Top" HorizontalAlignment="Left" RenderTransformOrigin="0.5,1" Padding="0" Margin="0,0,4,0" >
                             <Label.RenderTransform>
                                 <TransformGroup>
                                     <TranslateTransform x:Name="r2ValLbTrans" Y="66"/>
@@ -190,11 +190,11 @@
 
                     <StackPanel>
                         <StackPanel Orientation="Horizontal">
-                            <Label Content="I: " Width="30" />
+                            <Label Content="{lex:Loc InVal}" Width="30" />
                             <Label x:Name="r2InValLb" Content="" Width="30" />
                         </StackPanel>
                         <StackPanel Orientation="Horizontal">
-                            <Label Content="O: " Width="30" />
+                            <Label Content="{lex:Loc OutVal}" Width="30" />
                             <Label x:Name="r2OutValLb" Content="" Width="30" />
                         </StackPanel>
                     </StackPanel>
@@ -205,30 +205,30 @@
                     <StackPanel Margin="0,0,10,0">
                         <Label Content="{lex:Loc Gyro}" HorizontalAlignment="Center" Padding="0"/>
                         <StackPanel Orientation="Horizontal">
-                            <Label Content="Yaw" Width="40" />
+                            <Label Content="{lex:Loc Yaw}" Width="40" />
                             <Slider x:Name="gyroYawSlider" Width="80" Minimum="-9000" Maximum="9000" Value="0" Focusable="False" Margin="0,8,0,0"/>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal">
-                            <Label Content="Pitch" Width="40" />
+                            <Label Content="{lex:Loc Pitch}" Width="40" />
                             <Slider x:Name="gyroPitchSlider" Width="80" Minimum="-9000" Maximum="9000" Value="0" Focusable="False" Margin="0,4,0,0"/>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal">
-                            <Label Content="Roll" Width="40" />
+                            <Label Content="{lex:Loc Roll}" Width="40" />
                             <Slider x:Name="gyroRollSlider" Width="80" Minimum="-9000" Maximum="9000" Value="0" Focusable="False" Margin="0,4,0,0"/>
                         </StackPanel>
                     </StackPanel>
                     <StackPanel>
                         <Label Content="{lex:Loc Accel}" HorizontalAlignment="Center" Padding="0"/>
                         <StackPanel Orientation="Horizontal">
-                            <Label Content="X" Width="20" />
+                            <Label Content="{lex:Loc AccelX}" Width="20" />
                             <Slider x:Name="accelXSlider" Width="80" Minimum="-128" Maximum="128" Value="0" Focusable="False" Margin="0,8,0,0"/>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal">
-                            <Label Content="Y" Width="20" />
+                            <Label Content="{lex:Loc AccelY}" Width="20" />
                             <Slider x:Name="accelYSlider" Width="80" Minimum="-128" Maximum="128" Value="0" Focusable="False" Margin="0,4,0,0"/>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal">
-                            <Label Content="Z" Width="20" />
+                            <Label Content="{lex:Loc AccelZ}" Width="20" />
                             <Slider x:Name="accelZSlider" Width="80" Minimum="-128" Maximum="128" Value="0" Focusable="False" Margin="0,4,0,0"/>
                         </StackPanel>
                     </StackPanel>

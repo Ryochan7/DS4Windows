@@ -3,13 +3,17 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:lex="http://wpflocalizeextension.codeplex.com"
+        lex:LocalizeDictionary.DesignCulture=""
+        lex:ResxLocalizationProvider.DefaultAssembly="DS4Windows"
+        lex:ResxLocalizationProvider.DefaultDictionary="Strings"
         xmlns:local="clr-namespace:DS4WinWPF.DS4Forms"
         mc:Ignorable="d"
         Title="Log" MinHeight="200" Height="200" Width="600" MinWidth="400" SizeToContent="Height" WindowStartupLocation="CenterScreen"
         Style="{DynamicResource WindowStyle}">
     <DockPanel Margin="4">
         <StackPanel Orientation="Horizontal" DockPanel.Dock="Bottom" HorizontalAlignment="Right">
-            <Button x:Name="okayButton" Content="OK" MinWidth="60" Click="OkayButton_Click" />
+            <Button x:Name="okayButton" Content="{lex:Loc Ok}" MinWidth="60" Click="OkayButton_Click" />
         </StackPanel>
         <RichTextBox x:Name="richMessageBox" DockPanel.Dock="Top" IsReadOnly="True" IsDocumentEnabled="True" BorderBrush="{x:Null}" BorderThickness="0" HorizontalContentAlignment="Stretch" VerticalAlignment="Center"/>
     </DockPanel>

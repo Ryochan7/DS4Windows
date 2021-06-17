@@ -3,6 +3,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:lex="http://wpflocalizeextension.codeplex.com"
+        lex:LocalizeDictionary.DesignCulture=""
+        lex:ResxLocalizationProvider.DefaultAssembly="DS4Windows"
+        lex:ResxLocalizationProvider.DefaultDictionary="Strings"
         xmlns:local="clr-namespace:DS4WinWPF.DS4Forms"
         mc:Ignorable="d"
         Title="Welcome to DS4Windows" Height="440" Width="418" MinWidth="500" MinHeight="500"
@@ -17,13 +21,13 @@
     </Window.Resources>
     <ScrollViewer>
         <DockPanel Margin="10,10,10,10" LastChildFill="False">
-            <Button x:Name="vigemInstallBtn" Content="Step 1: Install ViGEmBus Driver" Style="{StaticResource CommonMargin}" DockPanel.Dock="Top" Click="VigemInstallBtn_Click" />
+            <Button x:Name="vigemInstallBtn" Content="{lex:Loc Step1}" Style="{StaticResource CommonMargin}" DockPanel.Dock="Top" Click="VigemInstallBtn_Click" />
             <TextBlock TextAlignment="Center" DockPanel.Dock="Top" TextWrapping="Wrap">
                 <TextBlock.Text>
                     If this window reappears after installing, you may need to reboot your PC.
                 </TextBlock.Text>
             </TextBlock>
-            <Button x:Name="step2Btn" Content="Step 2: If on Windows 7, Install 360 Driver" Style="{StaticResource CommonMargin}" DockPanel.Dock="Top"
+            <Button x:Name="step2Btn" Content="{lex:Loc Step2}" Style="{StaticResource CommonMargin}" DockPanel.Dock="Top"
                 Click="Step2Btn_Click" />
             <TextBlock TextAlignment="Center" DockPanel.Dock="Top">
                 <TextBlock.Text>
@@ -48,7 +52,7 @@
             </DockPanel>
 
             <StackPanel x:Name="step4HidHidePanel" DockPanel.Dock="Top" Margin="0,8,0,0">
-                <Button x:Name="hidHideInstallBtn" Content="(Optional) Step 4: Install HidHide Driver" Click="HidHideInstall_Click" />
+                <Button x:Name="hidHideInstallBtn" Content="{lex:Loc Step4}" Click="HidHideInstall_Click" />
                 <TextBlock TextWrapping="Wrap" TextAlignment="Center" Margin="0, 10, 0, 0">
                     <TextBlock.Text>
                         Use HidHide to configure and hide any input controllers from other apps running on your system.
@@ -58,7 +62,7 @@
             </StackPanel>
 
             <StackPanel x:Name="step5FakerInputPanel" DockPanel.Dock="Top" Margin="0,8,0,0">
-                <Button x:Name="fakerInputInstallBtn" Content="(Optional) Step 5: Install FakerInput Driver" Click="FakerInputInstallBtn_Click" />
+                <Button x:Name="fakerInputInstallBtn" Content="{lex:Loc Step5}" Click="FakerInputInstallBtn_Click" />
                 <TextBlock TextWrapping="Wrap" TextAlignment="Center" Margin="0, 10, 0, 0">
                     <TextBlock.Text>
                         Use FakerInput driver to expose system-wide virtual keyboard, relative mouse, and absolute mouse.
@@ -70,7 +74,7 @@
                 </TextBlock>
             </StackPanel>
 
-            <Button x:Name="finishedBtn" Content="Finished" HorizontalAlignment="Center" Padding="10,1" Style="{StaticResource CommonMargin}" Click="FinishedBtn_Click" DockPanel.Dock="Bottom" />
+            <Button x:Name="finishedBtn" Content="{lex:Loc Finished}" HorizontalAlignment="Center" Padding="10,1" Style="{StaticResource CommonMargin}" Click="FinishedBtn_Click" DockPanel.Dock="Bottom" />
         </DockPanel>
     </ScrollViewer>
 </Window>

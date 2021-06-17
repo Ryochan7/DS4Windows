@@ -4,6 +4,9 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:lex="http://wpflocalizeextension.codeplex.com"
+        lex:LocalizeDictionary.DesignCulture=""
+        lex:ResxLocalizationProvider.DefaultAssembly="DS4Windows"
+        lex:ResxLocalizationProvider.DefaultDictionary="Strings"
         xmlns:local="clr-namespace:DS4WinWPF.DS4Forms"
         mc:Ignorable="d"
         Title="UpdaterWindow" Height="450" Width="800"
@@ -11,9 +14,9 @@
     <DockPanel Margin="8,0">
         <TextBlock x:Name="captionTextBlock" Text="{Binding IntroText}" DockPanel.Dock="Top" Margin="0,4" />
         <StackPanel Orientation="Horizontal" DockPanel.Dock="Bottom" HorizontalAlignment="Right" Margin="0,0,0,8">
-            <Button x:Name="skipVersionBtn" Content="Skip Version" MinWidth="80" Click="SkipVersionBtn_Click" />
-            <Button x:Name="yesBtn" Content="Yes" MinWidth="60" Click="YesBtn_Click" Margin="10,0,0,0" />
-            <Button x:Name="noBtn" Content="No" MinWidth="60" Click="NoBtn_Click" Margin="10,0,0,0" />
+            <Button x:Name="skipVersionBtn" Content="{lex:Loc SkipVersion}" MinWidth="80" Click="SkipVersionBtn_Click" />
+            <Button x:Name="yesBtn" Content="{lex:Loc Yes}" MinWidth="60" Click="YesBtn_Click" Margin="10,0,0,0" />
+            <Button x:Name="noBtn" Content="{lex:Loc No}" MinWidth="60" Click="NoBtn_Click" Margin="10,0,0,0" />
         </StackPanel>
 
         <!--<TextBox x:Name="changelogText" Text="{Binding ChangelogText,Mode=OneWay}" AllowDrop="False" VerticalScrollBarVisibility="Auto" IsReadOnly="True" IsUndoEnabled="False" />-->

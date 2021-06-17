@@ -1,15 +1,19 @@
 ﻿<UserControl x:Class="DS4WinWPF.DS4Forms.OutputSlotManagerControl"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:lex="http://wpflocalizeextension.codeplex.com"
+             lex:LocalizeDictionary.DesignCulture=""
+             lex:ResxLocalizationProvider.DefaultAssembly="DS4Windows"
+             lex:ResxLocalizationProvider.DefaultDictionary="Strings"
              xmlns:local="clr-namespace:DS4WinWPF.DS4Forms"
              mc:Ignorable="d" 
              d:DesignHeight="200" d:DesignWidth="800">
     <DockPanel Margin="4,8">
         <StackPanel x:Name="plugDevStackPanel" Orientation="Horizontal" DockPanel.Dock="Bottom" Height="30" Margin="0,20,0,0">
-            <Button x:Name="pluginBtn" MinWidth="60" Content="Plug" IsEnabled="{Binding PluginEnabled}" Click="PluginBtn_Click" />
-            <Button x:Name="unplugBtn" MinWidth="60" Content="Unplug" IsEnabled="{Binding UnpluginEnabled}" Click="UnplugBtn_Click" Margin="30,0,0,0" />
+            <Button x:Name="pluginBtn" MinWidth="60" Content="{lex:Loc Plug}" IsEnabled="{Binding PluginEnabled}" Click="PluginBtn_Click" />
+            <Button x:Name="unplugBtn" MinWidth="60" Content="{lex:Loc Unplug}" IsEnabled="{Binding UnpluginEnabled}" Click="UnplugBtn_Click" Margin="30,0,0,0" />
         </StackPanel>
 
         <DockPanel>
@@ -20,28 +24,28 @@
                         <ComboBoxItem Tag="1" Content="Permanent" />
                     </ComboBox>
 
-                    <Button x:Name="slotChangeAcceptBtn" Content="Accept" IsEnabled="{Binding Dirty,FallbackValue=False}"
+                    <Button x:Name="slotChangeAcceptBtn" Content="{lex:Loc Accept}" IsEnabled="{Binding Dirty,FallbackValue=False}"
                             Click="SlotChangeAcceptBtn_Click" Margin="0,8,0,0" />
                 </StackPanel>
             </StackPanel>
             <ListView x:Name="currentOutDevLV" ItemsSource="{Binding SlotDeviceEntries}" SelectedIndex="{Binding SelectedIndex,Mode=OneWayToSource}" DockPanel.Dock="Top">
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn Width="200" Header="Current">
+                        <GridViewColumn Width="200" Header="{lex:Loc Current}">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <TextBlock Text="{Binding CurrentType}" />
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
-                        <GridViewColumn Width="200" Header="Requested">
+                        <GridViewColumn Width="200" Header="{lex:Loc Requested}">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <TextBlock Text="{Binding DesiredType}" />
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
-                        <GridViewColumn Width="60" Header="Active">
+                        <GridViewColumn Width="60" Header="{lex:Loc Active}">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <CheckBox IsChecked="{Binding BoundInput,Mode=OneWay}" IsEnabled="False" />

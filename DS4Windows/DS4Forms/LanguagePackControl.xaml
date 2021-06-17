@@ -1,13 +1,17 @@
 ﻿<UserControl x:Class="DS4WinWPF.DS4Forms.LanguagePackControl"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:lex="http://wpflocalizeextension.codeplex.com"
+             lex:LocalizeDictionary.DesignCulture=""
+             lex:ResxLocalizationProvider.DefaultAssembly="DS4Windows"
+             lex:ResxLocalizationProvider.DefaultDictionary="Strings"
              xmlns:local="clr-namespace:DS4WinWPF.DS4Forms"
              mc:Ignorable="d" 
              d:DesignHeight="30" d:DesignWidth="340">
     <StackPanel Orientation="Horizontal">
-        <Label x:Name="label1" Content="Use language pack:" />
+        <Label x:Name="label1" Content="{lex:Loc UseLanguagePack_}" />
         <ComboBox x:Name="cbCulture" Width="200" Margin="10,0,0,0"
                   ItemsSource="{Binding LangPackList}" SelectedIndex="{Binding SelectedIndex,FallbackValue=0}" IsEnabled="False">
             <ComboBox.ItemTemplate>

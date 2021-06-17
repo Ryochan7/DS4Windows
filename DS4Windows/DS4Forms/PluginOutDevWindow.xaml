@@ -3,6 +3,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:lex="http://wpflocalizeextension.codeplex.com"
+        lex:LocalizeDictionary.DesignCulture=""
+        lex:ResxLocalizationProvider.DefaultAssembly="DS4Windows"
+        lex:ResxLocalizationProvider.DefaultDictionary="Strings"
         xmlns:local="clr-namespace:DS4WinWPF.DS4Forms"
         mc:Ignorable="d"
         Title="PluginOutDevWindow" Height="200" Width="400"
@@ -10,8 +14,8 @@
     <DockPanel LastChildFill="False">
         <TextBlock Text="Device type" DockPanel.Dock="Top" />
         <StackPanel Orientation="Horizontal" DockPanel.Dock="Bottom" Height="40" HorizontalAlignment="Right">
-            <Button x:Name="acceptBtn" Content="Accept" Click="AcceptBtn_Click" />
-            <Button x:Name="cancelBtn" Content="Cancel" Click="CancelBtn_Click" Margin="20,0,0,0" />
+            <Button x:Name="acceptBtn" Content="{lex:Loc Accept}" Click="AcceptBtn_Click" />
+            <Button x:Name="cancelBtn" Content="{lex:Loc Cancel}" Click="CancelBtn_Click" Margin="20,0,0,0" />
         </StackPanel>
 
         <ComboBox x:Name="devTypeCombo" SelectedIndex="0" DockPanel.Dock="Top">

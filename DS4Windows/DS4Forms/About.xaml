@@ -3,6 +3,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:lex="http://wpflocalizeextension.codeplex.com"
+        lex:LocalizeDictionary.DesignCulture=""
+        lex:ResxLocalizationProvider.DefaultAssembly="DS4Windows"
+        lex:ResxLocalizationProvider.DefaultDictionary="Strings"
         xmlns:local="clr-namespace:DS4WinWPF.DS4Forms"
         mc:Ignorable="d"
         Title="Hotkeys/About" Height="450" Width="800"
@@ -11,7 +15,7 @@
         <local:AboutImgPathLocations x:Key="aboutImgPathLocs" />
     </Window.Resources>
     <DockPanel>
-        <Label x:Name="headerLb" Content="DS4Windows - Ryochan7 Build (Version " DockPanel.Dock="Top" HorizontalAlignment="Center" />
+        <Label x:Name="headerLb" Content="{lex:Loc ProgramName}" DockPanel.Dock="Top" HorizontalAlignment="Center" />
         <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" HorizontalAlignment="Center" Margin="0,4,0,0">
             <Button x:Name="githubSocialBtn" Click="GithubSocialBtn_Click"
                     BorderBrush="{x:Null}" Background="{x:Null}" Cursor="Hand" ToolTip="GitHub">
@@ -46,7 +50,7 @@
             <Hyperlink x:Name="changeLogLink" Click="ChangeLogLink_Click" Foreground="{DynamicResource AccentColor}">Changelog</Hyperlink>
         </TextBlock>
         <TabControl>
-            <TabItem Header="Hotkeys">
+            <TabItem Header="{lex:Loc Hotkeys}">
                 <TextBlock TextWrapping="Wrap" xml:space="preserve">Hide DS4 Controller: Hides the DS4's regular input (Dinput) from other programs, check if you are getting double input in games or R2 pauses games
 Click left side of touchpad: Left Touch
 Click right side of touchpad: Right Touch
@@ -65,7 +69,7 @@ Macro: Assign multiple keys to one input
 Scan Code: Keys are interpreted differently. May be needed for certain games
 *If enabled</TextBlock>
             </TabItem>
-            <TabItem Header="Credits">
+            <TabItem Header="{lex:Loc Credits}">
                 <DockPanel>
                     <StackPanel DockPanel.Dock="Top" Margin="10,0">
                         <StackPanel Orientation="Horizontal">
@@ -79,7 +83,7 @@ Scan Code: Keys are interpreted differently. May be needed for certain games
                         <StackPanel Orientation="Horizontal">
                             <TextBlock><Hyperlink x:Name="electrobrainsLink" Click="ElectrobrainsLink_Click" Foreground="{DynamicResource AccentColor}">electrobrains (Branched off of)</Hyperlink></TextBlock>
                         </StackPanel>
-                        <Label Content="Translators:" Margin="0,20,0,0" />
+                        <Label Content="{lex:Loc Translators}" Margin="0,20,0,0" />
                     </StackPanel>
                     <TextBox TextWrapping="Wrap" xml:space="preserve" IsReadOnly="True"
                              DockPanel.Dock="Bottom" VerticalScrollBarVisibility="Auto" Margin="10,0,10,10">xLive - Arabic
@@ -100,7 +104,7 @@ dondrakon - Ukranian
                     </TextBox>
                 </DockPanel>
             </TabItem>
-            <TabItem Header="Tip">
+            <TabItem Header="{lex:Loc Tip}">
                 <StackPanel>
                     <TextBox Background="Transparent" BorderThickness="0" IsReadOnly="True" TextWrapping="Wrap"
                          IsUndoEnabled="False" xml:space="preserve">Bitcoin: 1DnMJwjdd7JRfHJap2mmTmADYm38SzR2z9

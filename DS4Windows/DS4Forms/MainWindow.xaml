@@ -24,9 +24,9 @@
         <tb:TaskbarIcon x:Name="notifyIcon" IconSource="{Binding IconSource,Mode=OneWay}" ToolTipText="{Binding TooltipText,Mode=OneWay}" MenuActivation="RightClick" TrayRightMouseUp="NotifyIcon_TrayRightMouseUp" TrayMiddleMouseDown="NotifyIcon_TrayMiddleMouseDown" TrayMouseDoubleClick="NotifyIcon_TrayMouseDoubleClick">
             <!--<tb:TaskbarIcon.ContextMenu>
                 <ContextMenu>
-                    <MenuItem Header="Open" />
+                    <MenuItem Header="{lex:Loc Open}" />
                     <Separator />
-                    <MenuItem x:Name="exitMenuItem" Header="Exit" />
+                    <MenuItem x:Name="exitMenuItem" Header="{lex:Loc Exit}" />
                 </ContextMenu>
             </tb:TaskbarIcon.ContextMenu>-->
         </tb:TaskbarIcon>
@@ -60,7 +60,7 @@
                                     </GridViewColumn.CellTemplate>
                                 </GridViewColumn>
 
-                                <GridViewColumn x:Name="idColumn" Header="ID" Width="120">
+                                <GridViewColumn x:Name="idColumn" Header="{lex:Loc ID}" Width="120">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
                                             <TextBlock x:Name="idColumnTxtB" Text="{Binding IdText, Mode=OneWay}" ToolTip="{Binding TooltipIDText, Mode=OneWay}" ToolTipOpening="IdColumnTxtB_ToolTipOpening" Tag="{Binding DevIndex, Mode=OneTime}"/>
@@ -71,12 +71,12 @@
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
                                             <StackPanel Width="{Binding ElementName=statusColumn, Path=Width}">
-                                                <Image x:Name="contStatusImg" Source="{Binding StatusSource}" Stretch="Uniform" Width="20" Height="20" HorizontalAlignment="Center" ToolTip="Right click to disconnect wireless" MouseRightButtonUp="ContStatusImg_MouseRightButtonUp" Tag="{Binding DevIndex}" />
+                                                <Image x:Name="contStatusImg" Source="{Binding StatusSource}" Stretch="Uniform" Width="20" Height="20" HorizontalAlignment="Center" ToolTip="{lex:Loc ContStatusTip}" MouseRightButtonUp="ContStatusImg_MouseRightButtonUp" Tag="{Binding DevIndex}" />
                                             </StackPanel>
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
                                 </GridViewColumn>
-                                <GridViewColumn x:Name="exclusiveColumn" Header="Ex" Width="50">
+                                <GridViewColumn x:Name="exclusiveColumn" Header="{lex:Loc Ex}" Width="50">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
                                             <StackPanel Width="{Binding ElementName=exclusiveColumn, Path=Width}">
@@ -96,7 +96,7 @@
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
                                 </GridViewColumn>
-                                <GridViewColumn x:Name="LinkProfColumn" Header="Link Profile/ID" Width="100">
+                                <GridViewColumn x:Name="LinkProfColumn" Header="{lex:Loc LinkProfileOrID}" Width="100">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
                                             <StackPanel Width="{Binding ElementName=LinkProfColumn, Path=Width}">
@@ -105,7 +105,7 @@
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
                                 </GridViewColumn>
-                                <GridViewColumn x:Name="selectProfileColumn" Header="Selected Profile" Width="130">
+                                <GridViewColumn x:Name="selectProfileColumn" Header="{lex:Loc SelectedProfile}" Width="130">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
                                             <StackPanel Width="{Binding Path=Width, ElementName=selectProfileColumn, Mode=OneWay}" HorizontalAlignment="Center">
@@ -145,8 +145,8 @@
                                                 <Button x:Name="LightColorBtn" Width="120" Height="20" Background="{Binding LightColor, Mode=OneWay}" Tag="{Binding DevIndex, Mode=OneTime}" Click="LightColorBtn_Click">
                                                     <!--<Button.ContextMenu>
                                                         <ContextMenu>
-                                                            <MenuItem Header="Use Profile Color" IsCheckable="True" />
-                                                            <MenuItem Header="Use Custom Color" IsCheckable="True" />
+                                                            <MenuItem Header="{lex:Loc UseProfileColor}" IsCheckable="True" />
+                                                            <MenuItem Header="{lex:Loc UseCustomColor}" IsCheckable="True" />
                                                         </ContextMenu>
                                                     </Button.ContextMenu>-->
                                                 </Button>
@@ -233,7 +233,7 @@
 
                 </local:AutoProfiles>
             </TabItem>
-            <TabItem Header="Output Slots" IsEnabled="{Binding FullTabsEnabled,Mode=OneWay}">
+            <TabItem Header="{lex:Loc OutputSlots}" IsEnabled="{Binding FullTabsEnabled,Mode=OneWay}">
                 <local:OutputSlotManagerControl x:Name="slotManControl">
 
                 </local:OutputSlotManagerControl>
@@ -244,21 +244,21 @@
                         <WrapPanel.Resources>
                             <Thickness x:Key="spaceMargin" Left="4" Right="0" Bottom="8" Top="0" />
                         </WrapPanel.Resources>
-                        <CheckBox x:Name="hideDS4ContCk" Content="Hide DS4 Controller" x:Uid="hideDS4Checkbox"
+                        <CheckBox x:Name="hideDS4ContCk" Content="{lex:Loc HideDS4Controller}" x:Uid="hideDS4Checkbox"
                               Margin="{StaticResource spaceMargin}" IsChecked="{Binding HideDS4Controller}" Click="HideDS4ContCk_Click" >
                         </CheckBox>
-                        <CheckBox x:Name="swipeTouchCk" Content="Swipe Touchpad To Switch Profiles" Margin="{StaticResource spaceMargin}"
+                        <CheckBox x:Name="swipeTouchCk" Content="{lex:Loc SwipeTouch}" Margin="{StaticResource spaceMargin}"
                               IsChecked="{Binding SwipeTouchSwitchProfile}"
                               ToolTip="{lex:Loc Resources:TwoFingerSwipe}" Click="SwipeTouchCk_Click" />
                         <CheckBox x:Name="runAtStartCk" Content="{lex:Loc RunAtStartup}" Margin="{StaticResource spaceMargin}"
                               IsChecked="{Binding RunAtStartup}"
                               ToolTip="{lex:Loc Resources:RunAtStartup}" Click="RunAtStartCk_Click" />
-                        <GroupBox x:Name="runAsGroupBox" Header="Run As" BorderThickness="2" Visibility="{Binding ShowRunStartPanel}"
+                        <GroupBox x:Name="runAsGroupBox" Header="{lex:Loc RunAs}" BorderThickness="2" Visibility="{Binding ShowRunStartPanel}"
                               Margin="{StaticResource spaceMargin}">
                             <StackPanel Orientation="Horizontal">
                                 <StackPanel>
-                                    <RadioButton Content="Program" GroupName="RunAsOpt" Margin="{StaticResource spaceMargin}" IsChecked="{Binding RunStartProg}" />
-                                    <RadioButton Content="Task" GroupName="RunAsOpt" Margin="{StaticResource spaceMargin}"
+                                    <RadioButton Content="{lex:Loc Program}" GroupName="RunAsOpt" Margin="{StaticResource spaceMargin}" IsChecked="{Binding RunStartProg}" />
+                                    <RadioButton Content="{lex:Loc Task}" GroupName="RunAsOpt" Margin="{StaticResource spaceMargin}"
                                                  IsChecked="{Binding RunStartTask}" IsEnabled="{Binding CanWriteTask}" />
                                 </StackPanel>
                                 <Image x:Name="uacImg" Source="{Binding UACSource, Mode=OneTime}" Width="30" Height="30"
@@ -273,22 +273,22 @@
                                 <ComboBoxItem Content="{lex:Loc All}" />
                             </ComboBox>
                         </StackPanel>
-                        <CheckBox Content="Disconnect from BT when Stopping" Margin="{StaticResource spaceMargin}"
+                        <CheckBox Content="{lex:Loc DisconnectBTStop}" Margin="{StaticResource spaceMargin}"
                               IsChecked="{Binding DisconnectBTStop}" />
                         <StackPanel Orientation="Horizontal" Margin="{StaticResource spaceMargin}">
-                            <CheckBox Content="Flash Lightbar at High Latency" VerticalAlignment="Center"
+                            <CheckBox Content="{lex:Loc FlashHighLatency}" VerticalAlignment="Center"
                                   IsChecked="{Binding FlashHighLatency}" />
                             <StackPanel Orientation="Horizontal" Margin="8,0,0,0"
                                     IsEnabled="{Binding FlashHighLatency,FallbackValue='False'}">
                                 <!--<TextBox Text="20" VerticalContentAlignment="Center" />-->
                                 <xctk:IntegerUpDown d:IsHidden="True" Value="{Binding FlashHighLatencyAt}" MinWidth="30" ButtonSpinnerLocation="Right" Increment="1" Maximum="100" Minimum="10" />
-                                <Label Content="ms" />
+                                <Label Content="{lex:Loc Ms}" />
                             </StackPanel>
                         </StackPanel>
                         <CheckBox Content="{lex:Loc StartMinimized}" Margin="{StaticResource spaceMargin}"
                               IsChecked="{Binding StartMinimize}" />
-                        <CheckBox Content="Minimize to Taskbar"
-                                  ToolTip="Minimize to Taskbar instead of System Tray"
+                        <CheckBox Content="{lex:Loc MinimizeToTaskbar}"
+                                  ToolTip="{lex:Loc MinimizeToTaskbarTip}"
                                   IsChecked="{Binding MinimizeToTaskbar}" Margin="{StaticResource spaceMargin}" />
                         <CheckBox Content="{lex:Loc CloseMinimizes}" Margin="{StaticResource spaceMargin}"
                               IsChecked="{Binding CloseMinimizes}"
@@ -297,7 +297,7 @@
                               IsChecked="{Binding QuickCharge}"
                               ToolTip="{lex:Loc Resources:QuickCharge}" />
                         <StackPanel Orientation="Horizontal" Margin="{StaticResource spaceMargin}">
-                            <Label Content="Icon Choice:" />
+                            <Label Content="{lex:Loc IconChoice}" />
                             <ComboBox x:Name="useIconChoiceCom" SelectedIndex="{Binding IconChoiceIndex,FallbackValue='0'}" Margin="10,0,0,0">
                                 <ComboBoxItem>Default</ComboBoxItem>
                                 <ComboBoxItem>Colored</ComboBoxItem>
@@ -306,7 +306,7 @@
                             </ComboBox>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal" Margin="{StaticResource spaceMargin}">
-                            <Label Content="App Theme:" />
+                            <Label Content="{lex:Loc AppTheme}" />
                             <ComboBox x:Name="appThemeCom" SelectedIndex="{Binding AppChoiceIndex,FallbackValue='0'}" Margin="10,0,0,0">
                                 <ComboBoxItem>Default</ComboBoxItem>
                                 <ComboBoxItem>Dark</ComboBoxItem>
@@ -317,7 +317,7 @@
                               IsChecked="{Binding CheckForUpdates}" />
                         <StackPanel x:Name="checkEveryOptionsStack" Orientation="Horizontal" Margin="{StaticResource spaceMargin}"
                                 IsEnabled="{Binding CheckForUpdates}">
-                            <Label Content="Check every " />
+                            <Label Content="{lex:Loc CheckEvery}" />
                             <!--<TextBox Text="0" VerticalAlignment="Center" />-->
                             <xctk:IntegerUpDown d:IsHidden="True" Value="{Binding CheckEvery}" MinWidth="30" Margin="8,0,0,0"
                                             ButtonSpinnerLocation="Right" Increment="1" Maximum="30" Minimum="0" />
@@ -329,27 +329,27 @@
                                 <ComboBoxItem Content="Days" />
                             </ComboBox>
                         </StackPanel>
-                        <GroupBox Header="UDP Server" Padding="0,10,0,0" Margin="{StaticResource spaceMargin}">
+                        <GroupBox Header="{lex:Loc UDPServer}" Padding="0,10,0,0" Margin="{StaticResource spaceMargin}">
                             <StackPanel>
                                 <StackPanel Orientation="Horizontal" MinHeight="20">
-                                    <CheckBox x:Name="useUdpServerCk" Content="Enable Server" IsChecked="{Binding UseUDPServer}" Click="UseUdpServerCk_Click" />
+                                    <CheckBox x:Name="useUdpServerCk" Content="{lex:Loc EnableServer}" IsChecked="{Binding UseUDPServer}" Click="UseUdpServerCk_Click" />
                                     <TextBox x:Name="udpServerTxt" IsEnabled="{Binding UseUDPServer,Mode=OneWay}" Text="{Binding UdpIpAddress, UpdateSourceTrigger=LostFocus,FallbackValue='127.0.0.1'}"
                                  Margin="8,0,0,0" />
-                                    <Label Content="Port" Padding="0" Margin="20,0,0,0" />
+                                    <Label Content="{lex:Loc Port}" Padding="0" Margin="20,0,0,0" />
                                     <!--<TextBox x:Name="updPortNum" IsEnabled="{Binding UseUDPServer}" Text="{Binding UdpPort, UpdateSourceTrigger=LostFocus,FallbackValue='26760'}" />-->
                                     <xctk:IntegerUpDown d:IsHidden="True" x:Name="updPortNum" IsEnabled="{Binding UseUDPServer}" MinWidth="20" Margin="8,0,0,0"
                                             Value="{Binding UdpPort, UpdateSourceTrigger=LostFocus,FallbackValue='26760'}" ButtonSpinnerLocation="Right" Increment="1" Maximum="65535" Minimum="0" />
                                 </StackPanel>
 
-                                <CheckBox Content="Use Smoothing" IsChecked="{Binding UseUdpSmoothing,FallbackValue='False'}" IsEnabled="{Binding UseUDPServer,Mode=OneWay}" Margin="0,4,0,10" />
+                                <CheckBox Content="{lex:Loc UseSmoothing}" IsChecked="{Binding UseUdpSmoothing,FallbackValue='False'}" IsEnabled="{Binding UseUDPServer,Mode=OneWay}" Margin="0,4,0,10" />
                                 <StackPanel x:Name="udpEuroPanel" Orientation="Horizontal" Margin="{StaticResource spaceMargin}" Visibility="{Binding UdpServerOneEuroPanelVisibility,FallbackValue='Collapsed'}">
                                     <StackPanel Orientation="Horizontal">
-                                        <Label Content="1&#x20ac; MinCutoff" />
+                                        <Label Content="{lex:Loc OneEuroMinCutoff}" />
                                         <xctk:DoubleUpDown d:IsHidden="True" FormatString="F5" Value="{Binding UdpSmoothMinCutoff,FallbackValue=1.0,UpdateSourceTrigger=LostFocus}"
                                                            Minimum="0.00001" Maximum="100.0" Increment="0.1" MinWidth="60" />
                                     </StackPanel>
                                     <StackPanel Orientation="Horizontal" Margin="30,0,0,0">
-                                        <Label Content="1&#x20ac; Beta" />
+                                        <Label Content="{lex:Loc OneEuroBeta}" />
                                         <xctk:DoubleUpDown  d:IsHidden="True" FormatString="F5" Value="{Binding UdpSmoothBeta,FallbackValue=0.0,UpdateSourceTrigger=LostFocus}"
                                                            Minimum="0.0" Maximum="1.0" Increment="0.1" MinWidth="60" />
                                     </StackPanel>
@@ -359,14 +359,14 @@
                         </GroupBox>
 
                         <!--<StackPanel Orientation="Horizontal">
-                        <Label Content="Use language pack" />
+                        <Label Content="{lex:Loc UseLanguagePack}" />
                         <ComboBox x:Name="langPackCombo" MinWidth="100" IsEnabled="False">
                         </ComboBox>
                     </StackPanel>
                     -->
                         <local:LanguagePackControl Margin="{StaticResource spaceMargin}" />
                         <StackPanel Margin="{StaticResource spaceMargin}">
-                            <CheckBox x:Name="customSteamCk" Content="Use custom Steam Folder" Margin="{StaticResource spaceMargin}"
+                            <CheckBox x:Name="customSteamCk" Content="{lex:Loc UseCustomSteamFolder}" Margin="{StaticResource spaceMargin}"
                                   IsChecked="{Binding UseCustomSteamFolder}" />
                             <TextBox x:Name="customSteamTxt" Text="{Binding CustomSteamFolder, UpdateSourceTrigger=LostFocus}"
                                  IsEnabled="{Binding UseCustomSteamFolder}" />
@@ -380,7 +380,7 @@
                             <TextBox x:Name="fakeExeNameTxt" Text="{Binding FakeExeName, UpdateSourceTrigger=LostFocus}" MinWidth="200" />
                         </DockPanel>
 
-                        <GroupBox Header="Utils" BorderThickness="2" Margin="{StaticResource spaceMargin}"
+                        <GroupBox Header="{lex:Loc Utils}" BorderThickness="2" Margin="{StaticResource spaceMargin}"
                               Padding="8" HorizontalAlignment="Left">
                             <WrapPanel HorizontalAlignment="Left" Orientation="Vertical">
                                 <Button x:Name="profFolderBtn" BorderThickness="0" Margin="0,0,4,4" Background="{x:Null}" BorderBrush="{x:Null}"
@@ -420,7 +420,7 @@
                             </WrapPanel>
                         </GroupBox>
 
-                        <Button x:Name="deviceOptionSettingsBtn" MaxWidth="100" HorizontalAlignment="Left" Content="Device Options" Click="DeviceOptionSettingsBtn_Click" />
+                        <Button x:Name="deviceOptionSettingsBtn" MaxWidth="100" HorizontalAlignment="Left" Content="{lex:Loc DeviceOptions}" Click="DeviceOptionSettingsBtn_Click" />
                     </WrapPanel>
                 </ScrollViewer>
 
@@ -428,20 +428,20 @@
             <TabItem Header="{lex:Loc Log}">
                 <DockPanel>
                     <DockPanel Height="20" DockPanel.Dock="Bottom" Margin="4,8">
-                        <Button x:Name="exportLogBtn" Content="Export" HorizontalAlignment="Left" Padding="20,1" Click="ExportLogBtn_Click" />
+                        <Button x:Name="exportLogBtn" Content="{lex:Loc Export}" HorizontalAlignment="Left" Padding="20,1" Click="ExportLogBtn_Click" />
                         <Button x:Name="clearLogBtn" Content="{lex:Loc Clear}" DockPanel.Dock="Right" Padding="20,1" Margin="100,0,0,0" Click="ClearLogBtn_Click" />
                     </DockPanel>
                     <ListView x:Name="logListView" DockPanel.Dock="Top" ItemsSource="{Binding LogItems}" MouseDoubleClick="LogListView_MouseDoubleClick" Margin="0">
                         <ListView.View>
                             <GridView AllowsColumnReorder="False">
-                                <GridViewColumn Header="Time" Width="150">
+                                <GridViewColumn Header="{lex:Loc Time}" Width="150">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
                                             <TextBlock Text="{Binding Path=Datetime, StringFormat=\{0:G\}}"/>
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
                                 </GridViewColumn>
-                                <GridViewColumn Header="Data" Width="800">
+                                <GridViewColumn Header="{lex:Loc Data}" Width="800">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
                                             <TextBlock Text="{Binding Path=Message}"/>

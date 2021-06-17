@@ -32,8 +32,8 @@
         </Canvas>
 
         <StackPanel Orientation="Horizontal" DockPanel.Dock="Right" HorizontalAlignment="Right" Margin="0,0,30,0">
-            <Button x:Name="saveBtn" Content="Save" Width="80" Click="SaveBtn_Click" />
-            <Button x:Name="cancelBtn" Content="Cancel" Width="80" Click="CancelBtn_Click" Margin="20,0,0,0" />
+            <Button x:Name="saveBtn" Content="{lex:Loc Save}" Width="80" Click="SaveBtn_Click" />
+            <Button x:Name="cancelBtn" Content="{lex:Loc Cancel}" Width="80" Click="CancelBtn_Click" Margin="20,0,0,0" />
         </StackPanel>
     </DockPanel>
 </UserControl>

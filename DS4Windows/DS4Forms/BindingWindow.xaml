@@ -17,49 +17,49 @@
             <StackPanel.Resources>
                 <Thickness x:Key="spaceMargin" Bottom="8" />
             </StackPanel.Resources>
-            <GroupBox Header="Extra" x:Name="extrasGB">
+            <GroupBox Header="{lex:Loc Extra}" x:Name="extrasGB">
                 <StackPanel Orientation="Vertical" Margin="2,0">
                     <StackPanel Orientation="Horizontal" Margin="{StaticResource spaceMargin}">
                         <Label Content="{lex:Loc Rumble}" />
-                        <Button x:Name="testRumbleBtn" Width="60" Content="Test" Click="TestRumbleBtn_Click" />
+                        <Button x:Name="testRumbleBtn" Width="60" Content="{lex:Loc Test}" Click="TestRumbleBtn_Click" />
                     </StackPanel>
 
                     <StackPanel Orientation="Horizontal" Margin="{StaticResource spaceMargin}">
-                        <Label Content="Heavy" Width="50" />
+                        <Label Content="{lex:Loc Heavy}" Width="50" />
                         <xctk:IntegerUpDown Value="{Binding HeavyRumble}" MinWidth="60" Margin="20,0,0,0"
                                             Minimum="0" Maximum="255" />
                     </StackPanel>
 
                     <StackPanel Orientation="Horizontal" Margin="{StaticResource spaceMargin}">
-                        <Label Content="Light" Width="50" />
+                        <Label Content="{lex:Loc Light}" Width="50" />
                         <xctk:IntegerUpDown Value="{Binding LightRumble}" MinWidth="60" Margin="20,0,0,0"
                                             Minimum="0" Maximum="255" />
                     </StackPanel>
 
                     <StackPanel Orientation="Vertical">
-                        <CheckBox Content="Change Light" IsChecked="{Binding UseExtrasColor}" Margin="{StaticResource spaceMargin}" />
+                        <CheckBox Content="{lex:Loc ChangeLight}" IsChecked="{Binding UseExtrasColor}" Margin="{StaticResource spaceMargin}" />
                         <StackPanel Margin="{StaticResource spaceMargin}">
                             <StackPanel Orientation="Horizontal">
-                                <Label Content="R" />
+                                <Label Content="{lex:Loc ColorR}" />
                                 <Slider Value="{Binding ExtrasColorR}" Minimum="0" Maximum="255" ToolTip="{Binding ExtrasColorR}" MinWidth="100" Background="{Binding ExtrasColorRString, FallbackValue=Red}"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal">
-                                <Label Content="G" />
+                                <Label Content="{lex:Loc ColorG}" />
                                 <Slider Value="{Binding ExtrasColorG}" MinWidth="100" Minimum="0" Maximum="255" ToolTip="{Binding ExtrasColorG}" Background="{Binding ExtrasColorGString, FallbackValue=Lime}"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal">
-                                <Label Content="B" />
+                                <Label Content="{lex:Loc ColorB}" />
                                 <Slider Value="{Binding ExtrasColorB}" MinWidth="100" Minimum="0" Maximum="255" ToolTip="{Binding ExtrasColorB}" Background="{Binding ExtrasColorBString, FallbackValue=Blue}"/>
                             </StackPanel>
                             <Button x:Name="extrasColorChoosebtn" Width="20" Height="20" Background="{Binding ExtrasColorString}" HorizontalAlignment="Right" Margin="0,10,10,0" Click="ExtrasColorChoosebtn_Click" />
                         </StackPanel>
                         <StackPanel Orientation="Horizontal" Margin="{StaticResource spaceMargin}">
-                            <Label Content="Flash Rate"/>
+                            <Label Content="{lex:Loc FlashRate}"/>
                             <xctk:IntegerUpDown MinWidth="50" Value="{Binding FlashRate}"
                                                 Minimum="0" Maximum="20" />
                         </StackPanel>
                         <StackPanel Orientation="Vertical">
-                            <CheckBox Content="Change Mouse Sensitivity" IsChecked="{Binding UseMouseSens}"
+                            <CheckBox Content="{lex:Loc ChangeMouseSensitivity}" IsChecked="{Binding UseMouseSens}"
                                       Margin="{StaticResource spaceMargin}" />
                             <xctk:IntegerUpDown Value="{Binding MouseSens}" MinWidth="50" Height="20"
                                                 Minimum="0" Maximum="255" />
@@ -73,8 +73,8 @@
             <DockPanel x:Name="bottomPanel" DockPanel.Dock="Bottom" Margin="0">
                 <StackPanel x:Name="modePanel" Width="160" DockPanel.Dock="Left" Margin="8,0,0,0">
                     <StackPanel Orientation="Horizontal">
-                        <RadioButton x:Name="regBindRadio" Content="Regular" GroupName="bindModeGroup" IsChecked="True" Click="RegBindRadio_Click" />
-                        <RadioButton x:Name="shiftBindRadio" Content="Shift Modifier" GroupName="bindModeGroup" Margin="10,0,0,0" Click="ShiftBindRadio_Click" />
+                        <RadioButton x:Name="regBindRadio" Content="{lex:Loc Regular}" GroupName="bindModeGroup" IsChecked="True" Click="RegBindRadio_Click" />
+                        <RadioButton x:Name="shiftBindRadio" Content="{lex:Loc ShiftModifier}" GroupName="bindModeGroup" Margin="10,0,0,0" Click="ShiftBindRadio_Click" />
                     </StackPanel>
 
                     <ComboBox x:Name="shiftTriggerCombo" Margin="0,8,0,0" SelectedIndex="{Binding ShiftTrigger,FallbackValue=0}">
@@ -106,10 +106,10 @@
                         <ComboBoxItem Content="Sixaxis Right"/>
                         <ComboBoxItem Content="Finger on Touchpad"/>
                         <ComboBoxItem Content="Mute"/>
-                    </ComboBox>
+                  </ComboBox>
 
                     <Button x:Name="defaultBtn" Content="{Binding DefaultBtnString,FallbackValue=Default}" Background="{Binding DefaultColor,FallbackValue={StaticResource SecondaryColor}}" Margin="0,50,0,0" Click="DefaultBtn_Click" />
-                    <Button x:Name="unboundBtn" Content="Unbound" Background="{Binding UnboundColor,FallbackValue={StaticResource SecondaryColor}}" Margin="0,10,0,0" Click="UnboundBtn_Click" />
+                    <Button x:Name="unboundBtn" Content="{lex:Loc Unbound}" Background="{Binding UnboundColor,FallbackValue={StaticResource SecondaryColor}}" Margin="0,10,0,0" Click="UnboundBtn_Click" />
                 </StackPanel>
 
                 <StackPanel x:Name="outConPanel" Width="630" Orientation="Vertical" DockPanel.Dock="Right" HorizontalAlignment="Center" Margin="0">
@@ -178,7 +178,7 @@
                 </Grid.ColumnDefinitions>
                 <StackPanel Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left">
                     <Label x:Name="macroOnLb"
-                           Content="Macro On, Choose a key to disable, else close this window to save"
+                           Content="{lex:Loc MacroOn}"
                            Visibility="{Binding MacroLbVisible}" />
                 </StackPanel>
                 <StackPanel Grid.Column="1" HorizontalAlignment="Center">
@@ -186,11 +186,11 @@
                 </StackPanel>
                 <StackPanel x:Name="topOptsPanel" Orientation="Horizontal" Grid.Column="2"
                             HorizontalAlignment="Right" VerticalAlignment="Center">
-                    <CheckBox Content="Toggle" IsChecked="{Binding Toggle}" />
-                    <CheckBox Content="Scan Code" IsChecked="{Binding HasScanCode}" Margin="6,0,0,0" />
+                    <CheckBox Content="{lex:Loc Toggle}" IsChecked="{Binding Toggle}" />
+                    <CheckBox Content="{lex:Loc ScanCode}" IsChecked="{Binding HasScanCode}" Margin="6,0,0,0" />
                 </StackPanel>
                 <StackPanel Grid.Column="3" HorizontalAlignment="Right" VerticalAlignment="Center">
-                    <Button x:Name="recordMacroBtn" Content="Record A Macro" Click="RecordMacroBtn_Click" />
+                    <Button x:Name="recordMacroBtn" Content="{lex:Loc RecordMacro}" Click="RecordMacroBtn_Click" />
                 </StackPanel>
             </Grid>
             <Grid DockPanel.Dock="Top">
