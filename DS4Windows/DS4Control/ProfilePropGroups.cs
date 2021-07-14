@@ -605,18 +605,30 @@ namespace DS4Windows
 
     public class TouchpadAbsMouseSettings
     {
-        public const int DEFAULT_MAXZONE_X = 90;
-        public const int DEFAULT_MAXZONE_Y = 90;
+        public const double DEFAULT_MAXZONE_X = 90.0;
+        public const double DEFAULT_MAXZONE_Y = 90.0;
+        public const double DEFAULT_MINPOS_X = 0.0;
+        public const double DEFAULT_MINPOS_Y = 0.0;
+        public const double DEFAULT_MAXPOS_X = 100.0;
+        public const double DEFAULT_MAXPOS_Y = 100.0;
         public const bool DEFAULT_SNAP_CENTER = false;
 
-        public int maxZoneX = DEFAULT_MAXZONE_X;
-        public int maxZoneY = DEFAULT_MAXZONE_Y;
+        public double maxZoneX = DEFAULT_MAXZONE_X;
+        public double maxZoneY = DEFAULT_MAXZONE_Y;
+        public double minPosX = DEFAULT_MINPOS_X;
+        public double minPosY = DEFAULT_MINPOS_Y;
+        public double maxPosX = DEFAULT_MAXPOS_X;
+        public double maxPosY = DEFAULT_MAXPOS_Y;
         public bool snapToCenter = DEFAULT_SNAP_CENTER;
 
         public void Reset()
         {
             maxZoneX = DEFAULT_MAXZONE_X;
             maxZoneY = DEFAULT_MAXZONE_Y;
+            minPosX = DEFAULT_MINPOS_X;
+            minPosY = DEFAULT_MINPOS_Y;
+            maxPosX = DEFAULT_MAXPOS_X;
+            maxPosY = DEFAULT_MAXPOS_Y;
             snapToCenter = DEFAULT_SNAP_CENTER;
         }
     }

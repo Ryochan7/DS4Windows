@@ -1810,25 +1810,69 @@ namespace DS4WinWPF.DS4Forms.ViewModels
             set => Global.TrackballFriction[device] = value;
         }
 
-        public int TouchAbsMouseMaxZoneX
+        public double TouchAbsMouseMaxZoneX
         {
             get => Global.TouchAbsMouse[device].maxZoneX;
             set
             {
-                int temp = Global.TouchAbsMouse[device].maxZoneX;
+                double temp = Global.TouchAbsMouse[device].maxZoneX;
                 if (temp == value) return;
                 Global.TouchAbsMouse[device].maxZoneX = value;
             }
         }
 
-        public int TouchAbsMouseMaxZoneY
+        public double TouchAbsMouseMaxZoneY
         {
             get => Global.TouchAbsMouse[device].maxZoneY;
             set
             {
-                int temp = Global.TouchAbsMouse[device].maxZoneY;
+                double temp = Global.TouchAbsMouse[device].maxZoneY;
                 if (temp == value) return;
                 Global.TouchAbsMouse[device].maxZoneY = value;
+            }
+        }
+
+        public double TouchAbsMouseMinPosX
+        {
+            get => Global.TouchAbsMouse[device].minPosX;
+            set
+            {
+                double temp = Global.TouchAbsMouse[device].minPosX;
+                if (temp == value) return;
+                Global.TouchAbsMouse[device].minPosX = value;
+            }
+        }
+
+        public double TouchAbsMouseMinPosY
+        {
+            get => Global.TouchAbsMouse[device].minPosY;
+            set
+            {
+                double temp = Global.TouchAbsMouse[device].minPosY;
+                if (temp == value) return;
+                Global.TouchAbsMouse[device].minPosY = value;
+            }
+        }
+
+        public double TouchAbsMouseMaxPosX
+        {
+            get => Global.TouchAbsMouse[device].maxPosX;
+            set
+            {
+                double temp = Global.TouchAbsMouse[device].maxPosX;
+                if (temp == value) return;
+                Global.TouchAbsMouse[device].maxPosX = value;
+            }
+        }
+
+        public double TouchAbsMouseMaxPosY
+        {
+            get => Global.TouchAbsMouse[device].maxPosY;
+            set
+            {
+                double temp = Global.TouchAbsMouse[device].maxPosY;
+                if (temp == value) return;
+                Global.TouchAbsMouse[device].maxPosY = value;
             }
         }
 

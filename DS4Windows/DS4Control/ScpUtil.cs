@@ -3693,6 +3693,10 @@ namespace DS4Windows
                 XmlElement xmlTouchAbsMouseGroupEl = m_Xdoc.CreateElement("TouchpadAbsMouseSettings");
                 XmlElement xmlTouchAbsMouseMaxZoneX = m_Xdoc.CreateElement("MaxZoneX"); xmlTouchAbsMouseMaxZoneX.InnerText = touchpadAbsMouse[device].maxZoneX.ToString(); xmlTouchAbsMouseGroupEl.AppendChild(xmlTouchAbsMouseMaxZoneX);
                 XmlElement xmlTouchAbsMouseMaxZoneY = m_Xdoc.CreateElement("MaxZoneY"); xmlTouchAbsMouseMaxZoneY.InnerText = touchpadAbsMouse[device].maxZoneY.ToString(); xmlTouchAbsMouseGroupEl.AppendChild(xmlTouchAbsMouseMaxZoneY);
+                XmlElement xmlTouchAbsMouseMinPosX = m_Xdoc.CreateElement("MinPosX"); xmlTouchAbsMouseMinPosX.InnerText = touchpadAbsMouse[device].minPosX.ToString(); xmlTouchAbsMouseGroupEl.AppendChild(xmlTouchAbsMouseMinPosX);
+                XmlElement xmlTouchAbsMouseMinPosY = m_Xdoc.CreateElement("MinPosY"); xmlTouchAbsMouseMinPosY.InnerText = touchpadAbsMouse[device].minPosY.ToString(); xmlTouchAbsMouseGroupEl.AppendChild(xmlTouchAbsMouseMinPosY);
+                XmlElement xmlTouchAbsMouseMaxPosX = m_Xdoc.CreateElement("MaxPosX"); xmlTouchAbsMouseMaxPosX.InnerText = touchpadAbsMouse[device].maxPosX.ToString(); xmlTouchAbsMouseGroupEl.AppendChild(xmlTouchAbsMouseMaxPosX);
+                XmlElement xmlTouchAbsMouseMaxPosY = m_Xdoc.CreateElement("MaxPosY"); xmlTouchAbsMouseMaxPosY.InnerText = touchpadAbsMouse[device].maxPosY.ToString(); xmlTouchAbsMouseGroupEl.AppendChild(xmlTouchAbsMouseMaxPosY);
                 XmlElement xmlTouchAbsMouseSnapCenter = m_Xdoc.CreateElement("SnapToCenter"); xmlTouchAbsMouseSnapCenter.InnerText = touchpadAbsMouse[device].snapToCenter.ToString(); xmlTouchAbsMouseGroupEl.AppendChild(xmlTouchAbsMouseSnapCenter);
                 rootElement.AppendChild(xmlTouchAbsMouseGroupEl);
 
@@ -5593,7 +5597,7 @@ namespace DS4Windows
                     try
                     {
                         Item = touchpadAbsMouseElement.SelectSingleNode("MaxZoneX");
-                        int.TryParse(Item.InnerText, out int temp);
+                        double.TryParse(Item.InnerText, out double temp);
                         touchpadAbsMouse[device].maxZoneX = temp;
                     }
                     catch { touchpadAbsMouse[device].maxZoneX = TouchpadAbsMouseSettings.DEFAULT_MAXZONE_X; missingSetting = true; }
@@ -5601,10 +5605,42 @@ namespace DS4Windows
                     try
                     {
                         Item = touchpadAbsMouseElement.SelectSingleNode("MaxZoneY");
-                        int.TryParse(Item.InnerText, out int temp);
+                        double.TryParse(Item.InnerText, out double temp);
                         touchpadAbsMouse[device].maxZoneY = temp;
                     }
                     catch { touchpadAbsMouse[device].maxZoneY = TouchpadAbsMouseSettings.DEFAULT_MAXZONE_Y; missingSetting = true; }
+
+                    try
+                    {
+                        Item = touchpadAbsMouseElement.SelectSingleNode("MinPosX");
+                        double.TryParse(Item.InnerText, out double temp);
+                        touchpadAbsMouse[device].minPosX = temp;
+                    }
+                    catch { touchpadAbsMouse[device].minPosX = TouchpadAbsMouseSettings.DEFAULT_MINPOS_X; missingSetting = true; }
+
+                    try
+                    {
+                        Item = touchpadAbsMouseElement.SelectSingleNode("MinPosY");
+                        double.TryParse(Item.InnerText, out double temp);
+                        touchpadAbsMouse[device].minPosY = temp;
+                    }
+                    catch { touchpadAbsMouse[device].minPosY = TouchpadAbsMouseSettings.DEFAULT_MINPOS_Y; missingSetting = true; }
+
+                    try
+                    {
+                        Item = touchpadAbsMouseElement.SelectSingleNode("MaxPosX");
+                        double.TryParse(Item.InnerText, out double temp);
+                        touchpadAbsMouse[device].maxPosX = temp;
+                    }
+                    catch { touchpadAbsMouse[device].maxPosX = TouchpadAbsMouseSettings.DEFAULT_MAXPOS_X; missingSetting = true; }
+
+                    try
+                    {
+                        Item = touchpadAbsMouseElement.SelectSingleNode("MaxPosY");
+                        double.TryParse(Item.InnerText, out double temp);
+                        touchpadAbsMouse[device].maxPosY = temp;
+                    }
+                    catch { touchpadAbsMouse[device].maxPosY = TouchpadAbsMouseSettings.DEFAULT_MAXPOS_Y; missingSetting = true; }
 
                     try
                     {

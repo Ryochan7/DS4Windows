@@ -288,6 +288,7 @@ namespace DS4Windows
                 return;
 
             int currentX = 0, currentY = 0;
+            /// Is this a dead branch?
             if (touchesLen > 1)
             {
                 currentX = arg.touches[1].hwX;
@@ -301,29 +302,45 @@ namespace DS4Windows
 
             TouchpadAbsMouseSettings absSettings = Global.TouchAbsMouse[deviceNumber];
 
-            int minX = (int)(DS4Touchpad.RES_HALFED_X - (absSettings.maxZoneX * 0.01 * DS4Touchpad.RES_HALFED_X));
-            int minY = (int)(DS4Touchpad.RES_HALFED_Y - (absSettings.maxZoneY * 0.01 * DS4Touchpad.RES_HALFED_Y));
-            int maxX = (int)(DS4Touchpad.RES_HALFED_X + (absSettings.maxZoneX * 0.01 * DS4Touchpad.RES_HALFED_X));
-            int maxY = (int)(DS4Touchpad.RES_HALFED_Y + (absSettings.maxZoneY * 0.01 * DS4Touchpad.RES_HALFED_Y));
+            /// maxZone* determines what percentage of the touchpad will be used.
+            /// If maxZoneX is 90, any touch below 5% of the range is clamped to the minimum input and any touch above 95% of the range is clamped to the maximum input.
+            /// Values inbetween 5% and 95% are linearly interpolated to fill the whole range.
 
-            double mX = (DS4Touchpad.RESOLUTION_X_MAX - 0) / (double)(maxX - minX);
-            double bX = minX * mX;
-            double mY = (DS4Touchpad.RESOLUTION_Y_MAX - 0) / (double)(maxY - minY);
-            double bY = minY * mY;
+            double absX = ((currentX - DS4Touchpad.RES_HALFED_X) / (DS4Touchpad.RESOLUTION_X_MAX * absSettings.maxZoneX * 0.01)) + 0.5;
+            double absY = ((currentY - DS4Touchpad.RES_HALFED_Y) / (DS4Touchpad.RESOLUTION_Y_MAX * absSettings.maxZoneY * 0.01)) + 0.5;
 
-            currentX = currentX > maxX ? maxX : (currentX < minX ? minX : currentX);
-            currentY = currentY > maxY ? maxY : (currentX < minY ? minY : currentY);
+            absX = Math.Clamp(absX, 0.0, 1.0);
+            absY = Math.Clamp(absY, 0.0, 1.0);
 
-            double absX = (currentX * mX - bX) / (double)DS4Touchpad.RESOLUTION_X_MAX;
-            double absY = (currentY * mY - bY) / (double)DS4Touchpad.RESOLUTION_Y_MAX;
-            //InputMethods.MoveAbsoluteMouse(absX, absY);
-            Global.outputKBMHandler.MoveAbsoluteMouse(absX, absY);
+            /// minPos* and maxPos* determine what range of the screen will be used as outputs.
+            /// If minPosX is 10 and maxPosX is 90, only the middle 80% of the screen will be used as outputs.
+
+            double minPosX = absSettings.minPosX * 0.01;
+            double minPosY = absSettings.minPosY * 0.01;
+            double maxPosX = Math.Max(absSettings.maxPosX * 0.01, minPosX);
+            double maxPosY = Math.Max(absSettings.maxPosY * 0.01, minPosY);
+
+            double relX = minPosX + absX * (maxPosX - minPosX);
+            double relY = minPosY + absY * (maxPosY - minPosY);
+
+            //InputMethods.MoveAbsoluteMouse(relX, relY);
+            Global.outputKBMHandler.MoveAbsoluteMouse(relX, relY);
         }
 
         public void TouchCenterAbsolute()
         {
-            //InputMethods.MoveAbsoluteMouse(0.5, 0.5);
-            Global.outputKBMHandler.MoveAbsoluteMouse(0.5, 0.5);
+            TouchpadAbsMouseSettings absSettings = Global.TouchAbsMouse[deviceNumber];
+
+            double minPosX = absSettings.minPosX * 0.01;
+            double minPosY = absSettings.minPosY * 0.01;
+            double maxPosX = Math.Max(absSettings.maxPosX * 0.01, minPosX);
+            double maxPosY = Math.Max(absSettings.maxPosY * 0.01, minPosY);
+
+            double midX = (maxPosX + minPosX) * 0.5;
+            double midY = (maxPosY + minPosY) * 0.5;
+
+            //InputMethods.MoveAbsoluteMouse(midX, midY);
+            Global.outputKBMHandler.MoveAbsoluteMouse(midX, midY);
         }
 
         public void TouchMoveCursor(int dx, int dy, bool disableInvert = false)

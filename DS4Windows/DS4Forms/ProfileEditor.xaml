@@ -1087,7 +1087,10 @@
             <TabItem Header="Touchpad">
                 <TabItem.Resources>
                     <Thickness x:Key="spaceMargin" Bottom="8" />
-                </TabItem.Resources>
+					<Style x:Key="gridRowHeight" TargetType="{x:Type RowDefinition}">
+						<Setter Property="Height" Value="30" />
+					</Style>
+				</TabItem.Resources>
 
                 <StackPanel Margin="4">
                     <StackPanel Orientation="Horizontal" Margin="{StaticResource spaceMargin}">
@@ -1240,22 +1243,104 @@
                                                           Margin="5,8,0,0" />
                             </StackPanel>
                         </TabItem>
-                        <TabItem Header="Absolute Mouse" Visibility="Collapsed">
-                            <StackPanel>
-                                <StackPanel Orientation="Horizontal" Margin="{StaticResource spaceMargin}">
-                                    <Label Content="Max Zone X:" />
-                                    <xctk:IntegerUpDown d:IsHidden="True" MinWidth="80" Height="20" Minimum="0" Maximum="100" Value="{Binding TouchAbsMouseMaxZoneX}" Margin="8,0,0,0" />
-                                </StackPanel>
-                                <StackPanel Orientation="Horizontal" Margin="{StaticResource spaceMargin}">
-                                    <Label Content="Max Zone Y:" />
-                                    <xctk:IntegerUpDown d:IsHidden="True" MinWidth="80" Height="20" Minimum="0" Maximum="100" Value="{Binding TouchAbsMouseMaxZoneY}" Margin="8,0,0,0" />
-                                </StackPanel>
-                                <StackPanel Orientation="Horizontal" Margin="{StaticResource spaceMargin}">
-                                    <Label Content="Snap To Center on Release:" />
-                                    <CheckBox IsChecked="{Binding TouchAbsMouseSnapCenter}" VerticalAlignment="Center" Margin="8,0,0,0" />
-                                </StackPanel>
-                            </StackPanel>
-                        </TabItem>
+						<TabItem Header="Absolute Mouse" Visibility="Collapsed">
+							<StackPanel>
+
+								<Grid Margin="{StaticResource spaceMargin}">
+									<Grid.RowDefinitions>
+										<RowDefinition></RowDefinition>
+										<RowDefinition Style="{StaticResource gridRowHeight}"></RowDefinition>
+										<RowDefinition Style="{StaticResource gridRowHeight}"></RowDefinition>
+										<RowDefinition Style="{StaticResource gridRowHeight}"></RowDefinition>
+									</Grid.RowDefinitions>
+
+									<Grid.ColumnDefinitions>
+										<ColumnDefinition/>
+										<ColumnDefinition/>
+										<ColumnDefinition/>
+									</Grid.ColumnDefinitions>
+
+									<TextBlock Text="X" Grid.Row="0" Grid.Column="1" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,8" />
+									<TextBlock Text="Y" Grid.Row="0" Grid.Column="2" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,8" />
+									
+									<Label Content="Max Zone:" Grid.Row="1" Grid.Column="0" />
+									<DockPanel Grid.Row="1" Grid.Column="1">
+										<Label Content="%" DockPanel.Dock="Right" />
+										<xctk:DoubleUpDown d:IsHidden="True" FormatString="F0" Value="{Binding TouchAbsMouseMaxZoneX}" MinWidth="50" Maximum="100.0" Minimum="0.0" Increment="1"
+                                                   Margin="{StaticResource spaceMargin}">
+											<xctk:DoubleUpDown.ToolTip>
+												<TextBlock TextWrapping="Wrap">
+                                                Determines what percentage of the touchpad will be used. If this is set to 90, any inputs outside the middle 90% of the touchpad will be clamped to the minimum or maximim value.
+												</TextBlock>
+											</xctk:DoubleUpDown.ToolTip>
+										</xctk:DoubleUpDown>
+									</DockPanel>
+									<DockPanel Grid.Row="1" Grid.Column="2">
+										<Label Content="%" DockPanel.Dock="Right" />
+										<xctk:DoubleUpDown d:IsHidden="True" FormatString="F0" Value="{Binding TouchAbsMouseMaxZoneY}" MinWidth="50" Maximum="100.0" Minimum="0.0" Increment="1"
+                                                   Margin="{StaticResource spaceMargin}">
+											<xctk:DoubleUpDown.ToolTip>
+												<TextBlock TextWrapping="Wrap">
+                                                Determines what percentage of the touchpad will be used. If this is set to 90, any inputs outside the middle 90% of the touchpad will be clamped to the minimum or maximim value.
+												</TextBlock>
+											</xctk:DoubleUpDown.ToolTip>
+										</xctk:DoubleUpDown>
+									</DockPanel>
+
+									<Label Content="Min Position:" Grid.Row="2" Grid.Column="0" />
+									<DockPanel Grid.Row="2" Grid.Column="1">
+										<Label Content="%" DockPanel.Dock="Right" />
+										<xctk:DoubleUpDown d:IsHidden="True" FormatString="F2" Value="{Binding TouchAbsMouseMinPosX}" MinWidth="50" Maximum="100.0" Minimum="0.0" Increment="0.01"
+                                                   Margin="{StaticResource spaceMargin}">
+											<xctk:DoubleUpDown.ToolTip>
+												<TextBlock TextWrapping="Wrap">
+                                                Determines what portion of the screen will be used as outputs. If this is set to 10, the minimum input will place the cursor 10% of the way along the screen.
+												</TextBlock>
+											</xctk:DoubleUpDown.ToolTip>
+										</xctk:DoubleUpDown>
+									</DockPanel>
+									<DockPanel Grid.Row="2" Grid.Column="2">
+										<Label Content="%" DockPanel.Dock="Right" />
+										<xctk:DoubleUpDown d:IsHidden="True" FormatString="F2" Value="{Binding TouchAbsMouseMinPosY}" MinWidth="50" Maximum="100.0" Minimum="0.0" Increment="0.01"
+                                                   Margin="{StaticResource spaceMargin}">
+											<xctk:DoubleUpDown.ToolTip>
+												<TextBlock TextWrapping="Wrap">
+                                                Determines what portion of the screen will be used as outputs. If this is set to 10, the minimum input will place the cursor 10% of the way down the screen.
+												</TextBlock>
+											</xctk:DoubleUpDown.ToolTip>
+										</xctk:DoubleUpDown>
+									</DockPanel>
+
+									<Label Content="Max Position:" Grid.Row="3" Grid.Column="0" />
+									<DockPanel Grid.Row="3" Grid.Column="1">
+										<Label Content="%" DockPanel.Dock="Right" />
+										<xctk:DoubleUpDown d:IsHidden="True" FormatString="F2" Value="{Binding TouchAbsMouseMaxPosX}" MinWidth="50" Maximum="100.0" Minimum="0.0" Increment="0.01"
+                                                   Margin="{StaticResource spaceMargin}">
+											<xctk:DoubleUpDown.ToolTip>
+												<TextBlock TextWrapping="Wrap">
+                                                Determines what portion of the screen will be used as outputs. If this is set to 90, the maximum input will place the cursor 90% of the way along the screen.
+												</TextBlock>
+											</xctk:DoubleUpDown.ToolTip>
+										</xctk:DoubleUpDown>
+									</DockPanel>
+									<DockPanel Grid.Row="3" Grid.Column="2">
+										<Label Content="%" DockPanel.Dock="Right" />
+										<xctk:DoubleUpDown d:IsHidden="True" FormatString="F2" Value="{Binding TouchAbsMouseMaxPosY}" MinWidth="50" Maximum="100.0" Minimum="0.0" Increment="0.01"
+                                                   Margin="{StaticResource spaceMargin}">
+											<xctk:DoubleUpDown.ToolTip>
+												<TextBlock TextWrapping="Wrap">
+                                                Determines what portion of the screen will be used as outputs. If this is set to 90, the maximum input will place the cursor 90% of the way down the screen.
+												</TextBlock>
+											</xctk:DoubleUpDown.ToolTip>
+										</xctk:DoubleUpDown>
+									</DockPanel>
+								</Grid>
+								<StackPanel Orientation="Horizontal" Margin="{StaticResource spaceMargin}">
+									<Label Content="Snap to Center on Release:" />
+									<CheckBox IsChecked="{Binding TouchAbsMouseSnapCenter}" VerticalAlignment="Center" Margin="8,0,0,0" />
+								</StackPanel>
+							</StackPanel>
+						</TabItem>
                         <TabItem Header="Passthru" Visibility="Collapsed">
                             <StackPanel>
                                 <TextBlock Foreground="Red">
